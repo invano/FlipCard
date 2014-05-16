@@ -25,7 +25,7 @@ namespace FlipCard_WP
 
         private void ginobutton_Tap(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Porco dio");
+            MessageBox.Show("Friendship and Love <3");
             
         }
 
@@ -54,7 +54,12 @@ namespace FlipCard_WP
 
         private void ginobutton_Hold(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            MessageBox.Show("Tap");
+            MessageBox.Show("You are holding me down :(");
+        }
+
+        private void aboutUs_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/AboutUs.xaml", UriKind.Relative));
         }
     }
 }
