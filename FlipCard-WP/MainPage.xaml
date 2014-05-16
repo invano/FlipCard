@@ -46,8 +46,10 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
+        <Grid x:Name="ContentPanel" Grid.Row="3" Margin="12,0,12,0">
+            <Button Margin="0,136,0,276" Background="#FF34AA19">Prova</Button>
+            <Button Margin="0,331,0,0" Background="#FFE4E40F">Prova1</Button>
+            <Button Margin="0,0,0,471" Click="Prova2_Click" Background="#FFDC2424">Prova2</Button>
         </Grid>
 
         <!--Uncomment to see an alignment grid to help ensure your controls are
