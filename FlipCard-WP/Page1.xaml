@@ -20,16 +20,15 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="8*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28" Grid.ColumnSpan="2">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="second 
-                       page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="FlipCards" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Random Game" Margin="9,-7,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -64,22 +63,35 @@
             <Image Grid.Row="3" Grid.Column="3" Source="/Assets/ImagesCards/Card7Red.png" Margin="10"/>
         </Grid>
 
-        <Grid x:Name="Cards" Grid.Row="2" Margin="20,20,20,5" Grid.ColumnSpan="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="4*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Image Grid.Row="0" Grid.Column="0" Source="/Assets/ImagesCards/Card0Blue.png" Margin="10"/>
-            <Image Grid.Row="0" Grid.Column="1" Source="/Assets/ImagesCards/Card1Blue.png" Margin="10"/>
-            <Image Grid.Row="0" Grid.Column="2" Source="/Assets/ImagesCards/Card0Red.png" Margin="10"/>
-            <Image Grid.Row="0" Grid.Column="3" Source="/Assets/ImagesCards/Card1Red.png" Margin="10"/>
-     
+        <Grid x:Name="Cards" Grid.Row="2" Grid.ColumnSpan="2">
+            <ScrollViewer HorizontalScrollBarVisibility="Visible" HorizontalContentAlignment="Center" VerticalScrollBarVisibility="disabled">
+                <StackPanel Orientation="Horizontal">
+                    <Grid x:Name="HandGrid" Grid.Row="0" Margin="20,20,20,5" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="4*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Grid.Column="0" Source="/Assets/ImagesCards/Card0Blue.png" Margin="10"/>
+                        <Image Grid.Row="0" Grid.Column="1" Source="/Assets/ImagesCards/Card1Blue.png" Margin="10"/>
+                        <Image Grid.Row="0" Grid.Column="2" Source="/Assets/ImagesCards/Card0Red.png" Margin="10"/>
+                        <Image Grid.Row="0" Grid.Column="3" Source="/Assets/ImagesCards/Card1Red.png" Margin="10"/>
+                        <Image Grid.Row="0" Grid.Column="4" Source="/Assets/ImagesCards/Card1Red.png" Margin="10"/>
+                        <Image Grid.Row="0" Grid.Column="5" Source="/Assets/ImagesCards/Card1Red.png" Margin="10"/>
+
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+
         </Grid>
+
     </Grid>
 
 </phone:PhoneApplicationPage>
