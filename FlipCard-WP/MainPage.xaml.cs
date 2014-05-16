@@ -23,7 +23,7 @@ namespace FlipCard_WP
             BuildLocalizedApplicationBar();
         }
 
-        private void ginobutton_Click(object sender, RoutedEventArgs e)
+        private void ginobutton_Tap(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Porco dio");
             
