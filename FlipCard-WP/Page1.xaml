@@ -83,15 +83,11 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="100"/>
                         </Grid.RowDefinitions>
-                        <Image x:Name="Card1" Grid.Row="0" Grid.Column="0" Margin="10" MouseMove="MouseMoving">
-                            <i:Interaction.Behaviors>
-                                <el:MouseDragElementBehavior ConstrainToParentBounds="False"/>
-                            </i:Interaction.Behaviors>
-                        </Image>
-                        <Image Grid.Row="0" Grid.Column="1" Source="/Assets/ImagesCards/Card1Blue.png" Margin="10" AllowDrop="True"/>
-                        <Image Grid.Row="0" Grid.Column="2" Source="/Assets/ImagesCards/Card0Red.png" Margin="10"/>
-                        <Image Grid.Row="0" Grid.Column="3" Source="/Assets/ImagesCards/Card1Red.png" Margin="10"/>
-                        <Image Grid.Row="0" Grid.Column="4" Source="/Assets/ImagesCards/Card1Red.png" Margin="10"/>
+                        <Image x:Name="Card0" Grid.Row="0" Grid.Column="0" Margin="10" Tap="Card_Tap"/>
+                        <Image x:Name="Card1" Grid.Row="0" Grid.Column="1" Margin="10" Tap="Card_Tap"/>
+                        <Image Grid.Row="0" Grid.Column="2" Visibility="Collapsed" Margin="10"/>
+                        <Image Grid.Row="0" Grid.Column="3" Visibility="Collapsed" Margin="10"/>
+                        <Image Grid.Row="0" Grid.Column="4" Visibility="Collapsed" Margin="10"/>
                         <Image Grid.Row="0" Grid.Column="5" Source="/Assets/ImagesCards/Card1Red.png" Margin="10"/>
 
                     </Grid>
