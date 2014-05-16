@@ -14,5 +14,14 @@ namespace FlipCard_WP
         public const int MULTIPLY_WINNING_FACTOR = 10;
         public const int COMBO_MULTIPLY_FACTOR = 20;
         public const int WILL_LOSE_FACTOR_NEGATIVE = 1;
+        public const int FIRE = 3;
+        public const int WATER = 4;
+        public const int EARTH = 5;
+        public const int COMMON = 6;
+        public const int SILVER = 7;
+        public const int GOLD = 8;
+        public const int TIE = 9;
+        public const int PLACES_ON_TABLE = 16;
+        public const int ROW_LENGHT = 4;
     }
 }

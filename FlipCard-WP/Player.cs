@@ -9,7 +9,8 @@ namespace FlipCard_WP
     class Player
     {
         private const int cards = 8;
-        int playerId;
+        Deck deck;
+        public int playerId;
 
         public Card[] hand = new Card[cards];
 
