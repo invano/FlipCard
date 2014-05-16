@@ -29,11 +29,6 @@ namespace FlipCard_WP
             
         }
 
-        private void ginobutton_Hold(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            MessageBox.Show("Smettila di toccarmi");
-        }
-
 
         // Sample code for building a localized ApplicationBar
         private void BuildLocalizedApplicationBar()
@@ -52,9 +47,14 @@ namespace FlipCard_WP
             ApplicationBar.MenuItems.Add(appBarMenuItem);
         }
 
-        private void Prova2_Click(object sender, RoutedEventArgs e)
+        private void Prova2_Tap(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Page1.xaml", UriKind.Relative));
+        }
+
+        private void ginobutton_Hold(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            MessageBox.Show("Tap");
         }
     }
 }
