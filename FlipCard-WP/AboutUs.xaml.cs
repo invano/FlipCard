@@ -24,6 +24,7 @@ namespace FlipCard_WP
             TestRectangle.ManipulationDelta += new EventHandler<ManipulationDeltaEventArgs>(Drag_ManipulationDelta);
             TestRectangle.ManipulationCompleted += new EventHandler<ManipulationCompletedEventArgs>(Drag_ManipulationCompleted);
             TestRectangle.ManipulationStarted += new EventHandler<ManipulationStartedEventArgs>(Drag_ManipulationStarted);
+   
 
             dragTranslation = new TranslateTransform();
             originalTranslation = new TranslateTransform();
