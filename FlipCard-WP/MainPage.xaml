@@ -57,9 +57,9 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             
-            <Button Grid.Row="0" Grid.Column="0" Name="gioca" Click="Prova2_Click" Background="#FF07A400" Width="290" Height="100" >Gioca</Button>
-            <Button Grid.Row="1" Grid.Column="0" Name="regole" Background="#FF175914" Click="ginobutton_Click" Hold="ginobutton_Hold" Height="85">Regole</Button>
-            <Button Grid.Row="2" Grid.Column="0" Name="about" Background="Black" Click="ginobutton_Click" Hold="ginobutton_Hold">About Us</Button>
+            <Button Grid.Row="0" Grid.Column="0" Name="gioca" Click="Prova2_Tap" Background="#FF07A400" Width="290" Height="100" >Gioca</Button>
+            <Button Grid.Row="1" Grid.Column="0" Name="regole" Background="#FF175914" Tap="ginobutton_Tap" Hold="ginobutton_Hold" Height="85">Regole</Button>
+            <Button Grid.Row="2" Grid.Column="0" Name="about" Background="Black" Tap="ginobutton_Tap" Hold="ginobutton_Hold">About Us</Button>
 
         </Grid>
 
