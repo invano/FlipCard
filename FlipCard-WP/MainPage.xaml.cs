@@ -22,6 +22,18 @@ namespace FlipCard_WP
             BuildLocalizedApplicationBar();
         }
 
+        private void ginobutton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Porco dio");
+            
+        }
+
+        private void ginobutton_Hold(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            MessageBox.Show("Smettila di toccarmi");
+        }
+
+
         // Sample code for building a localized ApplicationBar
         private void BuildLocalizedApplicationBar()
         {
