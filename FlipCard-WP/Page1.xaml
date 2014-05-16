@@ -14,14 +14,15 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,0,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
@@ -40,15 +41,44 @@
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="4*"/>
-                <RowDefinition Height="4*"/>
-                <RowDefinition Height="4*"/>
-                <RowDefinition Height="4*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <Image Grid.Row="0" Grid.Column="0" Source="/Assets/ImagesCards/Card0Blue.png" Margin="10"/>
             <Image Grid.Row="0" Grid.Column="1" Source="/Assets/ImagesCards/Card1Blue.png" Margin="10"/>
             <Image Grid.Row="0" Grid.Column="2" Source="/Assets/ImagesCards/Card0Red.png" Margin="10"/>
             <Image Grid.Row="0" Grid.Column="3" Source="/Assets/ImagesCards/Card1Red.png" Margin="10"/>
+            <Image Grid.Row="1" Grid.Column="0" Source="/Assets/ImagesCards/Card2Blue.png" Margin="10"/>
+            <Image Grid.Row="1" Grid.Column="1" Source="/Assets/ImagesCards/Card3Blue.png" Margin="10"/>
+            <Image Grid.Row="1" Grid.Column="2" Source="/Assets/ImagesCards/Card2Red.png" Margin="10"/>
+            <Image Grid.Row="1" Grid.Column="3" Source="/Assets/ImagesCards/Card3Red.png" Margin="10"/>
+            <Image Grid.Row="2" Grid.Column="0" Source="/Assets/ImagesCards/Card4Blue.png" Margin="10"/>
+            <Image Grid.Row="2" Grid.Column="1" Source="/Assets/ImagesCards/Card5Blue.png" Margin="10"/>
+            <Image Grid.Row="2" Grid.Column="2" Source="/Assets/ImagesCards/Card4Red.png" Margin="10"/>
+            <Image Grid.Row="2" Grid.Column="3" Source="/Assets/ImagesCards/Card5Red.png" Margin="10"/>
+            <Image Grid.Row="3" Grid.Column="0" Source="/Assets/ImagesCards/Card6Blue.png" Margin="10"/>
+            <Image Grid.Row="3" Grid.Column="1" Source="/Assets/ImagesCards/Card7Blue.png" Margin="10"/>
+            <Image Grid.Row="3" Grid.Column="2" Source="/Assets/ImagesCards/Card6Red.png" Margin="10"/>
+            <Image Grid.Row="3" Grid.Column="3" Source="/Assets/ImagesCards/Card7Red.png" Margin="10"/>
+        </Grid>
+
+        <Grid x:Name="Cards" Grid.Row="2" Margin="20,20,20,5" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Grid.Column="0" Source="/Assets/ImagesCards/Card0Blue.png" Margin="10"/>
+            <Image Grid.Row="0" Grid.Column="1" Source="/Assets/ImagesCards/Card1Blue.png" Margin="10"/>
+            <Image Grid.Row="0" Grid.Column="2" Source="/Assets/ImagesCards/Card0Red.png" Margin="10"/>
+            <Image Grid.Row="0" Grid.Column="3" Source="/Assets/ImagesCards/Card1Red.png" Margin="10"/>
+     
         </Grid>
     </Grid>
 
