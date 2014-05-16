@@ -13,6 +13,7 @@ namespace FlipCard_WP
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        
         // Constructor
         public MainPage()
         {
