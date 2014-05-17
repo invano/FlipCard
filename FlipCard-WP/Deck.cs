@@ -52,6 +52,10 @@ namespace FlipCard_WP
                 list[n] = value;
             }
         }
+        /*public void addCardtoDeck (Card cardToAdd)
+         * {       }*/
 
+       /* public void addCardstoDeck()
+        {        }*/
     }
 }
