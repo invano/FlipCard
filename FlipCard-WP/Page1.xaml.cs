@@ -166,6 +166,11 @@ namespace FlipCard_WP
                         table[pc.getPosition()] = cpu.hand[pc.getCard()];
                         cpu.hand[pc.getCard()] = null;
 
+
+
+
+
+
                         step++;
                         break;
                     }
@@ -191,8 +196,117 @@ namespace FlipCard_WP
 
 
             img.Source = new ImageSourceConverter().ConvertFromString(targetSource) as ImageSource;
-            
 
+            //Controlla carte adiacenti
+            bool isCPUMove = false;
+            if (newCard.isBlue()) isCPUMove = true;
+            int tmpIndex=0;
+
+            tmpIndex = myGame.abovePositionWRTLocation(index);
+            if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].downValue < newCard.upValue)
+            {
+                int tmp2 = table[tmpIndex].idNumber;
+                string targetSource2 = "/Assets/ImagesCards/Card" + tmp2;
+                //table[tmpIndex].color != newCard.color
+                if (true)
+                {
+                    if (isCPUMove)
+                    {
+                        newCard.color = 2;
+                        targetSource2 += "Blue.png";
+                    }
+                    else
+                    {
+                        newCard.color = 1;
+                        targetSource2 += "Red.png";
+                    }
+                    string target2 = "c" + tmpIndex;
+                    Image img2 = (Image)this.FindName(target2);
+
+
+                    img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
+
+                }
+            }
+
+            tmpIndex = myGame.leftPositionWRTLocation(index);
+            if (tmpIndex!=-1 && table[tmpIndex] != null && table[tmpIndex].rightValue < newCard.leftValue)
+            {
+                int tmp2 = table[tmpIndex].idNumber;
+                string targetSource2 = "/Assets/ImagesCards/Card" + tmp2;
+                if (true)
+                {
+                    if (isCPUMove)
+                    {
+                        newCard.color = 2;
+                        targetSource2 += "Blue.png";
+                    }
+                    else
+                    {
+                        newCard.color = 1;
+                        targetSource2 += "Red.png";
+                    }
+                    string target2 = "c" + tmpIndex;
+                    Image img2 = (Image)this.FindName(target2);
+
+
+                    img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
+
+                }
+            }
+
+            tmpIndex = myGame.belowPositionWRTLocation(index);
+            if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].upValue < newCard.downValue)
+            {
+                int tmp2 = table[tmpIndex].idNumber;
+                string targetSource2 = "/Assets/ImagesCards/Card" + tmp2;
+                if (true)
+                {
+                    if (isCPUMove)
+                    {
+                        newCard.color = 2;
+                        targetSource2 += "Blue.png";
+                    }
+                    else
+                    {
+                        newCard.color = 1;
+                        targetSource2 += "Red.png";
+                    }
+                    string target2 = "c" + tmpIndex;
+                    Image img2 = (Image)this.FindName(target2);
+
+
+                    img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
+
+                }
+            }
+
+            tmpIndex = myGame.rightPositionWRTLocation(index);
+            if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].leftValue < newCard.rightValue)
+            {
+                int tmp2 = table[tmpIndex].idNumber;
+                string targetSource2 = "/Assets/ImagesCards/Card" + tmp2;
+                if (true)
+                {
+                    if (isCPUMove)
+                    {
+                        newCard.color = 2;
+                        targetSource2 += "Blue.png";
+                    }
+                    else
+                    {
+                        newCard.color = 1;
+                        targetSource2 += "Red.png";
+                    }
+                    string target2 = "c" + tmpIndex;
+                    Image img2 = (Image)this.FindName(target2);
+
+
+                    img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
+
+                }
+            }
+            
         }
 
         public void updateHand(int index, Card newCard)
