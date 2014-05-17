@@ -149,24 +149,32 @@ namespace FlipCard_WP
 
                     if (table[index] == null)
                     {
+
+                        if (player.hand[k] == null) continue;
                         updateTiles(index, player.hand[k]);
                         table[index] = player.hand[k];
                         player.hand[k] = null;
                         hideFromHand(k);
                         myGame.setCardsOnTable(table);
+
+                        
+
+                        PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
+                        if (cpu.hand[pc.getCard()] == null) continue;
+                        updateTiles(pc.getPosition(), cpu.hand[pc.getCard()]);
+                        table[pc.getPosition()] = cpu.hand[pc.getCard()];
+                        cpu.hand[pc.getCard()] = null;
+
+                        step++;
                         break;
                     }
+                    break;
                 }
             }
 
-            
-            PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
-            updateTiles(pc.getPosition(), cpu.hand[pc.getCard()]);
-            table[pc.getPosition()] = cpu.hand[pc.getCard()];
-            cpu.hand[pc.getCard()] = null;
-
-            if (step == 7)
-                MessageBox.Show((myGame.checkWinningId()).ToString());
+  
+            if (step == 8)
+                MessageBox.Show("ciao");
 
         }
 
