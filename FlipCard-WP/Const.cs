@@ -25,5 +25,8 @@ namespace FlipCard_WP
         public const int ROW_LENGHT = 4;
         public const int DECK_SIZE = 24;
         public const int HAND_SIZE = 8;
+        public const int APPROXIMATE_CARDSNUMBER = 10;
+        public const int GOLD_RARITY_PROBABILITY_DIVIDER = 6;
+        public const int SILVER_RARITY_PROBABILITY_DIVIDER = 3;
     }
 }
