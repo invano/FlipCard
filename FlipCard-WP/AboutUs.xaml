@@ -17,20 +17,64 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
 
-        
-        <Rectangle  Name="TestRectangle"
-                    Grid.Row="0"
+        <TextBlock Grid.Column="1" 
+                   Grid.Row="1" 
+                   Grid.ColumnSpan="2" 
+                   FontSize="20"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center">
+            App was developed in 32 hours<LineBreak />
+            for the /publish/ hackaton <LineBreak />
+            in 16-17/05/2014 by:<LineBreak />
+        </TextBlock>
+        <TextBlock Grid.Column="1" 
+                   Grid.Row="2" 
+                   Grid.ColumnSpan="2" 
+                   FontSize="20"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center">
+            Emanuele Cozzi<LineBreak />
+            Fabrizio Demaria<LineBreak />
+            Matteo Liera<LineBreak />
+            Vito Labalestra <LineBreak />
+
+        </TextBlock>
+        <Rectangle  Name="TestRectangle1"
+                    Grid.Row="1"
+                    Grid.Column="1"
                     Width="200"
                     Height="200"
-                    Fill="Blue" />
+                    Fill="#f25022" />
         <Rectangle  Name="TestRectangle2"
                     Grid.Row="1"
+                    Grid.Column="2"
                     Width="200"
                     Height="200"
-                    Fill="Red" />
+                    Fill="#7fba00" />
+        <Rectangle  Name="TestRectangle3"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Width="200"
+                    Height="200"
+                    Fill="#01a4ef" />
+        <Rectangle  Name="TestRectangle4"
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Width="200"
+                    Height="200"
+                    Fill="#ffb901" />
+        
 
             <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1">

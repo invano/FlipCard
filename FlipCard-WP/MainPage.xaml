@@ -14,7 +14,7 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="White">
+    <Grid x:Name="LayoutRoot" Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -41,7 +41,7 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="FlipCard" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" HorizontalAlignment="Center" Foreground="Black" />
+            <Image Source="/Assets/ImagesCards/TilteFC.png" Margin="0,0,10,0"/>
             <TextBlock Text="#pubwin" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" HorizontalAlignment="Center" Foreground="Black" FontSize="36" />
 
         </StackPanel>
@@ -57,9 +57,9 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             
-            <Button Grid.Row="0" Grid.Column="0" Name="gioca" Click="Prova2_Tap" Background="#FF07A400" Width="290" Height="100" >Gioca</Button>
-            <Button Grid.Row="1" Grid.Column="0" Name="regole" Background="#FF175914" Tap="ginobutton_Tap" Hold="ginobutton_Hold" Height="85">Regole</Button>
-            <Button Grid.Row="2" Grid.Column="0" Name="about" Background="Black" Tap="aboutUs_Tap" Hold="ginobutton_Hold">About Us</Button>
+            <Button Grid.Row="0" Grid.Column="0" Name="gioca" Click="Prova2_Tap" Background="#FF9b0b" Width="290" Height="100" >Gioca</Button>
+            <Button Grid.Row="1" Grid.Column="0" Name="regole" Background="#ff5d0b" Hold="ginobutton_Hold" Height="85">Regole</Button>
+            <Button Grid.Row="2" Grid.Column="0" Name="about" Background="#663300" Tap="aboutUs_Tap" Hold="ginobutton_Hold">About Us</Button>
 
         </Grid>
 
