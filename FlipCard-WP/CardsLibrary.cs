@@ -14,7 +14,7 @@ namespace FlipCard_WP
         public Card[] GoldCardsInLibrary;
 
 
-        public CardsLibrary(String libraryName)
+        public CardsLibrary()
         {
             Card card0 = new Card();
             card0.idNumber =0;
@@ -214,7 +214,7 @@ namespace FlipCard_WP
             card24.downValue = 1;
             card24.leftValue = 2;
             card24.rightValue = 1;
-            card24.rarityType = Const.Gold;
+            card24.rarityType = Const.GOLD;
 
             Card card25 = new Card();
             card25.idNumber = 25;
@@ -222,7 +222,7 @@ namespace FlipCard_WP
             card25.downValue = 1;
             card25.leftValue = 1;
             card25.rightValue = 6;
-            card25.rarityType = Const.Gold;
+            card25.rarityType = Const.GOLD;
 
             Card card26 = new Card();
             card26.idNumber = 26;
@@ -230,7 +230,7 @@ namespace FlipCard_WP
             card26.downValue = 6;
             card26.leftValue = 1;
             card26.rightValue = 2;
-            card26.rarityType = Const.Gold;
+            card26.rarityType = Const.GOLD;
 
             Card card27 = new Card();
             card27.idNumber = 27;
@@ -238,7 +238,7 @@ namespace FlipCard_WP
             card27.downValue = 2;
             card27.leftValue = 6;
             card27.rightValue = 1;
-            card27.rarityType = Const.Gold;
+            card27.rarityType = Const.GOLD;
 
             Card card28 = new Card();
             card28.idNumber = 28;
@@ -246,7 +246,7 @@ namespace FlipCard_WP
             card28.downValue = 1;
             card28.leftValue = 3;
             card28.rightValue = 2;
-            card28.rarityType = Const.Gold;
+            card28.rarityType = Const.GOLD;
 
             Card card29 = new Card();
             card29.idNumber = 29;
@@ -254,7 +254,7 @@ namespace FlipCard_WP
             card29.downValue = 2;
             card29.leftValue = 1;
             card29.rightValue = 5;
-            card29.rarityType = Const.Gold;
+            card29.rarityType = Const.GOLD;
 
             Card card30 = new Card();
             card30.idNumber = 30;
@@ -262,7 +262,7 @@ namespace FlipCard_WP
             card30.downValue = 5;
             card20.leftValue = 2;
             card30.rightValue = 3;
-            card30.rarityType = Const.Gold;
+            card30.rarityType = Const.GOLD;
 
             Card card31 = new Card();
             card31.idNumber = 31;
@@ -270,7 +270,7 @@ namespace FlipCard_WP
             card31.downValue = 3;
             card31.leftValue = 5;
             card31.rightValue = 1;
-            card31.rarityType = Const.Gold;
+            card31.rarityType = Const.GOLD;
 
             Card card32 = new Card();
             card32.idNumber = 32;
@@ -278,7 +278,7 @@ namespace FlipCard_WP
             card32.downValue = 4;
             card32.leftValue = 4;
             card32.rightValue = 1;
-            card32.rarityType = Const.Gold;
+            card32.rarityType = Const.GOLD;
 
             Card card33 = new Card();
             card33.idNumber = 33;
@@ -286,7 +286,7 @@ namespace FlipCard_WP
             card33.downValue = 1;
             card33.leftValue = 4;
             card33.rightValue = 4;
-            card33.rarityType = Const.Gold;
+            card33.rarityType = Const.GOLD;
 
             Card card34 = new Card();
             card34.idNumber = 34;
@@ -294,7 +294,7 @@ namespace FlipCard_WP
             card34.downValue = 4;
             card34.leftValue = 1;
             card34.rightValue = 4;
-            card34.rarityType = Const.Gold;
+            card34.rarityType = Const.GOLD;
 
             Card card35 = new Card();
             card35.idNumber = 35;
@@ -302,7 +302,7 @@ namespace FlipCard_WP
             card35.downValue = 4;
             card35.leftValue = 4;
             card35.rightValue = 4;
-            card35.rarityType = Const.Gold;
+            card35.rarityType = Const.GOLD;
 
             List<Card> tmpCommonList = new List<Card>(Const.APPROXIMATE_CARDSNUMBER);
             List<Card> tmpSilverList = new List<Card>(Const.APPROXIMATE_CARDSNUMBER);
@@ -356,29 +356,29 @@ namespace FlipCard_WP
             int intsize = size;
     
             if (intsize < 18) {
-                return -1;
+                return null;
             }
     
             Deck myRandomDeck = new Deck();
     
             int i = 0;
             Random rgn = new Random();
-            int goldNumber = Math.Round(intsize / Const.GOLD_RARITY_PROBABILITY_DIVIDER);
+            int goldNumber = (intsize / Const.GOLD_RARITY_PROBABILITY_DIVIDER);
             for (i = 0; i < goldNumber; i++) {
-                int casualGoldPosition = rgn.Next() % this.GoldCardsInLibrary.Count;
+                int casualGoldPosition = rgn.Next() % this.GoldCardsInLibrary.Count();
                 myRandomDeck.addCardToDeck(this.GoldCardsInLibrary[casualGoldPosition]);
             }
-    
-            int silverNumber = Math.Round(intsize / Const.SILVER_RARITY_PROBABILITY_DIVIDER);
+
+            int silverNumber = (intsize / Const.SILVER_RARITY_PROBABILITY_DIVIDER);
             for (i = 0; i < silverNumber; i++) {
-                int casualSilverPosition = rgn.Next() % this.SilverCardsInLibrary.Count;
+                int casualSilverPosition = rgn.Next() % this.SilverCardsInLibrary.Count();
                 myRandomDeck.addCardToDeck(this.SilverCardsInLibrary[casualSilverPosition]);
 
             }
     
             int commonNumber = intsize - goldNumber - silverNumber;
             for (i=0; i<commonNumber; i++) {
-                int casualCommonPosition = rgn.Next() % this.CommonCardsInLibrary.Count;
+                int casualCommonPosition = rgn.Next() % this.CommonCardsInLibrary.Count();
                 myRandomDeck.addCardToDeck(this.CommonCardsInLibrary[casualCommonPosition]);
             }
             return myRandomDeck;

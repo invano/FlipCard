@@ -12,7 +12,7 @@ namespace FlipCard_WP
         Deck deck;
         public int playerId;
 
-        public Card[] hand = new Card[cards];
+        public Card[] hand;
 
         public bool isRed()
         {

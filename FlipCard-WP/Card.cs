@@ -17,7 +17,7 @@ namespace FlipCard_WP
         int color;
 
         int manaType;
-        int rarityType;
+        public int rarityType;
 
         public bool isRed()
         {

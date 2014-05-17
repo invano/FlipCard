@@ -9,18 +9,25 @@ namespace FlipCard_WP
     class Deck
     {
         int no_cards;
-        public Card[] cardArray;
+        public List<Card> cardArray;
+        Random rgn;
 
+        public Deck()
+        {
+            cardArray = new List<Card>();
+            rgn = new Random();
+        }
 
         public void setDeck(Card[] deck ) {
 
-            deck.CopyTo(this.cardArray, this.no_cards);
+            cardArray = new List<Card>(deck) ;
         }
 
-        public Card[] getDeck() {
-            return this.cardArray;
-                }
-        
+        public Card[] getDeck()
+        {
+            return this.cardArray.ToArray();
+        }
+                
         public void set_no_cards(int no_cards) {
             this.no_cards = no_cards;
         }
@@ -33,18 +40,22 @@ namespace FlipCard_WP
             int i = 0;
             if (this.no_cards != 0)
             {
-                i = new Random().Next(0, this.no_cards + 1);
-                return this.cardArray[i];
+               i = rgn.Next(0, this.no_cards - 1);
+               return this.cardArray[i];
             }
+      
             return null;
 
         }
         
-        /*public void addCardtoDeck (Card cardToAdd)
-         * {       }*/
+        public void addCardToDeck (Card cardToAdd)
+        {
+            cardArray.Add(cardToAdd);
+        }
 
-       /* public void addCardstoDeck()
-        {        }*/
+        public void addCardstoDeck()
+        {
+        }
     }
 
  static class DeckShuffle

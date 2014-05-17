@@ -25,7 +25,9 @@ namespace FlipCard_WP
     public partial class Page1 : PhoneApplicationPage
     {
         private CardInfo[] cards = new CardInfo[8];
-        
+        Card[] table = new Card[Const.PLACES_ON_TABLE];
+        Player player = new Player();
+        Player cpu = new Player();
 
         public Page1()
         {
@@ -50,14 +52,40 @@ namespace FlipCard_WP
             cards[7].name = "Card7";
 
 
-            Card0.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card0Red.png") as ImageSource;
-            Card1.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card1Red.png") as ImageSource;
-            Card2.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card2Red.png") as ImageSource;
-            Card3.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card3Red.png") as ImageSource;
-            Card4.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card4Red.png") as ImageSource;
-            Card5.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card5Red.png") as ImageSource;
-            Card6.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card6Red.png") as ImageSource;
-            Card7.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card7Red.png") as ImageSource;
+            //Card0.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card0Red.png") as ImageSource;
+            //Card1.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card1Red.png") as ImageSource;
+            //Card2.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card2Red.png") as ImageSource;
+            //Card3.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card3Red.png") as ImageSource;
+            //Card4.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card4Red.png") as ImageSource;
+            //Card5.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card5Red.png") as ImageSource;
+            //Card6.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card6Red.png") as ImageSource;
+            //Card7.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card7Red.png") as ImageSource;
+          
+            
+
+            CardsLibrary cardsLibrary = new CardsLibrary();
+            Deck playerDeck = cardsLibrary.generateRandomDeckWithSize(40);
+            playerDeck.set_no_cards(40);
+            Deck cpuDeck  = cardsLibrary.generateRandomDeckWithSize(40);
+            cpuDeck.set_no_cards(40);
+
+            DeckShuffle.Shuffle<Card>(playerDeck.cardArray);
+            DeckShuffle.Shuffle<Card>(cpuDeck.cardArray);
+
+            player.hand = new Card[8];
+            cpu.hand = new Card[8];
+
+            for (int i = 0; i < 8; i++)
+            {
+                player.hand[i] = playerDeck.getRandomCard();
+                player.hand[i].setColor(Const.RED);
+                updateHand(i, player.hand[i]);
+                cpu.hand[i] = cpuDeck.getRandomCard();
+                cpu.hand[i].setColor(Const.BLUE);
+            }
+            //GGfinqui
+
+
 
         }
 
@@ -67,11 +95,6 @@ namespace FlipCard_WP
             TranslateTransform translation;
             translation = new TranslateTransform();
 
-
-            Card cardigan = new Card();
-            cardigan.setColor(2);
-            cardigan.idNumber = 3;
-            updateHand(2, cardigan);
 
             for (int i = 0; i < cards.Length; i++)
             {
@@ -120,7 +143,14 @@ namespace FlipCard_WP
                     string[] words = s.Split('c');
                     index = Convert.ToInt32(words[1]);
 
-                    //TODO call controller
+                    if (table[index] == null)
+                    {
+                        updateTiles(index, player.hand[k]);
+                        table[index] = player.hand[k];
+                        player.hand[k] = null;
+                        hideFromHand(k);
+                        break;
+                    }
                 }
             }
         }
@@ -129,8 +159,8 @@ namespace FlipCard_WP
         {
             int tmp = newCard.idNumber;
             string targetSource = "/Assets/ImagesCards/Card" + tmp;
-            if (newCard.isBlue()) targetSource += "Blue.png";
-            else targetSource += "Red.png";
+            if (newCard.isBlue()) targetSource += "Red.png";
+            else targetSource += "Blue.png";
 
             string target = "c" + index;
             Image img = (Image)this.FindName(target);
@@ -152,12 +182,6 @@ namespace FlipCard_WP
 
             Image img = (Image)this.FindName(target);
 
-            img.RenderTransformOrigin = new Point(0.5, 0.5);
-            ScaleTransform flipTrans = new ScaleTransform();
-            flipTrans.ScaleX = -1;
-            flipTrans.ScaleY = -1;
-            img.RenderTransform = flipTrans;
-
             img.Source = new ImageSourceConverter().ConvertFromString(targetSource) as ImageSource;
 
         }
@@ -168,5 +192,6 @@ namespace FlipCard_WP
             Image img = (Image)this.FindName(target);
             img.Visibility = System.Windows.Visibility.Collapsed;
         }
+
     }
 }

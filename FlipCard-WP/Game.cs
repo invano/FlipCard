@@ -16,7 +16,7 @@ namespace FlipCard_WP
         public Game()
         {
             this.cardsOnTable = new Card[Const.PLACES_ON_TABLE];
-            this.myCardsLibrary = new CardsLibrary("cardsLibrary");
+            this.myCardsLibrary = new CardsLibrary();
         }
 
         private bool addCard(int positionInHandOfPlayedCard, int x, Player whoPlayed)
