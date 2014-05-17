@@ -21,6 +21,7 @@ namespace FlipCard_WP
         public Page2()
         {
             InitializeComponent();
+
             TestRectangle.ManipulationDelta += new EventHandler<ManipulationDeltaEventArgs>(Drag_ManipulationDelta);
             TestRectangle.ManipulationCompleted += new EventHandler<ManipulationCompletedEventArgs>(Drag_ManipulationCompleted);
             TestRectangle.ManipulationStarted += new EventHandler<ManipulationStartedEventArgs>(Drag_ManipulationStarted);

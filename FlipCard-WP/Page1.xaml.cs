@@ -29,74 +29,45 @@ namespace FlipCard_WP
 
         public Page1()
         {
-
+            
             InitializeComponent();
+          
+
             cards[0].img = Card0;
             cards[0].name = "Card0";
             cards[1].img = Card1;
             cards[1].name = "Card1";
+            cards[2].img = Card2;
+            cards[2].name = "Card2";
+            cards[3].img = Card3;
+            cards[3].name = "Card3";
+            cards[4].img = Card4;
+            cards[4].name = "Card4";
+            cards[5].img = Card5;
+            cards[5].name = "Card5";
+            cards[6].img = Card6;
+            cards[6].name = "Card6";
+            cards[7].img = Card7;
+            cards[7].name = "Card7";
 
-            Card0.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card1Blue.png") as ImageSource;
+
+            Card0.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card0Red.png") as ImageSource;
             Card1.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card1Red.png") as ImageSource;
+            Card2.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card2Red.png") as ImageSource;
+            Card3.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card3Red.png") as ImageSource;
+            Card4.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card4Red.png") as ImageSource;
+            Card5.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card5Red.png") as ImageSource;
+            Card6.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card6Red.png") as ImageSource;
+            Card7.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card7Red.png") as ImageSource;
 
-
-            //Card1.ManipulationDelta += new EventHandler<ManipulationDeltaEventArgs>(Drag_ManipulationDelta);
-            //Card1.ManipulationCompleted += new EventHandler<ManipulationCompletedEventArgs>(Drag_ManipulationCompleted);
-            //Card1.ManipulationStarted += new EventHandler<ManipulationStartedEventArgs>(Drag_ManipulationStarted);
-
-            //dragTranslation = new TranslateTransform();
-            //originalTranslation = new TranslateTransform();
-
-
-
-
-
-        }
-
-        private void MouseMoving(object sender, MouseEventArgs e)
-        {
-            //if (sender.GetType() == typeof(Image))
-            //{
-            //    Image realSender = (Image)sender;
-            //    Canvas.SetZIndex(realSender, 32);
-            //}
-        }
-
-
-        private void Drag_ManipulationStarted(object sender, ManipulationStartedEventArgs e)
-        {
-            dragTranslation = new TranslateTransform();
-            originalTranslation = new TranslateTransform();
-
-            Image card1 = (Image)sender;
-            card1.RenderTransform = this.dragTranslation;
-        }
-
-        private void Drag_ManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
-        {
-            // Reset rectangle.
-            Image card1 = (Image)sender;
-            card1.RenderTransform = this.originalTranslation;
-
-
-            MessageBox.Show("Dude " + (originalTranslation.X + dragTranslation.X));
-
-            dragTranslation.X = originalTranslation.X;
-            dragTranslation.Y = originalTranslation.Y;
-        }
-
-        void Drag_ManipulationDelta(object sender, ManipulationDeltaEventArgs e)
-        {
-            // Move the rectangle.
-            dragTranslation.X += e.DeltaManipulation.Translation.X;
-            dragTranslation.Y += e.DeltaManipulation.Translation.Y;
-        }
 
         private void Card_Tap(object sender, GestureEventArgs e)
         {
             Image img = (Image)sender;
             TranslateTransform translation = new TranslateTransform();
-            for (int i = 0; i < 7; i++)
+
+            
+            for (int i = 0; i < cards.Length; i++)
             {
                 if (img.Name.Equals(cards[i].name))
                 {
@@ -108,7 +79,7 @@ namespace FlipCard_WP
                     }
                     else
                     {
-                        for (int j = 0; j < 7; j++)
+                        for (int j = 0; j < cards.Length; j++)
                         {
                             if (cards[j].isUp)
                             {

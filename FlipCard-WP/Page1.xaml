@@ -24,8 +24,8 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition x:Name="TopLine" Height="120"/>
-            <RowDefinition Height="8*"/>
+            <RowDefinition x:Name="TopLine" Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
    
@@ -36,7 +36,7 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Canvas.ZIndex="30" Margin="12,0,12,0" Grid.ColumnSpan="2">
+        <Grid x:Name="ContentPanel" Grid.Row="1" Canvas.ZIndex="30" Margin="0,0,0,0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="4*"/>
@@ -44,34 +44,35 @@
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
-            <Image Grid.Row="0" Grid.Column="0" Source="/Assets/ImagesCards/Card0Blue.png" Margin="10"/>
-            <Image Grid.Row="0" Grid.Column="1" Source="/Assets/ImagesCards/Card1Blue.png" Margin="10"/>
-            <Image Grid.Row="0" Grid.Column="2" Source="/Assets/ImagesCards/Card0Red.png" Margin="10"/>
-            <Image Grid.Row="0" Grid.Column="3" Source="/Assets/ImagesCards/Card1Red.png" Margin="10"/>
-            <Image Grid.Row="1" Grid.Column="0" Source="/Assets/ImagesCards/Card2Blue.png" Margin="10"/>
-            <Image Grid.Row="1" Grid.Column="1" Source="/Assets/ImagesCards/Card3Blue.png" Margin="10"/>
-            <Image Grid.Row="1" Grid.Column="2" Source="/Assets/ImagesCards/Card2Red.png" Margin="10"/>
-            <Image Grid.Row="1" Grid.Column="3" Source="/Assets/ImagesCards/Card3Red.png" Margin="10"/>
-            <Image Grid.Row="2" Grid.Column="0" Source="/Assets/ImagesCards/Card4Blue.png" Margin="10"/>
-            <Image Grid.Row="2" Grid.Column="1" Source="/Assets/ImagesCards/Card5Blue.png" Margin="10"/>
-            <Image Grid.Row="2" Grid.Column="2" Source="/Assets/ImagesCards/Card4Red.png" Margin="10"/>
-            <Image Grid.Row="2" Grid.Column="3" Source="/Assets/ImagesCards/Card5Red.png" Margin="10"/>
-            <Image Grid.Row="3" Grid.Column="0" Source="/Assets/ImagesCards/Card6Blue.png" Margin="10"/>
-            <Image Grid.Row="3" Grid.Column="1" Source="/Assets/ImagesCards/Card7Blue.png" Margin="10"/>
-            <Image Grid.Row="3" Grid.Column="2" Source="/Assets/ImagesCards/Card6Red.png" Margin="10"/>
-            <Image Grid.Row="3" Grid.Column="3" Source="/Assets/ImagesCards/Card7Red.png" Margin="10"/>
+            <Image x:Name="0" Grid.Row="0" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="1" Grid.Row="0" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="2" Grid.Row="0" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="3" Grid.Row="0" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="4" Grid.Row="1" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="5" Grid.Row="1" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="6" Grid.Row="1" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="7" Grid.Row="1" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="8" Grid.Row="2" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="9" Grid.Row="2" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="10" Grid.Row="2" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="11" Grid.Row="2" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="12" Grid.Row="3" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="13" Grid.Row="3" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="14" Grid.Row="3" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
+            <Image x:Name="15" Grid.Row="3" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10"/>
         </Grid>
 
         <Grid x:Name="Cards" Grid.Row="2" Canvas.ZIndex="40" Background="Gray" Grid.ColumnSpan="2">
             <ScrollViewer HorizontalScrollBarVisibility="Visible" HorizontalContentAlignment="Center" VerticalScrollBarVisibility="disabled">
                 <StackPanel Orientation="Horizontal">
-                    <Grid x:Name="HandGrid" Grid.Row="0" Margin="20,20,20,5" Grid.ColumnSpan="2">
+                    <Grid x:Name="HandGrid" Grid.Row="0" Margin="0,0,0,0" Grid.ColumnSpan="2" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
                             <ColumnDefinition Width="4*"/>
                             <ColumnDefinition Width="4*"/>
                             <ColumnDefinition Width="4*"/>
@@ -85,11 +86,12 @@
                         </Grid.RowDefinitions>
                         <Image x:Name="Card0" Grid.Row="0" Grid.Column="0" Margin="10" Tap="Card_Tap"/>
                         <Image x:Name="Card1" Grid.Row="0" Grid.Column="1" Margin="10" Tap="Card_Tap"/>
-                        <Image Grid.Row="0" Grid.Column="2" Visibility="Collapsed" Margin="10"/>
-                        <Image Grid.Row="0" Grid.Column="3" Visibility="Collapsed" Margin="10"/>
-                        <Image Grid.Row="0" Grid.Column="4" Visibility="Collapsed" Margin="10"/>
-                        <Image Grid.Row="0" Grid.Column="5" Source="/Assets/ImagesCards/Card1Red.png" Margin="10"/>
-
+                        <Image x:Name="Card2" Grid.Row="0" Grid.Column="2" Margin="10" Tap="Card_Tap"/>
+                        <Image x:Name="Card3" Grid.Row="0" Grid.Column="3" Margin="10" Tap="Card_Tap"/>
+                        <Image x:Name="Card4" Grid.Row="0" Grid.Column="4" Margin="10" Tap="Card_Tap"/>
+                        <Image x:Name="Card5" Grid.Row="0" Grid.Column="5" Margin="10" Tap="Card_Tap"/>
+                        <Image x:Name="Card6" Grid.Row="0" Grid.Column="6" Margin="10" Tap="Card_Tap"/>
+                        <Image x:Name="Card7" Grid.Row="0" Grid.Column="7" Margin="10" Tap="Card_Tap"/>
                     </Grid>
                 </StackPanel>
             </ScrollViewer>
