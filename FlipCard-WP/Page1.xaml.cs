@@ -150,9 +150,10 @@ namespace FlipCard_WP
 
                     if (table[index] == null)
                     {
-
                         if (player.hand[k] == null) continue;
-                        updateTiles(index, player.hand[k]);
+                        Card carro = new Card();
+                        carro.clone(player.hand[k]);
+                        updateTiles(index, carro);
                         table[index] = player.hand[k];
                         player.hand[k] = null;
                         hideFromHand(k);
@@ -162,7 +163,9 @@ namespace FlipCard_WP
 
                         PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
                         if (cpu.hand[pc.getCard()] == null) continue;
-                        updateTiles(pc.getPosition(), cpu.hand[pc.getCard()]);
+                        Card carri = new Card();
+                        carri.clone(cpu.hand[pc.getCard()]);
+                        updateTiles(pc.getPosition(), carri);
                         table[pc.getPosition()] = cpu.hand[pc.getCard()];
                         cpu.hand[pc.getCard()] = null;
 
@@ -173,10 +176,9 @@ namespace FlipCard_WP
                 }
             }
 
-  
-            if (step == 8)
-                MessageBox.Show("ciao");
 
+            if (step == 8) ;
+                
         }
 
         public void updateTiles(int index , Card newCard)

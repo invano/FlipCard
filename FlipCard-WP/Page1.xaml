@@ -70,7 +70,7 @@
         </Grid>
 
         <Grid x:Name="Cards" Grid.Row="3" Canvas.ZIndex="40" Background="Gray" Grid.ColumnSpan="2">
-            <ScrollViewer HorizontalScrollBarVisibility="Visible" HorizontalContentAlignment="Center" VerticalScrollBarVisibility="disabled" Margin="-19,-1,19,1">
+            <ScrollViewer HorizontalScrollBarVisibility="Visible" HorizontalContentAlignment="Center" VerticalScrollBarVisibility="disabled">
                 <StackPanel Orientation="Horizontal">
                     <Grid x:Name="HandGrid" Grid.Row="0" Margin="0,0,0,0" Grid.ColumnSpan="2" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>

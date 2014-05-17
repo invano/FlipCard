@@ -10,10 +10,10 @@ namespace FlipCard_WP
 {
     class CPUBrain
     {
+        static int positionsTotal= Const.PLACES_ON_TABLE;
 
         public static PositionAndCard generateMoveWithModel(Game myModelGame, Player player) {
 
-            int positionsTotal = myModelGame.cardsLeft;
             int score= Const.MIN_SCORE;
             int positionOnTable = 0;
             int cardInHand = 0;
