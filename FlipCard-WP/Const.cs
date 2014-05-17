@@ -28,5 +28,9 @@ namespace FlipCard_WP
         public const int APPROXIMATE_CARDSNUMBER = 10;
         public const int GOLD_RARITY_PROBABILITY_DIVIDER = 6;
         public const int SILVER_RARITY_PROBABILITY_DIVIDER = 3;
+        public const String CPU_WINS = "Done, CPU Wins!";
+        public const String PLAYER_WINS = "Done, You Win!";
+        public const String TIES = "Tie...";
+        public const String RETRY = "Retry?";
     }
 }
