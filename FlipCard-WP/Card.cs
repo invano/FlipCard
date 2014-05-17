@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlipCard_WP
 {
-    class Card
+    public class Card
     {
         public int idNumber;
         public int upValue;
