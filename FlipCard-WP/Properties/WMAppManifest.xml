@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{679fd7ad-2a53-4b64-b63f-804d31dae25f}" Title="FlipCards" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="FlipCard_WP author" Description="Beat me." Publisher="FlipCard_WP" PublisherID="{5dcc3e02-2eff-4647-aec0-3432f5ea217a}">
-    <IconPath IsRelative="true" IsResource="false">Tile2.png</IconPath>
+  <App xmlns="" ProductID="{679fd7ad-2a53-4b64-b63f-804d31dae25f}" Title="FlipCard" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="FlipCard_WP author" Description="Beat me." Publisher="FlipCard_WP" PublisherID="{5dcc3e02-2eff-4647-aec0-3432f5ea217a}">
+    <IconPath IsRelative="true" IsResource="false">Tile_Final.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
@@ -16,10 +16,10 @@
     <Tokens>
       <PrimaryToken TokenID="FlipCard_WPToken" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Tile2.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">Tile_Final.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Tile2.png</BackgroundImageURI>
-          <Title>FlipCards</Title>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Tile_Final.png</BackgroundImageURI>
+          <Title>FlipCard</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>

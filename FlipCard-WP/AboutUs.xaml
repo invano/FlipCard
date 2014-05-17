@@ -44,9 +44,9 @@
                    FontSize="20"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center">
-            Emanuele Cozzi<LineBreak />
-            Fabrizio Demaria<LineBreak />
-            Matteo Liera<LineBreak />
+            Emanuele Cozzi @invano<LineBreak />
+            Fabrizio Demaria @Fabriziodenny<LineBreak />
+            Matteo Liera @beh_light<LineBreak />
             Vito Labalestra <LineBreak />
 
         </TextBlock>
