@@ -14,7 +14,7 @@ namespace FlipCard_WP
         public int leftValue;
         public int rightValue;
 
-        int color;
+        public int color;
 
         int manaType;
         public int rarityType;

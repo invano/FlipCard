@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Windows.Media;
 using System.Windows.Input;
+using System.Diagnostics;
 
 namespace FlipCard_WP
 {
@@ -157,7 +158,7 @@ namespace FlipCard_WP
                         hideFromHand(k);
                         myGame.setCardsOnTable(table);
 
-                        
+                       
 
                         PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
                         if (cpu.hand[pc.getCard()] == null) continue;
@@ -182,8 +183,8 @@ namespace FlipCard_WP
         {
             int tmp = newCard.idNumber;
             string targetSource = "/Assets/ImagesCards/Card" + tmp;
-            if (newCard.isBlue()) targetSource += "Red.png";
-            else targetSource += "Blue.png";
+            if (newCard.isBlue()) targetSource += "Blue.png";
+            else targetSource += "Red.png";
 
             string target = "c" + index;
             Image img = (Image)this.FindName(target);
