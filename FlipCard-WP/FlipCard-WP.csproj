@@ -249,6 +249,7 @@
     <Content Include="Resources\cardsLibrary.xml" />
     <Content Include="Tile1.png" />
     <Content Include="Tile2.png" />
+    <Content Include="Tile_Final.png" />
     <Content Include="Tile_FlipCards.png" />
   </ItemGroup>
   <ItemGroup>
