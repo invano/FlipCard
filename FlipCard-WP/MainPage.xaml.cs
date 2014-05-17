@@ -46,6 +46,11 @@ namespace FlipCard_WP
             NavigationService.Navigate(new Uri("/Page1.xaml", UriKind.Relative));
         }
 
+        private void Regole_Tap(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Regole.xaml", UriKind.Relative));
+        }
+
         private void ginobutton_Hold(object sender, System.Windows.Input.GestureEventArgs e)
         {
             MessageBox.Show("You are holding me down :(");
