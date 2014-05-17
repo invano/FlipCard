@@ -17,7 +17,7 @@
 
  
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,0,0,0">
+    <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,1,0,-1">
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -70,7 +70,7 @@
         </Grid>
 
         <Grid x:Name="Cards" Grid.Row="3" Canvas.ZIndex="40" Background="Gray" Grid.ColumnSpan="2">
-            <ScrollViewer HorizontalScrollBarVisibility="Visible" HorizontalContentAlignment="Center" VerticalScrollBarVisibility="disabled">
+            <ScrollViewer HorizontalScrollBarVisibility="Visible" HorizontalContentAlignment="Center" VerticalScrollBarVisibility="disabled" Margin="-19,-1,19,1">
                 <StackPanel Orientation="Horizontal">
                     <Grid x:Name="HandGrid" Grid.Row="0" Margin="0,0,0,0" Grid.ColumnSpan="2" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
