@@ -16,6 +16,7 @@ namespace FlipCard_WP
     public struct CardInfo
     {
         public string name;
+
         public Image img;
         public string source;
         public bool isUp;
@@ -23,15 +24,16 @@ namespace FlipCard_WP
 
     public partial class Page1 : PhoneApplicationPage
     {
-        private TranslateTransform dragTranslation;
-        private TranslateTransform originalTranslation;
         private CardInfo[] cards = new CardInfo[8];
+        
 
         public Page1()
         {
-            
+
             InitializeComponent();
-          
+
+            
+
 
             cards[0].img = Card0;
             cards[0].name = "Card0";
@@ -60,13 +62,20 @@ namespace FlipCard_WP
             Card6.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card6Red.png") as ImageSource;
             Card7.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card7Red.png") as ImageSource;
 
+        }
 
         private void Card_Tap(object sender, GestureEventArgs e)
         {
             Image img = (Image)sender;
-            TranslateTransform translation = new TranslateTransform();
+            TranslateTransform translation;
+            translation = new TranslateTransform();
 
-            
+
+            Card cardigan = new Card();
+            cardigan.setColor(2);
+            cardigan.idNumber = 3;
+            updateHand(2, cardigan);
+
             for (int i = 0; i < cards.Length; i++)
             {
                 if (img.Name.Equals(cards[i].name))
@@ -76,6 +85,7 @@ namespace FlipCard_WP
                         img.RenderTransform = translation;
                         translation.Y += 0;
                         cards[i].isUp = false;
+
                     }
                     else
                     {
@@ -99,5 +109,67 @@ namespace FlipCard_WP
 
         }
 
+        private void board_Tap(object sender, GestureEventArgs e)
+        {
+            int index=0;
+            Image img = (Image)sender;
+
+            for (int k = 0; k < cards.Length; k++)
+            {               
+                if (cards[k].isUp)
+                {
+                    string s = img.Name;
+                   
+                    string[] words = s.Split('c');
+                    index = Convert.ToInt32(words[1]);
+
+                    //TODO call controller
+                }
+            }
+        }
+
+        public void updateTiles(int index , Card newCard)
+        {
+            int tmp = newCard.idNumber;
+            string targetSource = "/Assets/ImagesCards/Card" + tmp;
+            if (newCard.isBlue()) targetSource += "Blue.png";
+            else targetSource += "Red.png";
+
+            string target = "c" + index;
+            Image img = (Image)this.FindName(target);
+
+
+            img.Source = new ImageSourceConverter().ConvertFromString(targetSource) as ImageSource;
+            
+
+        }
+
+        public void updateHand(int index, Card newCard)
+        {
+            int tmp = newCard.idNumber;
+            string targetSource = "/Assets/ImagesCards/Card" + tmp;
+            if (newCard.isBlue()) targetSource += "Blue.png";
+            else targetSource += "Red.png";
+
+            string target = "Card" + index;
+
+            Image img = (Image)this.FindName(target);
+
+            img.RenderTransformOrigin = new Point(0.5, 0.5);
+            ScaleTransform flipTrans = new ScaleTransform();
+            flipTrans.ScaleX = -1;
+            flipTrans.ScaleY = -1;
+            img.RenderTransform = flipTrans;
+
+            img.Source = new ImageSourceConverter().ConvertFromString(targetSource) as ImageSource;
+
+        }
+
+        public void hideFromHand(int index)
+        {
+            string target = "Card" + index;
+            Image img = (Image)this.FindName(target);
+            img.Visibility = System.Windows.Visibility.Collapsed;
+        }
     }
 }
