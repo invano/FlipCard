@@ -23,5 +23,7 @@ namespace FlipCard_WP
         public const int TIE = 9;
         public const int PLACES_ON_TABLE = 16;
         public const int ROW_LENGHT = 4;
+        public const int DECK_SIZE = 24;
+        public const int HAND_SIZE = 8;
     }
 }
