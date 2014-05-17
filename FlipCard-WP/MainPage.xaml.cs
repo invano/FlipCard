@@ -23,12 +23,6 @@ namespace FlipCard_WP
             BuildLocalizedApplicationBar();
         }
 
-        private void ginobutton_Tap(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Friendship and Love <3");
-            
-        }
-
 
         // Sample code for building a localized ApplicationBar
         private void BuildLocalizedApplicationBar()
