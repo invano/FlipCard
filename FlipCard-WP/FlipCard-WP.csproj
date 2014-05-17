@@ -223,6 +223,7 @@
     <Content Include="Assets\ImagesCards\Empty.png" />
     <Content Include="Assets\ImagesCards\Tile_FlipCards.png" />
     <Content Include="Assets\ImagesCards\TilteFC.png" />
+    <Content Include="Assets\ImagesCards\Title2.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
