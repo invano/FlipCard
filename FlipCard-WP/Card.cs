@@ -43,6 +43,17 @@ namespace FlipCard_WP
             return "CardId: " + this.idNumber;
         }
 
+        public void clone(Card card)
+        {
+            this.idNumber = card.idNumber;
+            this.upValue = card.upValue;
+            this.downValue = card.downValue;
+            this.leftValue = card.leftValue;
+            this.rightValue = card.rightValue;
+            this.color = card.getColor();
+            this.rarityType = card.rarityType;
+        }
+
 
         /*
         public void initWithDictionaryData( dataDictionaryInput) {

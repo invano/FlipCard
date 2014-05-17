@@ -50,7 +50,9 @@ namespace FlipCard_WP
         
         public void addCardToDeck (Card cardToAdd)
         {
-            cardArray.Add(cardToAdd);
+            Card newCard = new Card();
+            newCard.clone(cardToAdd);
+            cardArray.Add(newCard);
         }
 
         public void addCardstoDeck()
