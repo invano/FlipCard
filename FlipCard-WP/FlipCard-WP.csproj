@@ -147,6 +147,7 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\ImagesCards\bar.png" />
     <Content Include="Assets\ImagesCards\Card0Blue.png" />
     <Content Include="Assets\ImagesCards\Card0Red.png" />
     <Content Include="Assets\ImagesCards\Card10Blue.png" />
@@ -220,6 +221,8 @@
     <Content Include="Assets\ImagesCards\Card9Blue.png" />
     <Content Include="Assets\ImagesCards\Card9Red.png" />
     <Content Include="Assets\ImagesCards\Empty.png" />
+    <Content Include="Assets\ImagesCards\Tile_FlipCards.png" />
+    <Content Include="Assets\ImagesCards\TilteFC.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -236,6 +239,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\cardsLibrary.xml" />
+    <Content Include="Tile1.png" />
+    <Content Include="Tile2.png" />
+    <Content Include="Tile_FlipCards.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
