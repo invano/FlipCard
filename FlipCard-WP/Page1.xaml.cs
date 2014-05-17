@@ -82,12 +82,9 @@ namespace FlipCard_WP
             {
                 player.hand[i] = playerDeck.getRandomCard();
                 player.hand[i].setColor(Const.RED);
-                Debug.WriteLine(player.hand[i].getColor().ToString() + " " + player.hand[i].GetHashCode());
                 updateHand(i, player.hand[i]);
                 cpu.hand[i] = cpuDeck.getRandomCard();
                 cpu.hand[i].setColor(Const.BLUE);
-                Debug.WriteLine("player_2 " + player.hand[i].getColor().ToString() + " " + player.hand[i].GetHashCode());
-                Debug.WriteLine(cpu.hand[i].getColor().ToString() + " " + cpu.hand[i].GetHashCode());
             }
             //GGfinqui
 
@@ -161,7 +158,7 @@ namespace FlipCard_WP
                         hideFromHand(k);
                         myGame.setCardsOnTable(table);
 
-                        
+                       
 
                         PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
                         if (cpu.hand[pc.getCard()] == null) continue;
@@ -186,8 +183,8 @@ namespace FlipCard_WP
         {
             int tmp = newCard.idNumber;
             string targetSource = "/Assets/ImagesCards/Card" + tmp;
-            if (!newCard.isBlue()) targetSource += "Red.png";
-            else targetSource += "Blue.png";
+            if (newCard.isBlue()) targetSource += "Blue.png";
+            else targetSource += "Red.png";
 
             string target = "c" + index;
             Image img = (Image)this.FindName(target);
@@ -202,8 +199,8 @@ namespace FlipCard_WP
         {
             int tmp = newCard.idNumber;
             string targetSource = "/Assets/ImagesCards/Card" + tmp;
-            if (!newCard.isBlue()) targetSource += "Red.png";
-            else targetSource += "Blue.png";
+            if (newCard.isBlue()) targetSource += "Blue.png";
+            else targetSource += "Red.png";
 
             string target = "Card" + index;
 
