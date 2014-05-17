@@ -32,9 +32,6 @@ namespace FlipCard_WP
 
             InitializeComponent();
 
-            
-
-
             cards[0].img = Card0;
             cards[0].name = "Card0";
             cards[1].img = Card1;
