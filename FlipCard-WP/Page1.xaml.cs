@@ -168,12 +168,6 @@ namespace FlipCard_WP
                         updateTiles(pc.getPosition(), carri);
                         table[pc.getPosition()] = cpu.hand[pc.getCard()];
                         cpu.hand[pc.getCard()] = null;
-
-
-
-
-
-
                         step++;
                         break;
                     }
@@ -182,7 +176,31 @@ namespace FlipCard_WP
             }
 
 
-            if (step == 8) ;
+            if (step == 8)
+            {
+                int counterRed=0;
+                int counterBlue=0;
+                for (int h = 0; h < 16; h++)
+                {
+                    if (table[h].color == 1)
+                    {
+                        counterRed++;
+                    }
+                    else
+                    {
+                        counterBlue++;
+                    }
+                    
+                }
+
+                if(counterRed>counterBlue)
+                MessageBox.Show("Done, CPU wins"); 
+                if(counterBlue>counterRed)
+                MessageBox.Show("Done, you win");
+                if (counterRed == counterBlue)
+                MessageBox.Show("Tie");
+            }
+
                 
         }
 
