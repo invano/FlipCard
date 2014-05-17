@@ -15,7 +15,6 @@ namespace FlipCard_WP
 
         public Game()
         {
-            int i = 0;
             this.cardsOnTable = new Card[Const.PLACES_ON_TABLE];
             this.myCardsLibrary = new CardsLibrary("cardsLibrary");
         }
