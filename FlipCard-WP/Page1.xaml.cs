@@ -53,16 +53,6 @@ namespace FlipCard_WP
             cards[6].name = "Card6";
             cards[7].img = Card7;
             cards[7].name = "Card7";
-
-
-            //Card0.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card0Red.png") as ImageSource;
-            //Card1.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card1Red.png") as ImageSource;
-            //Card2.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card2Red.png") as ImageSource;
-            //Card3.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card3Red.png") as ImageSource;
-            //Card4.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card4Red.png") as ImageSource;
-            //Card5.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card5Red.png") as ImageSource;
-            //Card6.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card6Red.png") as ImageSource;
-            //Card7.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card7Red.png") as ImageSource;
           
             
 
