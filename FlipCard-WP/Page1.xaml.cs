@@ -28,6 +28,8 @@ namespace FlipCard_WP
         Card[] table = new Card[Const.PLACES_ON_TABLE];
         Player player = new Player();
         Player cpu = new Player();
+        Game myGame = new Game();
+        int step = 0;
 
         public Page1()
         {
@@ -84,6 +86,8 @@ namespace FlipCard_WP
                 cpu.hand[i].setColor(Const.BLUE);
             }
             //GGfinqui
+
+
 
 
 
@@ -149,10 +153,21 @@ namespace FlipCard_WP
                         table[index] = player.hand[k];
                         player.hand[k] = null;
                         hideFromHand(k);
+                        myGame.setCardsOnTable(table);
                         break;
                     }
                 }
             }
+
+            
+            PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
+            updateTiles(pc.getPosition(), cpu.hand[pc.getCard()]);
+            table[pc.getPosition()] = cpu.hand[pc.getCard()];
+            cpu.hand[pc.getCard()] = null;
+
+            if (step == 7)
+                MessageBox.Show((myGame.checkWinningId()).ToString());
+
         }
 
         public void updateTiles(int index , Card newCard)

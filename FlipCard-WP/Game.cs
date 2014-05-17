@@ -9,14 +9,20 @@ namespace FlipCard_WP
     class Game
     {
         public Card[] cardsOnTable;
-        Player redPlayer = new Player();
-        Player bluePlayer = new Player();
         CardsLibrary myCardsLibrary;
+        public int cardsLeft;
 
         public Game()
         {
             this.cardsOnTable = new Card[Const.PLACES_ON_TABLE];
             this.myCardsLibrary = new CardsLibrary();
+            cardsLeft = Const.PLACES_ON_TABLE;
+        }
+
+        public void setCardsOnTable(Card[] cards)
+        {
+            this.cardsOnTable = cards;
+            cardsLeft--;
         }
 
         private bool addCard(int positionInHandOfPlayedCard, int x, Player whoPlayed)

@@ -13,7 +13,7 @@ namespace FlipCard_WP
 
         public static PositionAndCard generateMoveWithModel(Game myModelGame, Player player) {
 
-            int positionsTotal = myModelGame.cardsOnTable.Length;
+            int positionsTotal = myModelGame.cardsLeft;
             int score= Const.MIN_SCORE;
             int positionOnTable = 0;
             int cardInHand = 0;
@@ -25,6 +25,9 @@ namespace FlipCard_WP
                     //check various cards in position
                     int y = 0;
                     for(y = 0; y < player.hand.Length; y++){
+                        if (player.hand[y] == null) {
+                            continue;
+                        }
                         int sum = 0;
                         int win = 0;
                         Card actualCardInHandChecked = player.hand[y];
