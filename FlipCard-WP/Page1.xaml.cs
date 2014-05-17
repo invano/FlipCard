@@ -10,6 +10,7 @@ using Microsoft.Phone.Shell;
 using System.Windows.Media;
 using System.Windows.Input;
 using System.Diagnostics;
+using System.Threading;
 
 namespace FlipCard_WP
 {
@@ -53,16 +54,6 @@ namespace FlipCard_WP
             cards[6].name = "Card6";
             cards[7].img = Card7;
             cards[7].name = "Card7";
-
-
-            //Card0.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card0Red.png") as ImageSource;
-            //Card1.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card1Red.png") as ImageSource;
-            //Card2.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card2Red.png") as ImageSource;
-            //Card3.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card3Red.png") as ImageSource;
-            //Card4.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card4Red.png") as ImageSource;
-            //Card5.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card5Red.png") as ImageSource;
-            //Card6.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card6Red.png") as ImageSource;
-            //Card7.Source = new ImageSourceConverter().ConvertFromString("/Assets/ImagesCards/Card7Red.png") as ImageSource;
           
             
 
@@ -178,27 +169,23 @@ namespace FlipCard_WP
 
             if (step == 8)
             {
-                int counterRed=0;
-                int counterBlue=0;
+                
+                int counterRed = 0;
+                int counterBlue = 0;
                 for (int h = 0; h < 16; h++)
                 {
-                    if (table[h].color == 1)
-                    {
+                    if (table[h].color == Const.RED)
                         counterRed++;
-                    }
                     else
-                    {
                         counterBlue++;
-                    }
-                    
                 }
 
-                if(counterRed>counterBlue)
-                MessageBox.Show("Done, CPU wins"); 
-                if(counterBlue>counterRed)
-                MessageBox.Show("Done, you win");
+                if (counterRed < counterBlue)
+                    MessageBox.Show("Done, CPU wins");
+                if (counterBlue < counterRed)
+                    MessageBox.Show("Done, you win");
                 if (counterRed == counterBlue)
-                MessageBox.Show("Tie");
+                    MessageBox.Show("Tie");
             }
 
                 
@@ -234,11 +221,13 @@ namespace FlipCard_WP
                     {
                         newCard.color = 2;
                         targetSource2 += "Blue.png";
+                        table[tmpIndex].setColor(Const.BLUE);
                     }
                     else
                     {
                         newCard.color = 1;
                         targetSource2 += "Red.png";
+                        table[tmpIndex].setColor(Const.RED);
                     }
                     string target2 = "c" + tmpIndex;
                     Image img2 = (Image)this.FindName(target2);
@@ -260,11 +249,13 @@ namespace FlipCard_WP
                     {
                         newCard.color = 2;
                         targetSource2 += "Blue.png";
+                        table[tmpIndex].setColor(Const.BLUE);
                     }
                     else
                     {
                         newCard.color = 1;
                         targetSource2 += "Red.png";
+                        table[tmpIndex].setColor(Const.RED);
                     }
                     string target2 = "c" + tmpIndex;
                     Image img2 = (Image)this.FindName(target2);
@@ -286,11 +277,13 @@ namespace FlipCard_WP
                     {
                         newCard.color = 2;
                         targetSource2 += "Blue.png";
+                        table[tmpIndex].setColor(Const.BLUE);
                     }
                     else
                     {
                         newCard.color = 1;
                         targetSource2 += "Red.png";
+                        table[tmpIndex].setColor(Const.RED);
                     }
                     string target2 = "c" + tmpIndex;
                     Image img2 = (Image)this.FindName(target2);
@@ -312,11 +305,13 @@ namespace FlipCard_WP
                     {
                         newCard.color = 2;
                         targetSource2 += "Blue.png";
+                        table[tmpIndex].setColor(Const.BLUE);
                     }
                     else
                     {
                         newCard.color = 1;
                         targetSource2 += "Red.png";
+                        table[tmpIndex].setColor(Const.RED);
                     }
                     string target2 = "c" + tmpIndex;
                     Image img2 = (Image)this.FindName(target2);

@@ -16,7 +16,8 @@ namespace FlipCard_WP
 
         public int color;
 
-        int manaType;
+        //int manaType; NOTE USED ATM
+
         public int rarityType;
 
         public bool isRed()
@@ -53,28 +54,6 @@ namespace FlipCard_WP
             this.color = card.getColor();
             this.rarityType = card.rarityType;
         }
-
-
-        /*
-        public void initWithDictionaryData( dataDictionaryInput) {
-	self = [self init];
-	if (self) {
-		_idNumber = (NSNumber *)[dataDictionaryInput valueForKey:@"idNumber"];
-		_up = (NSNumber *)[dataDictionaryInput valueForKey:@"up"];
-		_down = (NSNumber *)[dataDictionaryInput valueForKey:@"down"];
-		_left = (NSNumber *)[dataDictionaryInput valueForKey:@"left"];
-		_right = (NSNumber *)[dataDictionaryInput valueForKey:@"right"];
-		_rarity = [dataDictionaryInput valueForKey:@"rarity"];
-		_manaType = [dataDictionaryInput valueForKey:@"manaType"];
-		
-		NSString *path1 = [[NSBundle mainBundle] pathForResource:[[NSString alloc] initWithFormat:@"Card%dRed", [_idNumber intValue]] ofType:@"png"]; //or .png?
-		_redCardImage = [UIImage imageWithContentsOfFile:path1];
-		NSString *path2 = [[NSBundle mainBundle] pathForResource:[[NSString alloc] initWithFormat:@"Card%dBlue", [_idNumber intValue]] ofType:@"png"]; //or .png?
-		_blueCardImage = [UIImage imageWithContentsOfFile:path2];
-	}
-	return self;
-}
-        */
 
     }
 }

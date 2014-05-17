@@ -9,10 +9,10 @@ namespace FlipCard_WP
     class Player
     {
         private const int cards = 8;
-        Deck deck;
         public int playerId;
-
         public Card[] hand;
+
+        //Deck deck; NOT USED ATM
 
         public bool isRed()
         {
