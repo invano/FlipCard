@@ -266,11 +266,15 @@ namespace FlipCard_WP
                     res = Const.PLAYER_WINS;
                 if (counterRed == counterBlue)
                     res = Const.TIES;
-                MessageBoxResult Result = MessageBox.Show(Const.RETRY, res, MessageBoxButton.OK);
+                MessageBoxResult Result = MessageBox.Show(Const.RETRY, res, MessageBoxButton.OKCancel);
                 switch (Result)
                 {
                     case MessageBoxResult.OK:
                         NavigationService.Navigate(new Uri(String.Format("/Page1.xaml?id={0}", Guid.NewGuid().ToString()), UriKind.Relative));
+                        break;
+
+                    case MessageBoxResult.Cancel:
+                        NavigationService.GoBack();
                         break;
                 }
             }
