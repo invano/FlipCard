@@ -4,11 +4,6 @@
   <App xmlns="" ProductID="{679fd7ad-2a53-4b64-b63f-804d31dae25f}" Title="FlipCard" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="FlipCard_WP author" Description="Beat me." Publisher="FlipCard_WP" PublisherID="{5dcc3e02-2eff-4647-aec0-3432f5ea217a}">
     <IconPath IsRelative="true" IsResource="false">Tile_Final.png</IconPath>
     <Capabilities>
-      <Capability Name="ID_CAP_NETWORKING" />
-      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
-      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
-      <Capability Name="ID_CAP_SENSORS" />
-      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
