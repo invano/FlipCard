@@ -65,6 +65,7 @@ namespace FlipCard_WP
         {
  	        base.OnNavigatedTo(e);
             while (NavigationService.RemoveBackEntry() != null) ;
+           
         }
     }
 }

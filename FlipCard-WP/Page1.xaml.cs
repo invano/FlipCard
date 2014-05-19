@@ -270,7 +270,8 @@ namespace FlipCard_WP
                 switch (Result)
                 {
                     case MessageBoxResult.OK:
-                        NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+                        NavigationService.Navigate(new Uri("/Page1.xaml?Refresh=true", UriKind.Relative));
+                        
                         break;
                 }
             }
@@ -435,10 +436,32 @@ namespace FlipCard_WP
 
         private void PhoneApplicationPage_BackKeyPress(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MessageBoxResult Result = MessageBox.Show(Const.RETRY, "prova", MessageBoxButton.OKCancel);
+            MessageBoxResult Result = MessageBox.Show("Go back?", "Exit menu", MessageBoxButton.OKCancel);
             
             if (Result == MessageBoxResult.Cancel)
                         e.Cancel = true;
+            
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            String tmp = "";
+            MessageBox.Show("Sono qua");
+            if(NavigationContext.QueryString.TryGetValue("Refresh",out tmp)){
+                MessageBox.Show("Sono proprio qua");
+                if(tmp.Equals("true")){
+                    MessageBox.Show("Sono proprio davvero qua");
+                    NavigationService.RemoveBackEntry();
+                }
+            }
+
+
+            //MessageBox.Show("Sono qua");
+            //if(e.Uri==(new Uri("/Page1.xaml", UriKind.Relative))){
+            //    MessageBox.Show("Sono proprio qua");
+            //    NavigationService.RemoveBackEntry();
+             // }   
+                
             
         }
 
