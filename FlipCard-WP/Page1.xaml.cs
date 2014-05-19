@@ -270,8 +270,7 @@ namespace FlipCard_WP
                 switch (Result)
                 {
                     case MessageBoxResult.OK:
-                        NavigationService.Navigate(new Uri("/Page1.xaml?Refresh=true", UriKind.Relative));
-                        
+                        NavigationService.Navigate(new Uri(String.Format("/Page1.xaml?id={0}", Guid.NewGuid().ToString()), UriKind.Relative));
                         break;
                 }
             }
@@ -445,12 +444,9 @@ namespace FlipCard_WP
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            String tmp = "";
-            MessageBox.Show("Sono qua");
-            if(NavigationContext.QueryString.TryGetValue("Refresh",out tmp)){
-                MessageBox.Show("Sono proprio qua");
-                if(tmp.Equals("true")){
-                    MessageBox.Show("Sono proprio davvero qua");
+            String id = "";
+            if(NavigationContext.QueryString.TryGetValue("id",out id)){
+               if(NavigationService.CanGoBack) {
                     NavigationService.RemoveBackEntry();
                 }
             }
