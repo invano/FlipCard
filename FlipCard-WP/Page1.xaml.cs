@@ -32,6 +32,8 @@ namespace FlipCard_WP
         Player cpu = new Player();
         Game myGame = new Game();
         int step = 0;
+        Random rgn = new Random();
+        bool PBegin = false;
 
         public Page1()
         {
@@ -79,9 +81,31 @@ namespace FlipCard_WP
             }
             //GGfinqui
 
+            int q = rgn.Next(1, 10);
+            if (q % 2 == 0)
+            {
+                PBegin = true;
+                MessageBox.Show("Player begins");
+            }
+            else
+            {
+                PBegin = false;
+                MessageBox.Show("CPU begins");
+            }
 
 
 
+            if (PBegin == false)
+            {
+                PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
+                if (cpu.hand[pc.getCard()] != null) { 
+                Card carri = new Card();
+                carri.clone(cpu.hand[pc.getCard()]);
+                updateTiles(pc.getPosition(), carri);
+                table[pc.getPosition()] = cpu.hand[pc.getCard()];
+                cpu.hand[pc.getCard()] = null;
+            }
+            }
 
         }
 
@@ -139,7 +163,7 @@ namespace FlipCard_WP
                     string[] words = s.Split('c');
                     index = Convert.ToInt32(words[1]);
 
-                    if (table[index] == null)
+                    if (table[index] == null && PBegin==false)
                     {
                         if (player.hand[k] == null) continue;
                         Card carro = new Card();
@@ -149,8 +173,10 @@ namespace FlipCard_WP
                         player.hand[k] = null;
                         hideFromHand(k);
                         myGame.setCardsOnTable(table);
+                        step++;
 
-                       
+
+                       if(step!=8){
 
                         PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
                         if (cpu.hand[pc.getCard()] == null) continue;
@@ -159,9 +185,62 @@ namespace FlipCard_WP
                         updateTiles(pc.getPosition(), carri);
                         table[pc.getPosition()] = cpu.hand[pc.getCard()];
                         cpu.hand[pc.getCard()] = null;
-                        step++;
+                        
                         break;
+                       }
                     }
+
+                    if (table[index] == null && PBegin == true)
+                    {
+                        if (player.hand[k] == null) continue;
+                        Card carro = new Card();
+                        carro.clone(player.hand[k]);
+                        updateTiles(index, carro);
+                        table[index] = player.hand[k];
+                        player.hand[k] = null;
+                        hideFromHand(k);
+                        myGame.setCardsOnTable(table);
+                        
+
+                            PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
+                            if (cpu.hand[pc.getCard()] == null) continue;
+                            Card carri = new Card();
+                            carri.clone(cpu.hand[pc.getCard()]);
+                            updateTiles(pc.getPosition(), carri);
+                            table[pc.getPosition()] = cpu.hand[pc.getCard()];
+                            cpu.hand[pc.getCard()] = null;
+                            step++;
+                            break;
+                        
+                    }
+                    //else if (table[index] == null && PBegin == false)
+                    //{
+                    //    PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
+                    //    if (cpu.hand[pc.getCard()] == null) continue;
+                    //    Card carri = new Card();
+                    //    carri.clone(cpu.hand[pc.getCard()]);
+                    //    updateTiles(pc.getPosition(), carri);
+                    //    table[pc.getPosition()] = cpu.hand[pc.getCard()];
+                    //    cpu.hand[pc.getCard()] = null;
+                    //    step++;
+
+                    //    if (step != 8)
+                    //    {
+
+                    //        if (player.hand[k] == null) continue;
+                    //        Card carro = new Card();
+                    //        carro.clone(player.hand[k]);
+                    //        updateTiles(index, carro);
+                    //        table[index] = player.hand[k];
+                    //        player.hand[k] = null;
+                    //        hideFromHand(k);
+                    //        myGame.setCardsOnTable(table);
+                    //        break;
+
+                    //    }
+
+
+                    //}
                     break;
                 }
             }
