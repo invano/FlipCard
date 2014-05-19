@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Input;
 using System.Diagnostics;
 using System.Threading;
+using System.Windows.Media.Animation;
 
 namespace FlipCard_WP
 {
@@ -39,7 +40,6 @@ namespace FlipCard_WP
         {
 
             InitializeComponent();
-
             cards[0].img = Card0;
             cards[0].name = "Card0";
             cards[1].img = Card1;
@@ -175,7 +175,7 @@ namespace FlipCard_WP
                         myGame.setCardsOnTable(table);
                         step++;
 
-
+                       
                        if(step!=8){
 
                         PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
@@ -209,8 +209,8 @@ namespace FlipCard_WP
                             updateTiles(pc.getPosition(), carri);
                             table[pc.getPosition()] = cpu.hand[pc.getCard()];
                             cpu.hand[pc.getCard()] = null;
-                            step++;
-                            break;
+                        step++;
+                        break;
                         
                     }
                     //else if (table[index] == null && PBegin == false)
@@ -259,12 +259,20 @@ namespace FlipCard_WP
                         counterBlue++;
                 }
 
+                String res = null;
                 if (counterRed < counterBlue)
-                    MessageBox.Show("Done, CPU wins");
+                    res = Const.CPU_WINS;
                 if (counterBlue < counterRed)
-                    MessageBox.Show("Done, you win");
+                    res = Const.PLAYER_WINS;
                 if (counterRed == counterBlue)
-                    MessageBox.Show("Tie");
+                    res = Const.TIES;
+                MessageBoxResult Result = MessageBox.Show(Const.RETRY, res, MessageBoxButton.OK);
+                switch (Result)
+                {
+                    case MessageBoxResult.OK:
+                        NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+                        break;
+                }
             }
 
                 
@@ -423,6 +431,15 @@ namespace FlipCard_WP
             string target = "Card" + index;
             Image img = (Image)this.FindName(target);
             img.Visibility = System.Windows.Visibility.Collapsed;
+        }
+
+        private void PhoneApplicationPage_BackKeyPress(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult Result = MessageBox.Show(Const.RETRY, "prova", MessageBoxButton.OKCancel);
+            
+            if (Result == MessageBoxResult.Cancel)
+                        e.Cancel = true;
+            
         }
 
     }

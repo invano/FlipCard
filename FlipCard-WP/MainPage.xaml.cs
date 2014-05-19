@@ -60,5 +60,11 @@ namespace FlipCard_WP
         {
             NavigationService.Navigate(new Uri("/AboutUs.xaml", UriKind.Relative));
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+ 	        base.OnNavigatedTo(e);
+            while (NavigationService.RemoveBackEntry() != null) ;
+        }
     }
 }
