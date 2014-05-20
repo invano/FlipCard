@@ -428,7 +428,7 @@ namespace FlipCard_WP
 
         private void CardOnTable_Completed(object sender, EventArgs e)
         {
-            if (playerPlayed && step <= 16)
+            if (playerPlayed && step < 16)
             {
 
                 PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
