@@ -12,7 +12,6 @@ using System.Windows.Input;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Media.Animation;
-using Microsoft.Phone.Tasks;
 
 namespace FlipCard_WP
 {
@@ -30,16 +29,13 @@ namespace FlipCard_WP
     {
         private CardInfo[] cards = new CardInfo[8];
         Card[] table = new Card[Const.PLACES_ON_TABLE];
+        bool playerPlayed; //states if the last move was made by the player or by the CPU
         Player player = new Player();
         Player cpu = new Player();
         Game myGame = new Game();
         int step = 0;
         Random rgn = new Random();
         bool PBegin = false;
-
-        int playerOverall = 0;
-        int cpuOverall = 0;
-        bool shared = false;
 
         public RandomGame()
         {
@@ -106,9 +102,11 @@ namespace FlipCard_WP
                 if (cpu.hand[pc.getCard()] != null) { 
                 Card carri = new Card();
                 carri.clone(cpu.hand[pc.getCard()]);
+                playerPlayed = false; //should be set every time, before updatetiles is called
                 updateTiles(pc.getPosition(), carri);
                 table[pc.getPosition()] = cpu.hand[pc.getCard()];
                 cpu.hand[pc.getCard()] = null;
+                step++;
             }
             }
 
@@ -168,125 +166,26 @@ namespace FlipCard_WP
                     string[] words = s.Split('c');
                     index = Convert.ToInt32(words[1]);
 
-                    if (table[index] == null && PBegin==false)
+                    if (table[index] == null)
                     {
                         if (player.hand[k] == null) continue;
                         Card carro = new Card();
                         carro.clone(player.hand[k]);
+                        playerPlayed = true;
                         updateTiles(index, carro);
-                        table[index] = player.hand[k];
+                        table[index] = carro;
                         player.hand[k] = null;
                         hideFromHand(k);
                         myGame.setCardsOnTable(table);
                         step++;
-
-                       
-                       if(step!=8){
-
-                        PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
-                        if (cpu.hand[pc.getCard()] == null) continue;
-                        Card carri = new Card();
-                        carri.clone(cpu.hand[pc.getCard()]);
-                        updateTiles(pc.getPosition(), carri);
-                        table[pc.getPosition()] = cpu.hand[pc.getCard()];
-                        cpu.hand[pc.getCard()] = null;
-                        
-                        break;
-                       }
+                        checkVictory();
                     }
-
-                    if (table[index] == null && PBegin == true)
-                    {
-                        if (player.hand[k] == null) continue;
-                        Card carro = new Card();
-                        carro.clone(player.hand[k]);
-                        updateTiles(index, carro);
-                        table[index] = player.hand[k];
-                        player.hand[k] = null;
-                        hideFromHand(k);
-                        myGame.setCardsOnTable(table);
-                        
-
-                            PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
-                            if (cpu.hand[pc.getCard()] == null) continue;
-                            Card carri = new Card();
-                            carri.clone(cpu.hand[pc.getCard()]);
-                            updateTiles(pc.getPosition(), carri);
-                            table[pc.getPosition()] = cpu.hand[pc.getCard()];
-                            cpu.hand[pc.getCard()] = null;
-                        step++;
-                        break;
-                        
-                    }
-                    //else if (table[index] == null && PBegin == false)
-                    //{
-                    //    PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
-                    //    if (cpu.hand[pc.getCard()] == null) continue;
-                    //    Card carri = new Card();
-                    //    carri.clone(cpu.hand[pc.getCard()]);
-                    //    updateTiles(pc.getPosition(), carri);
-                    //    table[pc.getPosition()] = cpu.hand[pc.getCard()];
-                    //    cpu.hand[pc.getCard()] = null;
-                    //    step++;
-
-                    //    if (step != 8)
-                    //    {
-
-                    //        if (player.hand[k] == null) continue;
-                    //        Card carro = new Card();
-                    //        carro.clone(player.hand[k]);
-                    //        updateTiles(index, carro);
-                    //        table[index] = player.hand[k];
-                    //        player.hand[k] = null;
-                    //        hideFromHand(k);
-                    //        myGame.setCardsOnTable(table);
-                    //        break;
-
-                    //    }
-
-
-                    //}
                     break;
                 }
             }
 
 
-            if (step == 8)
-            {
-                
-                int counterRed = 0;
-                int counterBlue = 0;
-                for (int h = 0; h < 16; h++)
-                {
-                    if (table[h].color == Const.RED)
-                        counterRed++;
-                    else
-                        counterBlue++;
-                }
-
-                String res = null;
-                if (counterRed < counterBlue) {
-                    res = Const.CPU_WINS;
-                    cpuOverall++;
-                }
-                if (counterBlue < counterRed) {
-                    res = Const.PLAYER_WINS;
-                    playerOverall++;
-                }
-                if (counterRed == counterBlue)
-                    res = Const.TIES;
-                MessageBoxResult Result = MessageBox.Show(Const.RETRY, res, MessageBoxButton.OKCancel);
-                switch (Result)
-                {
-                    case MessageBoxResult.OK:
-                        NavigationService.Navigate(new Uri(String.Format("/RandomGame.xaml?id={0}&player={1}&cpu={2}", Guid.NewGuid().ToString(), playerOverall.ToString(), cpuOverall.ToString()), UriKind.Relative));
-                        break;
-
-                    case MessageBoxResult.Cancel:
-                        NavigationService.GoBack();
-                        break;
-                }
-            }
+            
 
                 
         }
@@ -304,10 +203,63 @@ namespace FlipCard_WP
 
             img.Source = new ImageSourceConverter().ConvertFromString(targetSource) as ImageSource;
 
+            switch (index)
+            {
+                case 0:
+                    CardOnTable0.Begin();
+                    break;
+                case 1:
+                    CardOnTable1.Begin();
+                    break;
+                case 2:
+                    CardOnTable2.Begin();
+                    break;
+                case 3:
+                    CardOnTable3.Begin();
+                    break;
+                case 4:
+                    CardOnTable4.Begin();
+                    break;
+                case 5:
+                    CardOnTable5.Begin();
+                    break;
+                case 6:
+                    CardOnTable6.Begin();
+                    break;
+                case 7:
+                    CardOnTable7.Begin();
+                    break;
+                case 8:
+                    CardOnTable8.Begin();
+                    break;
+                case 9:
+                    CardOnTable9.Begin();
+                    break;
+                case 10:
+                    CardOnTable10.Begin();
+                    break;
+                case 11:
+                    CardOnTable11.Begin();
+                    break;
+                case 12:
+                    CardOnTable12.Begin();
+                    break;
+                case 13:
+                    CardOnTable13.Begin();
+                    break;
+                case 14:
+                    CardOnTable14.Begin();
+                    break;
+                case 15:
+                    CardOnTable15.Begin();
+                    break;
+
+            }
+
             //Controlla carte adiacenti
             bool isCPUMove = false;
             if (newCard.isBlue()) isCPUMove = true;
-            int tmpIndex=0;
+            int tmpIndex = 0;
 
             tmpIndex = myGame.abovePositionWRTLocation(index);
             if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].downValue < newCard.upValue)
@@ -339,7 +291,7 @@ namespace FlipCard_WP
             }
 
             tmpIndex = myGame.leftPositionWRTLocation(index);
-            if (tmpIndex!=-1 && table[tmpIndex] != null && table[tmpIndex].rightValue < newCard.leftValue)
+            if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].rightValue < newCard.leftValue)
             {
                 int tmp2 = table[tmpIndex].idNumber;
                 string targetSource2 = "/Assets/ImagesCards/Card" + tmp2;
@@ -446,22 +398,6 @@ namespace FlipCard_WP
             img.Visibility = System.Windows.Visibility.Collapsed;
         }
 
-        private void sharestatus_Click(object sender, EventArgs e)
-        {
-            ShareStatusTask shareStatusTask = new ShareStatusTask();
-            String cpuwin = " CPU is beating me :(";
-            String playerwin = " I'm winning! :D";
-            String tie = " We're even! :)";
-            String res = playerOverall.ToString() + " " + cpuOverall.ToString();
-            if (cpuOverall == playerOverall)
-                shareStatusTask.Status = "First twitter message from #FlipCard! " + res + tie;
-            else
-                shareStatusTask.Status = "First twitter message from #FlipCard! " + res + (cpuOverall > playerOverall ? cpuwin:playerwin);
-            this.shared = true;
-            shareStatusTask.Show();
-        }
-
-
         private void PhoneApplicationPage_BackKeyPress(object sender, System.ComponentModel.CancelEventArgs e)
         {
             MessageBoxResult Result = MessageBox.Show("Go back?", "Exit menu", MessageBoxButton.OKCancel);
@@ -474,21 +410,74 @@ namespace FlipCard_WP
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             String id = "";
-            String cpuScore = "";
-            String playerScore = "";
-
-            if(NavigationContext.QueryString.TryGetValue("player", out playerScore))
-                this.playerOverall = int.Parse(playerScore);
-
-            if(NavigationContext.QueryString.TryGetValue("cpu", out cpuScore))
-                this.cpuOverall = int.Parse(cpuScore);
-
             if(NavigationContext.QueryString.TryGetValue("id",out id)){
-               if(NavigationService.CanGoBack && !this.shared) {
+               if(NavigationService.CanGoBack) {
                     NavigationService.RemoveBackEntry();
                 }
             }
+
+
+            //MessageBox.Show("Sono qua");
+            //if(e.Uri==(new Uri("/RandomGame.xaml", UriKind.Relative))){
+            //    MessageBox.Show("Sono proprio qua");
+            //    NavigationService.RemoveBackEntry();
+             // }   
+                
+            
         }
 
+        private void CardOnTable_Completed(object sender, EventArgs e)
+        {
+            if (playerPlayed && step < 16)
+            {
+
+                PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
+                Card carri = new Card();
+                carri.clone(cpu.hand[pc.getCard()]);
+                playerPlayed = false;
+                updateTiles(pc.getPosition(), carri);
+                table[pc.getPosition()] = carri;
+                cpu.hand[pc.getCard()] = null;
+                step++;
+                checkVictory();
+            }
+
+        }
+        private void checkVictory()
+        {
+            if (step == 16)
+            {
+
+                int counterRed = 0;
+                int counterBlue = 0;
+                for (int h = 0; h < 16; h++)
+                {
+                    if (table[h].color == Const.RED)
+                        counterRed++;
+                    else
+                        counterBlue++;
+                }
+
+                String res = null;
+                if (counterRed < counterBlue)
+                    res = Const.CPU_WINS;
+                if (counterBlue < counterRed)
+                    res = Const.PLAYER_WINS;
+                if (counterRed == counterBlue)
+                    res = Const.TIES;
+                MessageBoxResult Result = MessageBox.Show(Const.RETRY, res, MessageBoxButton.OKCancel);
+                switch (Result)
+                {
+                    case MessageBoxResult.OK:
+                        NavigationService.Navigate(new Uri(String.Format("/RandomGame.xaml?id={0}", Guid.NewGuid().ToString()), UriKind.Relative));
+                        break;
+
+                    case MessageBoxResult.Cancel:
+                        NavigationService.GoBack();
+                        break;
+                }
+                return;
+            }
+        }
     }
 }
