@@ -2,7 +2,7 @@
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
   <App xmlns="" ProductID="{679fd7ad-2a53-4b64-b63f-804d31dae25f}" Title="FlipCard" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="FlipCard_WP author" Description="Beat me." Publisher="FlipCard_WP" PublisherID="{5dcc3e02-2eff-4647-aec0-3432f5ea217a}">
-    <IconPath IsRelative="true" IsResource="false">Tile_Final.png</IconPath>
+    <IconPath IsRelative="true" IsResource="false">Assets\Tiles\Tile_Final.png</IconPath>
     <Capabilities>
     </Capabilities>
     <Tasks>
@@ -11,9 +11,9 @@
     <Tokens>
       <PrimaryToken TokenID="FlipCard_WPToken" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Tile_Final.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\Tile_Final.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Tile_Final.png</BackgroundImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\Tile_Final.png</BackgroundImageURI>
           <Title>FlipCard</Title>
           <BackContent>
           </BackContent>
@@ -21,7 +21,7 @@
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
-          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Tile_Big.png</LargeBackgroundImageURI>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\Tile_Big.png</LargeBackgroundImageURI>
           <LargeBackContent />
           <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
           </LargeBackBackgroundImageURI>

@@ -114,7 +114,7 @@
 
     <!--TitlePanel contains the name of the application and page title-->
 		<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" HorizontalAlignment="Center" VerticalAlignment="Center">
-			<Image x:Name="image" Source="/Assets/ImagesCards/Title3.png" Margin="0,0,10,0" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="image" Source="/Assets/Misc/TitleFlipCard.png" Margin="0,0,10,0" RenderTransformOrigin="0.5,0.5">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
