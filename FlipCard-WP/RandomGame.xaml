@@ -50,6 +50,105 @@
                 <RowDefinition Height="4*"/>
                 <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
+            <Grid.Resources>
+                <Storyboard x:Name="CardOnTable0" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c0">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable1" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c1">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable2" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c2">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable3" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c3">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable4" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c4">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable5" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c5">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable6" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c6">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable7" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c7">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable8" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c8">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable9" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c9">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable10" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c10">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable11" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c11">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable12" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c12">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable13" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c13">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable14" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c14">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable15" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c15">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                
+            </Grid.Resources>
             <Image x:Name="c0" x:Uid="0" Grid.Row="0" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap"/>
             <Image x:Name="c1" x:Uid="1" Grid.Row="0" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap"/>
             <Image x:Name="c2" Grid.Row="0" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap"/>
