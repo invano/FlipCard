@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Media.Animation;
+using Microsoft.Phone.Tasks;
 
 namespace FlipCard_WP
 {
@@ -35,6 +36,10 @@ namespace FlipCard_WP
         int step = 0;
         Random rgn = new Random();
         bool PBegin = false;
+
+        int playerOverall = 0;
+        int cpuOverall = 0;
+        bool shared = false;
 
         public RandomGame()
         {
@@ -260,17 +265,21 @@ namespace FlipCard_WP
                 }
 
                 String res = null;
-                if (counterRed < counterBlue)
+                if (counterRed < counterBlue) {
                     res = Const.CPU_WINS;
-                if (counterBlue < counterRed)
+                    cpuOverall++;
+                }
+                if (counterBlue < counterRed) {
                     res = Const.PLAYER_WINS;
+                    playerOverall++;
+                }
                 if (counterRed == counterBlue)
                     res = Const.TIES;
                 MessageBoxResult Result = MessageBox.Show(Const.RETRY, res, MessageBoxButton.OKCancel);
                 switch (Result)
                 {
                     case MessageBoxResult.OK:
-                        NavigationService.Navigate(new Uri(String.Format("/RandomGame.xaml?id={0}", Guid.NewGuid().ToString()), UriKind.Relative));
+                        NavigationService.Navigate(new Uri(String.Format("/RandomGame.xaml?id={0}&player={1}&cpu={2}", Guid.NewGuid().ToString(), playerOverall.ToString(), cpuOverall.ToString()), UriKind.Relative));
                         break;
 
                     case MessageBoxResult.Cancel:
@@ -437,6 +446,22 @@ namespace FlipCard_WP
             img.Visibility = System.Windows.Visibility.Collapsed;
         }
 
+        private void sharestatus_Click(object sender, EventArgs e)
+        {
+            ShareStatusTask shareStatusTask = new ShareStatusTask();
+            String cpuwin = " CPU is beating me :(";
+            String playerwin = " I'm winning! :D";
+            String tie = " We're even! :)";
+            String res = playerOverall.ToString() + " " + cpuOverall.ToString();
+            if (cpuOverall == playerOverall)
+                shareStatusTask.Status = "First twitter message from #FlipCard! " + res + tie;
+            else
+                shareStatusTask.Status = "First twitter message from #FlipCard! " + res + (cpuOverall > playerOverall ? cpuwin:playerwin);
+            this.shared = true;
+            shareStatusTask.Show();
+        }
+
+
         private void PhoneApplicationPage_BackKeyPress(object sender, System.ComponentModel.CancelEventArgs e)
         {
             MessageBoxResult Result = MessageBox.Show("Go back?", "Exit menu", MessageBoxButton.OKCancel);
@@ -449,20 +474,20 @@ namespace FlipCard_WP
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             String id = "";
+            String cpuScore = "";
+            String playerScore = "";
+
+            if(NavigationContext.QueryString.TryGetValue("player", out playerScore))
+                this.playerOverall = int.Parse(playerScore);
+
+            if(NavigationContext.QueryString.TryGetValue("cpu", out cpuScore))
+                this.cpuOverall = int.Parse(cpuScore);
+
             if(NavigationContext.QueryString.TryGetValue("id",out id)){
-               if(NavigationService.CanGoBack) {
+               if(NavigationService.CanGoBack && !this.shared) {
                     NavigationService.RemoveBackEntry();
                 }
             }
-
-
-            //MessageBox.Show("Sono qua");
-            //if(e.Uri==(new Uri("/RandomGame.xaml", UriKind.Relative))){
-            //    MessageBox.Show("Sono proprio qua");
-            //    NavigationService.RemoveBackEntry();
-             // }   
-                
-            
         }
 
     }

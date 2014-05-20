@@ -225,9 +225,11 @@
     <Content Include="Assets\ImagesCards\Card9Red.png" />
     <Content Include="Assets\ImagesCards\Empty.png" />
     <Content Include="Assets\Misc\TitleFlipCard.png" />
-    <Content Include="Resources\cardsLibrary.xml" />
     <Content Include="Assets\Tiles\Tile_Big.png" />
     <Content Include="Assets\Tiles\Tile_Final.png" />
+    <Content Include="Images\AppBar\overflowdots.png" />
+    <Content Include="Images\AppBar\share.png" />
+    <Content Include="Resources\cardsLibrary.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
@@ -242,6 +244,11 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Cards\" />
+    <Folder Include="Images\Misc\" />
+    <Folder Include="Images\Tiles\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
