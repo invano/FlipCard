@@ -25,7 +25,7 @@ namespace FlipCard_WP
         public bool isUp;
     }
 
-    public partial class Page1 : PhoneApplicationPage
+    public partial class RandomGame : PhoneApplicationPage
     {
         private CardInfo[] cards = new CardInfo[8];
         Card[] table = new Card[Const.PLACES_ON_TABLE];
@@ -36,7 +36,7 @@ namespace FlipCard_WP
         Random rgn = new Random();
         bool PBegin = false;
 
-        public Page1()
+        public RandomGame()
         {
 
             InitializeComponent();
@@ -270,7 +270,7 @@ namespace FlipCard_WP
                 switch (Result)
                 {
                     case MessageBoxResult.OK:
-                        NavigationService.Navigate(new Uri(String.Format("/Page1.xaml?id={0}", Guid.NewGuid().ToString()), UriKind.Relative));
+                        NavigationService.Navigate(new Uri(String.Format("/RandomGame.xaml?id={0}", Guid.NewGuid().ToString()), UriKind.Relative));
                         break;
 
                     case MessageBoxResult.Cancel:
@@ -457,7 +457,7 @@ namespace FlipCard_WP
 
 
             //MessageBox.Show("Sono qua");
-            //if(e.Uri==(new Uri("/Page1.xaml", UriKind.Relative))){
+            //if(e.Uri==(new Uri("/RandomGame.xaml", UriKind.Relative))){
             //    MessageBox.Show("Sono proprio qua");
             //    NavigationService.RemoveBackEntry();
              // }   

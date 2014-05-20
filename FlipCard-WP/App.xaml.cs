@@ -32,6 +32,7 @@ namespace FlipCard_WP
             // Phone-specific initialization
             InitializePhoneApplication();
 
+            
             // Language display initialization
             InitializeLanguage();
 

@@ -22,19 +22,12 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Regole" FontSize="50" Margin="10,10,10,10"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.Button_Rules, Source={StaticResource LocalizedStrings}}" FontSize="50" Margin="10,10,10,10"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Width="auto" Margin="30,0,30,0">
-            <TextBlock TextWrapping="Wrap" FontSize="25">In FlipCard vince il giocatore con più
-                carte in gioco. Ogni carta è 
-                caratterizzata da quattro numeri e
-                quando viene giocata, tutte le carte 
-                intorno ad essa vengono "conquistate"
-                qualora il numero corrispondente sia
-                più alto. Le carte sono distribuite 
-                casualmente all'inizio di una partita.</TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="25" Text="{Binding Path=LocalizedResources.Rules, Source={StaticResource LocalizedStrings}}"></TextBlock>
         </Grid>
     </Grid>
 

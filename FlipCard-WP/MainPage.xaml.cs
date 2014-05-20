@@ -23,7 +23,6 @@ namespace FlipCard_WP
             //BuildLocalizedApplicationBar();
             Storyboard_ButtonsDown.Begin();
             Menu_In.Begin();
-            SBBG.Begin();
         }
 
 
@@ -44,72 +43,59 @@ namespace FlipCard_WP
         //    ApplicationBar.MenuItems.Add(appBarMenuItem);
         //}
 
-        private void Prova2_Tap(object sender, RoutedEventArgs e)
+        private void Play_Tap(object sender, RoutedEventArgs e)
         {
+            //At the end of the animation the proper target page is fired up
             PlayPressedAnimation.Begin();
-            //NavigationService.Navigate(new Uri("/Page1.xaml", UriKind.Relative));
         }
 
-        private void Regole_Tap(object sender, RoutedEventArgs e)
+        private void Rules_Tap(object sender, RoutedEventArgs e)
         {
+            //At the end of the animation the proper target page is fired up
             RulesPressedAnimation.Begin();
-           // NavigationService.Navigate(new Uri("/Regole.xaml", UriKind.Relative));
         }
 
-        private void ginobutton_Hold(object sender, System.Windows.Input.GestureEventArgs e)
+        private void button_Hold(object sender, System.Windows.Input.GestureEventArgs e)
         {
             MessageBox.Show("You are holding me down :(");
         }
 
         private void aboutUs_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-         //   NavigationService.Navigate(new Uri("/AboutUs.xaml", UriKind.Relative));
-            Storyboard2.Begin();
-
+            //At the end of the animation the proper target page is fired up
+            AboutUsPressedAnimation.Begin();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Storyboard2.Seek(new TimeSpan(0));
-            Storyboard2.Stop();
+            AboutUsPressedAnimation.Seek(new TimeSpan(0));
+            AboutUsPressedAnimation.Stop();
             RulesPressedAnimation.Seek(new TimeSpan(0));
             RulesPressedAnimation.Stop();
             PlayPressedAnimation.Seek(new TimeSpan(0));
             PlayPressedAnimation.Stop();
  	        base.OnNavigatedTo(e);
-            while (NavigationService.RemoveBackEntry() != null) ;
-           
+            while (NavigationService.RemoveBackEntry() != null) ;    
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-   
-            
             base.OnNavigatedFrom(e);
-            
         }
 
-        private void Storyboard2_Completed(object sender, EventArgs e)
+        private void AboutUsPressedAnimation_Completed(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/AboutUs.xaml", UriKind.Relative));
-            
-        }
-
-        private void SBBG_Completed(object sender, EventArgs e)
-        {
-            SBBG.Seek(new TimeSpan(0));
-            SBBG.Begin();
         }
 
         private void RulesPressedAnimation_Completed(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Regole.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Rules.xaml", UriKind.Relative));
         }
 
         private void PlayPressedAnimation_Completed(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Page1.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/RandomGame.xaml", UriKind.Relative));
         }
-
     }
 }

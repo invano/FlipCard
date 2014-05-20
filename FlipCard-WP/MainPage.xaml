@@ -13,24 +13,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
-	<phone:PhoneApplicationPage.Resources>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	</phone:PhoneApplicationPage.Resources>
 	
-
 	
 <!--LayoutRoot is the root grid where all page content is placed-->
 	<Grid x:Name="LayoutRoot" Background="Black">
@@ -39,21 +22,20 @@
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
         <Grid.Resources>
-            <Storyboard x:Name="SBBG" Completed="SBBG_Completed"/>
             <Storyboard x:Name="RulesPressedAnimation" Completed="RulesPressedAnimation_Completed">
-                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="regole">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="btn_rules">
                     <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.3"/>
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
             <Storyboard x:Name="PlayPressedAnimation" Completed="PlayPressedAnimation_Completed">
-                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="gioca">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="btn_play">
                     <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.3"/>
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
-            <Storyboard x:Name="Storyboard2" Completed="Storyboard2_Completed">
-                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="about">
+            <Storyboard x:Name="AboutUsPressedAnimation" Completed="AboutUsPressedAnimation_Completed">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="btn_about">
                     <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.3"/>
                 </DoubleAnimationUsingKeyFrames>
@@ -71,32 +53,32 @@
             </Storyboard>
             
             <Storyboard x:Name="Storyboard_ButtonsDown">
-                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="gioca">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="btn_play">
                     <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.2"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
                 </DoubleAnimationUsingKeyFrames>
-                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="regole">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="btn_rules">
                     <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1.2"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
                 </DoubleAnimationUsingKeyFrames>
-                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="about">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="btn_about">
                     <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.35" Value="1.2"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
                 </DoubleAnimationUsingKeyFrames>
-                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="gioca">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="btn_play">
                     <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.2"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
                 </DoubleAnimationUsingKeyFrames>
-                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="regole">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="btn_rules">
                     <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1.2"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
                 </DoubleAnimationUsingKeyFrames>
-                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="about">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="btn_about">
                     <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.35" Value="1.2"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
@@ -151,18 +133,19 @@
 				<RowDefinition Height="auto"/>
 				<RowDefinition Height="auto"/>
 			</Grid.RowDefinitions>
-            
-			<Button Grid.Row="0" Grid.Column="0" x:Name="gioca" Click="Prova2_Tap" Background="#FF9b0b" Width="290" Height="100" Content="Gioca" RenderTransformOrigin="0.5,0.5" >
+
+            <Button Grid.Row="0" Grid.Column="0" Content="{Binding Path=LocalizedResources.Button_Play, Source={StaticResource LocalizedStrings}}" x:Name="btn_play" Click="Play_Tap" Background="#FF9b0b" Width="290" Height="100" RenderTransformOrigin="0.5,0.5" >
+                <Button.RenderTransform>
+                    <CompositeTransform/>
+                </Button.RenderTransform>
+                
+            </Button>
+            <Button Grid.Row="1" Grid.Column="0" x:Name="btn_rules" Background="#ff5d0b" Tap="Rules_Tap" Hold="button_Hold" Height="85" Content="{Binding Path=LocalizedResources.Button_Rules, Source={StaticResource LocalizedStrings}}" RenderTransformOrigin="0.5,0.5">
 				<Button.RenderTransform>
 					<CompositeTransform/>
 				</Button.RenderTransform>
 			</Button>
-			<Button Grid.Row="1" Grid.Column="0" x:Name="regole" Background="#ff5d0b" Tap="Regole_Tap" Hold="ginobutton_Hold" Height="85" Content="Regole" RenderTransformOrigin="0.5,0.5">
-				<Button.RenderTransform>
-					<CompositeTransform/>
-				</Button.RenderTransform>
-			</Button>
-			<Button Grid.Row="2" Grid.Column="0" x:Name="about" Background="#663300" Tap="aboutUs_Tap" Hold="ginobutton_Hold" RenderTransformOrigin="0.5,0.5" Content="About Us">
+            <Button Grid.Row="2" Grid.Column="0" x:Name="btn_about" Background="#663300" Tap="aboutUs_Tap" Hold="button_Hold" RenderTransformOrigin="0.5,0.5" Content="{Binding Path=LocalizedResources.Button_About, Source={StaticResource LocalizedStrings}}">
 				<Button.RenderTransform>
 					<CompositeTransform/>
 				</Button.RenderTransform>
