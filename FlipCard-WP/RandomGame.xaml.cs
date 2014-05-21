@@ -19,7 +19,6 @@ namespace FlipCard_WP
     public struct CardInfo
     {
         public string name;
-
         public Image img;
         public string source;
         public bool isUp;
@@ -30,6 +29,11 @@ namespace FlipCard_WP
         private CardInfo[] cards = new CardInfo[8];
         Card[] table = new Card[Const.PLACES_ON_TABLE];
         bool playerPlayed; //states if the last move was made by the player or by the CPU
+        int[] tiltBackIndex = new int[4]; //needed to perform the tiltback animation
+        string[] tmpPath= new string[4]; //needed to perform the tiltback animation
+        Image[] img2 = new Image[4]; //needed to perform the tilt animation
+        bool stopCheckAdj; //needed. Don't touch it!
+        int[] checkDone = new int[4]; 
         Player player = new Player();
         Player cpu = new Player();
         Game myGame = new Game();
@@ -39,7 +43,6 @@ namespace FlipCard_WP
 
         public RandomGame()
         {
-
             InitializeComponent();
             cards[0].img = Card0;
             cards[0].name = "Card0";
@@ -57,9 +60,9 @@ namespace FlipCard_WP
             cards[6].name = "Card6";
             cards[7].img = Card7;
             cards[7].name = "Card7";
-          
-            
 
+
+            
             CardsLibrary cardsLibrary = new CardsLibrary();
             Deck playerDeck = cardsLibrary.generateRandomDeckWithSize(40);
             playerDeck.set_no_cards(40);
@@ -71,9 +74,10 @@ namespace FlipCard_WP
 
             player.hand = new Card[8];
             cpu.hand = new Card[8];
-
+              
             for (int i = 0; i < 8; i++)
             {
+                
                 player.hand[i] = playerDeck.getRandomCard();
                 player.hand[i].setColor(Const.RED);
                 updateHand(i, player.hand[i]);
@@ -81,7 +85,7 @@ namespace FlipCard_WP
                 cpu.hand[i].setColor(Const.BLUE);
             }
             //GGfinqui
-
+          
             int q = rgn.Next(1, 10);
             if (q % 2 == 0)
             {
@@ -93,8 +97,6 @@ namespace FlipCard_WP
                 PBegin = false;
                 MessageBox.Show("CPU begins");
             }
-
-
 
             if (PBegin == false)
             {
@@ -260,10 +262,16 @@ namespace FlipCard_WP
             bool isCPUMove = false;
             if (newCard.isBlue()) isCPUMove = true;
             int tmpIndex = 0;
+            for (int u = 0; u < 4; u++)
+            {
+                checkDone[u] = 0;
+            }
+                stopCheckAdj = false;
 
             tmpIndex = myGame.abovePositionWRTLocation(index);
             if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].downValue < newCard.upValue)
             {
+                stopCheckAdj = true;
                 int tmp2 = table[tmpIndex].idNumber;
                 string targetSource2 = "/Assets/ImagesCards/Card" + tmp2;
                 //table[tmpIndex].color != newCard.color
@@ -281,18 +289,42 @@ namespace FlipCard_WP
                         targetSource2 += "Red.png";
                         table[tmpIndex].setColor(Const.RED);
                     }
+                    
+
+
                     string target2 = "c" + tmpIndex;
-                    Image img2 = (Image)this.FindName(target2);
 
+                    int t;
+                    for (t = 0; t < 4; t++)
+                    {
+                        if (checkDone[t] == 0)
+                        {
+                            checkDone[t] = 1;
+                            break;
+                        }
 
-                    img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
+                    }
+                    //Use t to set global variables;
+                    //img2 defined as a global variable
+                    img2[t] = (Image)this.FindName(target2);
 
+                    tiltBackIndex[t] = tmpIndex;
+                    //tmpPath is a global string to be passed to the tiltBack method
+                    tmpPath[t] = string.Copy(targetSource2);
+
+                    tiltCardAtIndex(tmpIndex);
+
+                    // img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
+                   
+             
                 }
             }
 
+            //while (stopCheckAdj) { } //this make it wait until previous check is performed
             tmpIndex = myGame.leftPositionWRTLocation(index);
             if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].rightValue < newCard.leftValue)
             {
+                stopCheckAdj = true;
                 int tmp2 = table[tmpIndex].idNumber;
                 string targetSource2 = "/Assets/ImagesCards/Card" + tmp2;
                 if (true)
@@ -310,17 +342,36 @@ namespace FlipCard_WP
                         table[tmpIndex].setColor(Const.RED);
                     }
                     string target2 = "c" + tmpIndex;
-                    Image img2 = (Image)this.FindName(target2);
 
+                     int t;
+                    for (t = 0; t < 4; t++)
+                    {
+                        if (checkDone[t] == 0)
+                        {
+                            checkDone[t] = 1;
+                            break;
+                        }
+                    }
+                    //Use t to set global variables;
+                    //img2 defined as a global variable
+                    img2[t] = (Image)this.FindName(target2);
 
-                    img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
+                    tiltBackIndex[t] = tmpIndex;
+                    //tmpPath is a global string to be passed to the tiltBack method
+                    tmpPath[t] = string.Copy(targetSource2);
 
+                    tiltCardAtIndex(tmpIndex);
+
+                    // img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
+                    
                 }
             }
 
+           // while (stopCheckAdj) { } //this make it wait until previous check is performed
             tmpIndex = myGame.belowPositionWRTLocation(index);
             if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].upValue < newCard.downValue)
             {
+                stopCheckAdj = true;
                 int tmp2 = table[tmpIndex].idNumber;
                 string targetSource2 = "/Assets/ImagesCards/Card" + tmp2;
                 if (true)
@@ -338,17 +389,35 @@ namespace FlipCard_WP
                         table[tmpIndex].setColor(Const.RED);
                     }
                     string target2 = "c" + tmpIndex;
-                    Image img2 = (Image)this.FindName(target2);
 
+                     int t;
+                    for (t = 0; t < 4; t++)
+                    {
+                        if (checkDone[t] == 0)
+                        {
+                            checkDone[t] = 1;
+                            break;
+                        }
+                    }
+                    //Use t to set global variables;
+                    //img2 defined as a global variable
+                    img2[t] = (Image)this.FindName(target2);
 
-                    img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
+                    tiltBackIndex[t] = tmpIndex;
+                    //tmpPath is a global string to be passed to the tiltBack method
+                    tmpPath[t] = string.Copy(targetSource2);
 
+                    tiltCardAtIndex(tmpIndex);
+
+                    // img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
                 }
             }
 
+           // while (stopCheckAdj) { } //this make it wait until previous check is performed
             tmpIndex = myGame.rightPositionWRTLocation(index);
             if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].leftValue < newCard.rightValue)
             {
+                stopCheckAdj = true;
                 int tmp2 = table[tmpIndex].idNumber;
                 string targetSource2 = "/Assets/ImagesCards/Card" + tmp2;
                 if (true)
@@ -366,11 +435,26 @@ namespace FlipCard_WP
                         table[tmpIndex].setColor(Const.RED);
                     }
                     string target2 = "c" + tmpIndex;
-                    Image img2 = (Image)this.FindName(target2);
+                     int t;
+                    for (t = 0; t < 4; t++)
+                    {
+                        if (checkDone[t] == 0)
+                        {
+                            checkDone[t] = 1;
+                            break;
+                        }
+                    }
+                    //Use t to set global variables;
+                    //img2 defined as a global variable
+                    img2[t] = (Image)this.FindName(target2);
 
+                    tiltBackIndex[t] = tmpIndex;
+                    //tmpPath is a global string to be passed to the tiltBack method
+                    tmpPath[t] = string.Copy(targetSource2);
 
-                    img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
+                    tiltCardAtIndex(tmpIndex);
 
+                    // img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
                 }
             }
             
@@ -378,16 +462,18 @@ namespace FlipCard_WP
 
         public void updateHand(int index, Card newCard)
         {
+           
             int tmp = newCard.idNumber;
             string targetSource = "/Assets/ImagesCards/Card" + tmp;
             if (newCard.isBlue()) targetSource += "Blue.png";
             else targetSource += "Red.png";
 
             string target = "Card" + index;
-
+        
             Image img = (Image)this.FindName(target);
-
+         
             img.Source = new ImageSourceConverter().ConvertFromString(targetSource) as ImageSource;
+     
 
         }
 
@@ -479,5 +565,132 @@ namespace FlipCard_WP
                 return;
             }
         }
+
+        private void tiltCardAtIndex(int index)
+        {
+            switch (index)
+            {
+                case 0:
+                    Tilting0.Begin();
+                    break;
+                case 1:
+                    Tilting1.Begin();
+                    break;
+                case 2:
+                    Tilting2.Begin();
+                    break;
+                case 3:
+                    Tilting3.Begin();
+                    break;
+                case 4:
+                    Tilting4.Begin();
+                    break;
+                case 5:
+                    Tilting5.Begin();
+                    break;
+                case 6:
+                    Tilting6.Begin();
+                    break;
+                case 7:
+                    Tilting7.Begin();
+                    break;
+                case 8:
+                    Tilting8.Begin();
+                    break;
+                case 9:
+                    Tilting9.Begin();
+                    break;
+                case 10:
+                    Tilting10.Begin();
+                    break;
+                case 11:
+                    Tilting11.Begin();
+                    break;
+                case 12:
+                    Tilting12.Begin();
+                    break;
+                case 13:
+                    Tilting13.Begin();
+                    break;
+                case 14:
+                    Tilting14.Begin();
+                    break;
+                case 15:
+                    Tilting15.Begin();
+                    break;
+
+            }
+        }
+
+
+        private void TiltBack_Completed(object sender, EventArgs e)
+        {
+            int i , j;
+
+            for(i=0;i<4;i++){
+                if(checkDone[i]==1){
+                    checkDone[i]=2;
+                    break;
+                }
+
+            }
+
+            img2[i].Source = new ImageSourceConverter().ConvertFromString(tmpPath[i]) as ImageSource;
+            switch (tiltBackIndex[i])
+            {
+                case 0:
+                    TiltingBack0.Begin();
+                    break;
+                case 1:
+                    TiltingBack1.Begin();
+                    break;
+                case 2:
+                    TiltingBack2.Begin();
+                    break;
+                case 3:
+                    TiltingBack3.Begin();
+                    break;
+                case 4:
+                    TiltingBack4.Begin();
+                    break;
+                case 5:
+                    TiltingBack5.Begin();
+                    break;
+                case 6:
+                    TiltingBack6.Begin();
+                    break;
+                case 7:
+                    TiltingBack7.Begin();
+                    break;
+                case 8:
+                    TiltingBack8.Begin();
+                    break;
+                case 9:
+                    TiltingBack9.Begin();
+                    break;
+                case 10:
+                    TiltingBack10.Begin();
+                    break;
+                case 11:
+                    TiltingBack11.Begin();
+                    break;
+                case 12:
+                    TiltingBack12.Begin();
+                    break;
+                case 13:
+                    TiltingBack13.Begin();
+                    break;
+                case 14:
+                    TiltingBack14.Begin();
+                    break;
+                case 15:
+                    TiltingBack15.Begin();
+                    break;
+
+            }
+
+            stopCheckAdj = false;
+        }
+
     }
 }
