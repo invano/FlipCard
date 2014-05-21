@@ -96,11 +96,13 @@ namespace FlipCard_WP
             {
                 PBegin = true;
                 MessageBox.Show("Player begins");
+                
             }
             else
             {
                 PBegin = false;
                 MessageBox.Show("CPU begins");
+               
             }
 
             if (PBegin == false)

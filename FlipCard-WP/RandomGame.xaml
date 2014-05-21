@@ -14,9 +14,7 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True" BackKeyPress="PhoneApplicationPage_BackKeyPress">
-	<phone:PhoneApplicationPage.Resources>
-		
-	</phone:PhoneApplicationPage.Resources>
+    
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,1,0,-1">
@@ -1045,6 +1043,7 @@
             <shell:ApplicationBarIconButton IconUri="/Images/AppBar/share.png" x:Name="sharestatus" Click="sharestatus_Click" Text="Share"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
+    
 
 </phone:PhoneApplicationPage>
     

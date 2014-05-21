@@ -16,14 +16,14 @@ namespace FlipCard_WP
     public partial class Page2 : PhoneApplicationPage
     {
         private TranslateTransform dragTranslation;
-        private TranslateTransform originalTranslation;
+        //private TranslateTransform originalTranslation;
 
         public Page2()
         {
             InitializeComponent();
 
             dragTranslation = new TranslateTransform();
-            originalTranslation = new TranslateTransform();
+            //originalTranslation = new TranslateTransform();
 
             TestRectangle1.ManipulationDelta += new EventHandler<ManipulationDeltaEventArgs>(Drag_ManipulationDelta);
             TestRectangle1.ManipulationCompleted += new EventHandler<ManipulationCompletedEventArgs>(Drag_ManipulationCompleted);
@@ -46,7 +46,7 @@ namespace FlipCard_WP
         private void Drag_ManipulationStarted(object sender, ManipulationStartedEventArgs e)
         {
             dragTranslation = new TranslateTransform();
-            originalTranslation = new TranslateTransform();
+            //originalTranslation = new TranslateTransform();
             Rectangle rect = (Rectangle)sender;
             rect.RenderTransform = this.dragTranslation;
         }
@@ -54,8 +54,8 @@ namespace FlipCard_WP
         private void Drag_ManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
         {
             // Reset rectangle.
-            Rectangle rect = (Rectangle)sender;
-            rect.RenderTransform = this.originalTranslation;
+            //Rectangle rect = (Rectangle)sender;
+            //rect.RenderTransform = this.originalTranslation;
 
             //dragTranslation.X = originalTranslation.X;
             //dragTranslation.Y = originalTranslation.Y;
