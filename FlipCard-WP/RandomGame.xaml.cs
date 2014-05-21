@@ -603,17 +603,8 @@ namespace FlipCard_WP
                     res = Const.PLAYER_WINS;
                 if (counterRed == counterBlue)
                     res = Const.TIES;
-                MessageBoxResult Result = MessageBox.Show(Const.RETRY, res, MessageBoxButton.OKCancel);
-                switch (Result)
-                {
-                    case MessageBoxResult.OK:
-                        NavigationService.Navigate(new Uri(String.Format("/RandomGame.xaml?id={0}&player={1}&cpu={2}", Guid.NewGuid().ToString(), playerOverall.ToString(), cpuOverall.ToString()), UriKind.Relative));
-                        break;
 
-                    case MessageBoxResult.Cancel:
-                        NavigationService.GoBack();
-                        break;
-                }
+                ExpandTopBar(res, Const.RETRY);
                 return;
             }
         }
@@ -741,6 +732,24 @@ namespace FlipCard_WP
 
             }
             updateScore();
+        }
+
+        private void ExpandTopBar(String title, String description)
+        {
+            Title_RetryPanel.Text = title;
+            Description_RetryPanel.Text = description;
+            RetryPanel.Visibility = Visibility.Visible;
+        }
+
+
+        private void RetryButton_RetryPanel_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri(String.Format("/RandomGame.xaml?id={0}&player={1}&cpu={2}", Guid.NewGuid().ToString(), playerOverall.ToString(), cpuOverall.ToString()), UriKind.Relative));
+        }
+
+        private void CancelButton_RetryPanel_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
 
     }
