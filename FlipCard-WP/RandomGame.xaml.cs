@@ -605,7 +605,7 @@ namespace FlipCard_WP
                 switch (Result)
                 {
                     case MessageBoxResult.OK:
-                        NavigationService.Navigate(new Uri(String.Format("/RandomGame.xaml?id={0}", Guid.NewGuid().ToString()), UriKind.Relative));
+                        NavigationService.Navigate(new Uri(String.Format("/RandomGame.xaml?id={0}&player={1}&cpu={2}", Guid.NewGuid().ToString(), playerOverall.ToString(), cpuOverall.ToString()), UriKind.Relative));
                         break;
 
                     case MessageBoxResult.Cancel:
@@ -675,7 +675,7 @@ namespace FlipCard_WP
 
         private void TiltBack_Completed(object sender, EventArgs e)
         {
-            int i , j;
+            int i;
 
             for(i=0;i<4;i++){
                 if(checkDone[i]==1){
