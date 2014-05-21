@@ -66,8 +66,9 @@ namespace FlipCard_WP
             cards[7].img = Card7;
             cards[7].name = "Card7";
 
+            ActualScore.Text = "0 - 0";
+ 
 
-            
             CardsLibrary cardsLibrary = new CardsLibrary();
             Deck playerDeck = cardsLibrary.generateRandomDeckWithSize(40);
             playerDeck.set_no_cards(40);
@@ -462,7 +463,21 @@ namespace FlipCard_WP
                     // img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
                 }
             }
-            
+
+            int counterRed = 0;
+            int counterBlue = 0;
+            for (int h = 0; h < 16; h++)
+            {
+                if (table[h] != null && table[h].color == Const.RED)
+                    counterRed++;
+                if (table[h] != null && table[h].color == Const.BLUE)
+                    counterBlue++;
+            }
+
+            string tmpScore = "You " + counterRed + " | CPU " + counterBlue;
+            ActualScore.Text=tmpScore;
+
+
         }
 
         public void updateHand(int index, Card newCard)
