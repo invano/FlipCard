@@ -120,6 +120,8 @@ namespace FlipCard_WP
             }
             }
 
+           
+
         }
 
         private void Card_Tap(object sender, GestureEventArgs e)
