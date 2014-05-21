@@ -146,4 +146,10 @@
   <data name="Rules" xml:space="preserve">
     <value>In FlipCard the player with the most cards of his color on the table wins. When two cards are played one next to the other, the numbers on the touching sides are compared and the higher one wins, making the other card switch color. Cards are randomly drawn and distributed between the player and the CPU. At the beginning of each turn a player is randomly selected to play first.</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Again_Question" xml:space="preserve">
+    <value>Again?</value>
+  </data>
 </root>

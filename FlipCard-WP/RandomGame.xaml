@@ -14,11 +14,11 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True" BackKeyPress="PhoneApplicationPage_BackKeyPress">
-    
+
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,1,0,-1">
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="2*"/>
@@ -30,11 +30,27 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-   
+
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28" Grid.ColumnSpan="2">
+        <StackPanel Name="TopPanel" Grid.Row="0" Margin="12,17,0,28" Grid.ColumnSpan="2">
             <TextBlock Text="Random Match - FlipCard" Style="{StaticResource PhoneTextNormalStyle}"/>
-           <!-- <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>-->
+            <!-- <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>-->
+            <StackPanel Name="RetryPanel" Visibility="Collapsed" Margin="0,0,10,10">
+                <TextBlock Name="Title_RetryPanel" Text="" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                <TextBlock Name="Description_RetryPanel" Text="" Style="{StaticResource PhoneTextNormalStyle}"/>
+                <Grid Height="auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Name="RetryButton_RetryPanel" Click="RetryButton_RetryPanel_Click" Content="{Binding Path=LocalizedResources.Again_Question, Source={StaticResource LocalizedStrings}}"/>
+                    <Button Grid.Column="1" Name="CancelButton_RetryPanel" Click="CancelButton_RetryPanel_Click"  Content="{Binding Path=LocalizedResources.Cancel, Source={StaticResource LocalizedStrings}}"/>
+                    <Button Grid.Column="2" Name="sharestatus" Click="sharestatus_Click" BorderThickness="0" RenderTransformOrigin="0.316,0.476">
+                        <Image Source="/Images/AppBar/share.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None"/>
+                    </Button>
+                </Grid>
+            </StackPanel>
             <Grid Margin="0,10,0,0" Height="auto">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
@@ -47,7 +63,7 @@
                 <TextBlock Grid.Column="2" x:Name="ActualScoreCPU" Foreground="#6f99ff"  Style="{StaticResource PhoneTextExtraLargeStyle}"></TextBlock>
 
             </Grid>
-             </StackPanel>
+        </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Canvas.ZIndex="30" Margin="0,0,0,0" Grid.ColumnSpan="2">
@@ -169,7 +185,7 @@
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c0">
                         <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="90"/>                  
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="90"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c0">
                         <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
@@ -873,12 +889,12 @@
                 </Storyboard>
             </Grid.Resources>
             <Image x:Name="c0" x:Uid="0" Grid.Row="0" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
-            	<Image.RenderTransform>
-            		<CompositeTransform/>
-            	</Image.RenderTransform>
-            	<Image.Projection>
-            		<PlaneProjection/>
-            	</Image.Projection>
+                <Image.RenderTransform>
+                    <CompositeTransform/>
+                </Image.RenderTransform>
+                <Image.Projection>
+                    <PlaneProjection/>
+                </Image.Projection>
             </Image>
             <Image x:Name="c1" x:Uid="1" Grid.Row="0" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
                 <Image.RenderTransform>
@@ -1035,15 +1051,8 @@
             </ScrollViewer>
 
         </Grid>
- 
-    </Grid>
 
-    <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="False" IsMenuEnabled="False">
-            <shell:ApplicationBarIconButton IconUri="/Images/AppBar/share.png" x:Name="sharestatus" Click="sharestatus_Click" Text="Share"/>
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
-    
+    </Grid>
 
 </phone:PhoneApplicationPage>
     
