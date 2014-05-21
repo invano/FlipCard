@@ -15,9 +15,9 @@
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True" BackKeyPress="PhoneApplicationPage_BackKeyPress">
     
-
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,1,0,-1">
+    <Grid x:Name="LayoutRoot" Background="#FF343632" Margin="0,1,0,-1">
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -79,7 +79,8 @@
 
 
 
-
+                <!--
+                
                 <Storyboard x:Name="CardOnTable0" Completed="CardOnTable_Completed">
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c0">
                         <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
@@ -235,11 +236,11 @@
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
                 <Storyboard x:Name="CardOnTable11" Completed="CardOnTable_Completed">
-                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c10">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c11">
                         <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
-                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c10">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c11">
                         <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
@@ -249,11 +250,11 @@
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
                 <Storyboard x:Name="CardOnTable12" Completed="CardOnTable_Completed">
-                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c11">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c12">
                         <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
-                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c11">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c12">
                         <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
@@ -263,11 +264,11 @@
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
                 <Storyboard x:Name="CardOnTable13" Completed="CardOnTable_Completed">
-                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c12">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c13">
                         <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
-                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c12">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c13>
                         <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
@@ -277,11 +278,11 @@
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
                 <Storyboard x:Name="CardOnTable14" Completed="CardOnTable_Completed">
-                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c13">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c14">
                         <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
-                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c13">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c14">
                         <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
@@ -291,11 +292,11 @@
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
                 <Storyboard x:Name="CardOnTable15" Completed="CardOnTable_Completed">
-                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c14">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c15">
                         <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
-                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c14">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c15">
                         <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
@@ -305,12 +306,8 @@
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
 
+                -->
                 
-                
-                
-                <!--
-                
-                UNCOMMENT THIS TO ENABLE FADE INSTEAD OF SCALE
                 
                 <Storyboard x:Name="CardOnTable0" Completed="CardOnTable_Completed">
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c0">
@@ -408,7 +405,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
-                -->
+   
 
 
                 <Storyboard x:Name="Tilting0" Completed="TiltBack_Completed">
