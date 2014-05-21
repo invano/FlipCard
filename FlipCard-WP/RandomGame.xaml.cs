@@ -603,7 +603,7 @@ namespace FlipCard_WP
                     res = Const.PLAYER_WINS;
                 if (counterRed == counterBlue)
                     res = Const.TIES;
-
+                updateScore();
                 ExpandTopBar(res, Const.RETRY);
                 return;
             }
