@@ -64,6 +64,254 @@
                 <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
             <Grid.Resources>
+                
+                
+                <!--<Storyboard x:Name="CardOn0">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Card0">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1.4"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Card0">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1.4"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>-->
+
+
+
+
+                <Storyboard x:Name="CardOnTable0" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c0">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c0">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c0">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable1" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c1">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c1">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c1">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable2" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c2">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c2">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c2">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable3" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c3">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c3">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c3">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable4" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c4">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c4">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c4">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable5" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c5">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c5">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c5">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable6" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c6">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c6">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c6">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable7" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c7">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c7">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c7">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable8" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c8">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c8">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c8">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable9" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c9">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c9">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c9">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable10" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c10">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c10">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c10">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable11" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c10">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c10">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c11">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable12" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c11">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c11">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c12">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable13" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c12">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c12">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c13">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable14" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c13">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c13">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c14">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Name="CardOnTable15" Completed="CardOnTable_Completed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c14">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c14">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c15">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+
+                
+                
+                
+                <!--
+                
+                UNCOMMENT THIS TO ENABLE FADE INSTEAD OF SCALE
+                
                 <Storyboard x:Name="CardOnTable0" Completed="CardOnTable_Completed">
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="c0">
                         <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
@@ -160,6 +408,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
+                -->
 
 
                 <Storyboard x:Name="Tilting0" Completed="TiltBack_Completed">
@@ -880,7 +1129,7 @@
             		<PlaneProjection/>
             	</Image.Projection>
             </Image>
-            <Image x:Name="c1" x:Uid="1" Grid.Row="0" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c1" x:Uid="1" Grid.Row="0" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -888,7 +1137,7 @@
                     <PlaneProjection/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="c2" x:Uid="2" Grid.Row="0" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c2" x:Uid="2" Grid.Row="0" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -896,7 +1145,7 @@
                     <PlaneProjection/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="c3" x:Uid="3" Grid.Row="0" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c3" x:Uid="3" Grid.Row="0" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -904,7 +1153,7 @@
                     <PlaneProjection/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="c4" x:Uid="4" Grid.Row="1" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c4" x:Uid="4" Grid.Row="1" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -912,7 +1161,7 @@
                     <PlaneProjection/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="c5" x:Uid="5" Grid.Row="1" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c5" x:Uid="5" Grid.Row="1" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -920,7 +1169,7 @@
                     <PlaneProjection/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="c6" x:Uid="6" Grid.Row="1" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c6" x:Uid="6" Grid.Row="1" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -928,7 +1177,7 @@
                     <PlaneProjection/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="c7" x:Uid="7" Grid.Row="1" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c7" x:Uid="7" Grid.Row="1" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -936,7 +1185,7 @@
                     <PlaneProjection/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="c8" x:Uid="8" Grid.Row="2" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c8" x:Uid="8" Grid.Row="2" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -944,7 +1193,7 @@
                     <PlaneProjection/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="c9" x:Uid="9" Grid.Row="2" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c9" x:Uid="9" Grid.Row="2" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -952,7 +1201,7 @@
                     <PlaneProjection/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="c10" x:Uid="10" Grid.Row="2" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c10" x:Uid="10" Grid.Row="2" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -960,7 +1209,7 @@
                     <PlaneProjection/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="c11" x:Uid="11" Grid.Row="2" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c11" x:Uid="11" Grid.Row="2" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -968,7 +1217,7 @@
                     <PlaneProjection/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="c12" x:Uid="12" Grid.Row="3" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c12" x:Uid="12" Grid.Row="3" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -976,7 +1225,7 @@
                     <PlaneProjection/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="c13" x:Uid="13" Grid.Row="3" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c13" x:Uid="13" Grid.Row="3" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -984,7 +1233,7 @@
                     <PlaneProjection/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="c14" x:Uid="14" Grid.Row="3" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c14" x:Uid="14" Grid.Row="3" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -992,7 +1241,7 @@
                     <PlaneProjection/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="c15" x:Uid="15" Grid.Row="3" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap">
+            <Image x:Name="c15" x:Uid="15" Grid.Row="3" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform/>
                 </Image.RenderTransform>
@@ -1022,6 +1271,14 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="6*"/>
                         </Grid.RowDefinitions>
+                        
+                        <!--<Image x:Name="Card0" Grid.Row="0" Grid.Column="0" Margin="5,25,5,25" Tap="Card_Tap" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <CompositeTransform/>
+                            </Image.RenderTransform>
+                        </Image>-->
+
+                       
                         <Image x:Name="Card0" Grid.Row="0" Grid.Column="0" Margin="5,25,5,25" Tap="Card_Tap"/>
                         <Image x:Name="Card1" Grid.Row="0" Grid.Column="1" Margin="5,25,5,25" Tap="Card_Tap"/>
                         <Image x:Name="Card2" Grid.Row="0" Grid.Column="2" Margin="5,25,5,25" Tap="Card_Tap"/>
