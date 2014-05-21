@@ -1028,5 +1028,11 @@
  
     </Grid>
 
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="False" IsMenuEnabled="False">
+            <shell:ApplicationBarIconButton IconUri="/Images/AppBar/share.png" x:Name="sharestatus" Click="sharestatus_Click" Text="Share"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>
+    
