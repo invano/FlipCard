@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Resources;
 using System.Xml.Linq;
 
 namespace FlipCard_WP
@@ -24,8 +25,9 @@ namespace FlipCard_WP
             List<Card> tmpSilverList = new List<Card>();
             List<Card> tmpGoldList = new List<Card>();
 
-            XDocument cardsLibraryXml = XDocument.Load(Assembly.GetExecutingAssembly().GetManifestResourceStream("FlipCard_WP.CardsLibrary.xml"));
-
+            StreamResourceInfo xml = Application.GetResourceStream(new Uri("/FlipCard-WP;component/Resources/CardsLibrary.xml", UriKind.Relative));
+            XElement cardsLibraryXml = XElement.Load(xml.Stream); 
+ 
             foreach(XElement element in cardsLibraryXml.Descendants("card")) {
                 
                 Card card = new Card();
