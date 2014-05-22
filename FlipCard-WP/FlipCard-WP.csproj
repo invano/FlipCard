@@ -229,7 +229,7 @@
     <Content Include="Assets\Tiles\Tile_Final.png" />
     <Content Include="Images\AppBar\overflowdots.png" />
     <Content Include="Images\AppBar\share.png" />
-    <Content Include="Resources\cardsLibrary.xml" />
+    <Content Include="Resources\CardsLibrary.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
