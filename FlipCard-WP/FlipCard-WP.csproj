@@ -236,6 +236,8 @@
     <Content Include="Assets\Tiles\Tile_Final.png" />
     <Content Include="Images\AppBar\overflowdots.png" />
     <Content Include="Images\AppBar\share.png" />
+    <Content Include="Images\Misc\YouStart.png" />
+    <Content Include="Images\Misc\CPUStarts.png" />
     <Content Include="Images\Misc\Star.png" />
     <Resource Include="Resources\CardsLibrary.xml">
       <SubType>Designer</SubType>

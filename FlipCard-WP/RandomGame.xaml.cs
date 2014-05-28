@@ -16,6 +16,7 @@ using Microsoft.Phone.Tasks;
 using System.Windows.Resources;
 using System.Xml.Linq;
 using System.IO.IsolatedStorage;
+using System.Windows.Media.Imaging;
 
 namespace FlipCard_WP
 {
@@ -97,20 +98,21 @@ namespace FlipCard_WP
                 cpu.hand[i].setColor(Const.BLUE);
             }
             //GGfinqui
-          
+           
             int q = rgn.Next(1, 10);
+
             if (q % 2 == 0)
             {
                 PBegin = true;
-                MessageBox.Show("Player begins");
-                
+                spimage.ImageSource = new ImageSourceConverter().ConvertFromString("/Images/Misc/YouStart.png") as ImageSource;                
             }
             else
             {
                 PBegin = false;
-                MessageBox.Show("CPU begins");
-               
+                spimage.ImageSource = new ImageSourceConverter().ConvertFromString("/Images/Misc/CPUStarts.png") as ImageSource;               
             }
+
+            AnimateStart.Begin();
 
             if (PBegin == false)
             {

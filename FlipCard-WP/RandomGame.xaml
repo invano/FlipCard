@@ -14,6 +14,45 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True" BackKeyPress="PhoneApplicationPage_BackKeyPress">
+    <phone:PhoneApplicationPage.Resources>
+        <Storyboard x:Name="AnimateStart">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="startingPanel">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="500">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuinticEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="560"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1200">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuinticEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="startingPanel">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuinticEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuinticEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="startingPanel">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0.1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0.08"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		
+	</phone:PhoneApplicationPage.Resources>
     
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,1,0,-1">
@@ -31,12 +70,14 @@
         </Grid.RowDefinitions>
    
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Name="TopPanel" Grid.Row="0" Margin="12,17,0,28" Grid.ColumnSpan="2">
+   
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TopPanel" Grid.Row="0" Margin="12,17,0,28" Grid.ColumnSpan="2">
             <TextBlock Text="Random Match - FlipCard" Style="{StaticResource PhoneTextNormalStyle}"/>
            <!-- <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>-->
-            <StackPanel Name="RetryPanel" Margin="0,0,10,10" Visibility="Collapsed">
-                <TextBlock Name="Title_RetryPanel" Text="" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                <TextBlock Name="Description_RetryPanel" Text="" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <StackPanel x:Name="RetryPanel" Margin="0,0,10,10" Visibility="Collapsed">
+                <TextBlock x:Name="Title_RetryPanel" Text="" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                <TextBlock x:Name="Description_RetryPanel" Text="" Style="{StaticResource PhoneTextNormalStyle}"/>
                 <Grid Height="auto">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
@@ -47,9 +88,9 @@
                         <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Name="RetryButton_RetryPanel" Click="RetryButton_RetryPanel_Click" Content="{Binding Path=LocalizedResources.Again_Question, Source={StaticResource LocalizedStrings}}"/>
-                    <Button Grid.Column="1" Name="CancelButton_RetryPanel" Click="CancelButton_RetryPanel_Click"  Content="{Binding Path=LocalizedResources.Cancel, Source={StaticResource LocalizedStrings}}"/>
-                    <Button Grid.Column="2" Name="sharestatus" Click="sharestatus_Click" BorderThickness="0" RenderTransformOrigin="0.316,0.476">
+                    <Button Grid.Column="0" x:Name="RetryButton_RetryPanel" Click="RetryButton_RetryPanel_Click" Content="{Binding LocalizedResources.Again_Question, Source={StaticResource LocalizedStrings}}"/>
+                    <Button Grid.Column="1" x:Name="CancelButton_RetryPanel" Click="CancelButton_RetryPanel_Click"  Content="{Binding LocalizedResources.Cancel, Source={StaticResource LocalizedStrings}}"/>
+                    <Button Grid.Column="2" x:Name="sharestatus" Click="sharestatus_Click" BorderThickness="0" RenderTransformOrigin="0.316,0.476">
                         <Image Source="/Images/AppBar/share.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None"/>
                     </Button>
                     <TextBlock Grid.Row="1" Grid.ColumnSpan="3" TextWrapping="Wrap" x:Name="EndMatchStatsBox" Foreground="Yellow"/>
@@ -62,27 +103,17 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="5*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" x:Name="ActualScoreYou" Foreground="#ff8d6e"  Style="{StaticResource PhoneTextExtraLargeStyle}"></TextBlock>
-                <TextBlock Grid.Column="1" Style="{StaticResource PhoneTextExtraLargeStyle}">-</TextBlock>
-                <TextBlock Grid.Column="2" x:Name="ActualScoreCPU" Foreground="#6f99ff"  Style="{StaticResource PhoneTextExtraLargeStyle}"></TextBlock>
+                <TextBlock Grid.Column="0" x:Name="ActualScoreYou" Foreground="#ff8d6e"  Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                <TextBlock Grid.Column="1" Style="{StaticResource PhoneTextExtraLargeStyle}">
+                	<Run Text="-"/>
+</TextBlock>
+                <TextBlock Grid.Column="2" x:Name="ActualScoreCPU" Foreground="#6f99ff"  Style="{StaticResource PhoneTextExtraLargeStyle}"/>
 
             </Grid>
              </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Canvas.ZIndex="30" Margin="0,0,0,0" Grid.ColumnSpan="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="4*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="4*"/>
-                <RowDefinition Height="4*"/>
-                <RowDefinition Height="4*"/>
-                <RowDefinition Height="4*"/>
-            </Grid.RowDefinitions>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Canvas.ZIndex="1" Margin="0,0,0,0" Grid.ColumnSpan="2">
             <Grid.Resources>
                 
                 
@@ -1138,6 +1169,18 @@
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
             </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
             <Image x:Name="c0" x:Uid="0" Grid.Row="0" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
             	<Image.RenderTransform>
             		<CompositeTransform/>
@@ -1309,6 +1352,14 @@
             </ScrollViewer>
 
         </Grid>
+        <Rectangle x:Name="startingPanel" HorizontalAlignment="Left" Height="199" Margin="-625,145,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="625" Canvas.ZIndex="1" RenderTransformOrigin="0.5,0.5">
+        	<Rectangle.RenderTransform>
+        		<CompositeTransform/>
+        	</Rectangle.RenderTransform>
+        	<Rectangle.Fill>
+        		<ImageBrush x:Name="spimage" Stretch="Fill"/>
+        	</Rectangle.Fill>
+        </Rectangle>
  
     </Grid>
 
