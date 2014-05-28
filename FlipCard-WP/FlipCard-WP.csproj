@@ -110,6 +110,9 @@
     <Compile Include="AboutUs.xaml.cs">
       <DependentUpon>AboutUs.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Statistics.xaml.cs">
+      <DependentUpon>Statistics.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rules.xaml.cs">
       <DependentUpon>Rules.xaml</DependentUpon>
     </Compile>
@@ -137,6 +140,10 @@
     <Page Include="AboutUs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Statistics.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Rules.xaml">
       <SubType>Designer</SubType>
@@ -229,6 +236,7 @@
     <Content Include="Assets\Tiles\Tile_Final.png" />
     <Content Include="Images\AppBar\overflowdots.png" />
     <Content Include="Images\AppBar\share.png" />
+    <Content Include="Images\Misc\Star.png" />
     <Resource Include="Resources\CardsLibrary.xml">
       <SubType>Designer</SubType>
     </Resource>
@@ -249,7 +257,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\Cards\" />
-    <Folder Include="Images\Misc\" />
     <Folder Include="Images\Tiles\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />

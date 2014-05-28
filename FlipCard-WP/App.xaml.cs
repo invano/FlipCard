@@ -7,9 +7,12 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using FlipCard_WP.Resources;
+using System.IO.IsolatedStorage;
 
 namespace FlipCard_WP
 {
+
+
     public partial class App : Application
     {
         /// <summary>
@@ -18,6 +21,7 @@ namespace FlipCard_WP
         /// <returns>The root frame of the Phone Application.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
 
+        IsolatedStorageSettings appStats = IsolatedStorageSettings.ApplicationSettings;
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
@@ -62,6 +66,26 @@ namespace FlipCard_WP
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            if (!appStats.Contains("Wins"))
+            {
+                appStats.Add("Wins", 0);
+            }
+            if (!appStats.Contains("Losses"))
+            {
+                appStats.Add("Losses", 0);
+            }
+            if (!appStats.Contains("Ties"))
+            {
+                appStats.Add("Ties", 0);
+            }
+            if (!appStats.Contains("Row"))
+            {
+                appStats.Add("Row", 0);
+            } 
+            if(!appStats.Contains("Stars"))
+            {
+                appStats.Add("Stars", 0);
+            }
         }
 
         // Code to execute when the application is activated (brought to foreground)

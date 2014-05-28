@@ -8,17 +8,21 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using FlipCard_WP.Resources;
+using System.IO.IsolatedStorage;
 
 namespace FlipCard_WP
 {
     public partial class MainPage : PhoneApplicationPage
+
+
     {
+
+        IsolatedStorageSettings appStats = IsolatedStorageSettings.ApplicationSettings;
         
         // Constructor
         public MainPage()
         {
             InitializeComponent();
-
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
             Storyboard_ButtonsDown.Begin();
@@ -55,9 +59,19 @@ namespace FlipCard_WP
             RulesPressedAnimation.Begin();
         }
 
+        private void btn_stats_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            StatsPressedAnimation.Begin();
+
+        }
+
         private void button_Hold(object sender, System.Windows.Input.GestureEventArgs e)
         {
+           
+
             MessageBox.Show("You are holding me down :(");
+
+           
         }
 
         private void aboutUs_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -74,6 +88,8 @@ namespace FlipCard_WP
             RulesPressedAnimation.Stop();
             PlayPressedAnimation.Seek(new TimeSpan(0));
             PlayPressedAnimation.Stop();
+            StatsPressedAnimation.Seek(new TimeSpan(0));
+            StatsPressedAnimation.Stop();
  	        base.OnNavigatedTo(e);
             while (NavigationService.RemoveBackEntry() != null) ;    
         }
@@ -96,6 +112,11 @@ namespace FlipCard_WP
         private void PlayPressedAnimation_Completed(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/RandomGame.xaml", UriKind.Relative));
+        }
+
+        private void StatsPressedAnimation_Completed(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Statistics.xaml", UriKind.Relative));
         }
     }
 }

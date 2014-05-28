@@ -13,14 +13,14 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
-	
-	
-<!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot" Background="Black">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
-		</Grid.RowDefinitions>
+
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Grid.Resources>
             <Storyboard x:Name="RulesPressedAnimation" Completed="RulesPressedAnimation_Completed">
                 <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="btn_rules">
@@ -40,6 +40,12 @@
                     <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.3"/>
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
+            <Storyboard x:Name="StatsPressedAnimation" Completed="StatsPressedAnimation_Completed">
+                 <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="btn_stats">
+                     <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                     <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.3"/>
+                 </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
 
             <Storyboard x:Name="Menu_In">
                 <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="image">
@@ -51,7 +57,7 @@
                     <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
-            
+
             <Storyboard x:Name="Storyboard_ButtonsDown">
                 <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="btn_play">
                     <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
@@ -85,7 +91,7 @@
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
         </Grid.Resources>
-		<!-- LOCALIZATION NOTE:
+        <!-- LOCALIZATION NOTE:
             To localize the displayed strings copy their values to appropriately named
             keys in the app's neutral language resource file (AppResources.resx) then
             replace the hard-coded text value between the attributes' quotation marks
@@ -104,55 +110,63 @@
             CurrentUICulture of the app at run time.
          -->
 
-		<!--Uncomment to see an alignment grid to help ensure your controls are
+        <!--Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to
             account for the System Tray. Set this to 0 (or remove the margin altogether)
             if the System Tray is hidden.
 
             Before shipping remove this XAML and the image itself.-->
-		<!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
 
-    <!--TitlePanel contains the name of the application and page title-->
-		<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" HorizontalAlignment="Center" VerticalAlignment="Center">
-			<Image x:Name="image" Source="/Assets/Misc/TitleFlipCard.png" Margin="0,0,10,0" RenderTransformOrigin="0.5,0.5">
-				<Image.RenderTransform>
-					<CompositeTransform/>
-				</Image.RenderTransform>
-			</Image>
-			<TextBlock Text="#pubwin" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" HorizontalAlignment="Center" Foreground="White" FontSize="36" />
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image x:Name="image" Source="/Assets/Misc/TitleFlipCard.png" Margin="0,0,10,0" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <CompositeTransform/>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock Text="#pubwin" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" HorizontalAlignment="Center" Foreground="White" FontSize="36" />
 
-		</StackPanel>
+        </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="97,128,93,128" HorizontalAlignment="Center" VerticalAlignment="Center">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="auto"/>
-			</Grid.ColumnDefinitions>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="auto"/>
-				<RowDefinition Height="auto"/>
-				<RowDefinition Height="auto"/>
-			</Grid.RowDefinitions>
+        <Grid x:Name="ContentPanel" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="235.836"/>
+                <ColumnDefinition Width="54.164"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
 
-            <Button Grid.Row="0" Grid.Column="0" Content="{Binding Path=LocalizedResources.Button_Play, Source={StaticResource LocalizedStrings}}" x:Name="btn_play" Click="Play_Tap" Background="#FF9b0b" Width="290" Height="100" RenderTransformOrigin="0.5,0.5" >
+            <Button Grid.Row="0" Grid.Column="0" Content="{Binding Path=LocalizedResources.Button_Play, Source={StaticResource LocalizedStrings}}" x:Name="btn_play" Click="Play_Tap" Background="#FF9b0b" Width="290" Height="100" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" >
                 <Button.RenderTransform>
                     <CompositeTransform/>
                 </Button.RenderTransform>
-                
+
             </Button>
-            <Button Grid.Row="1" Grid.Column="0" x:Name="btn_rules" Background="#ff5d0b" Tap="Rules_Tap" Hold="button_Hold" Height="85" Content="{Binding Path=LocalizedResources.Button_Rules, Source={StaticResource LocalizedStrings}}" RenderTransformOrigin="0.5,0.5">
-				<Button.RenderTransform>
-					<CompositeTransform/>
-				</Button.RenderTransform>
-			</Button>
-            <Button Grid.Row="2" Grid.Column="0" x:Name="btn_about" Background="#663300" Tap="aboutUs_Tap" Hold="button_Hold" RenderTransformOrigin="0.5,0.5" Content="{Binding Path=LocalizedResources.Button_About, Source={StaticResource LocalizedStrings}}">
-				<Button.RenderTransform>
-					<CompositeTransform/>
-				</Button.RenderTransform>
-			</Button>
+            <Button Grid.Row="1" Grid.Column="0" x:Name="btn_rules" Background="#ff5d0b" Tap="Rules_Tap" Hold="button_Hold" Height="85" Content="{Binding Path=LocalizedResources.Button_Rules, Source={StaticResource LocalizedStrings}}" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <Button.RenderTransform>
+                    <CompositeTransform/>
+                </Button.RenderTransform>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="0" x:Name="btn_stats" Background="#663300" Height="77" Tap="btn_stats_Tap" Hold="button_Hold" RenderTransformOrigin="0.5,0.5" Content="{Binding Path=LocalizedResources.Button_Stats, Source={StaticResource LocalizedStrings}}" Grid.ColumnSpan="2">
+                <Button.RenderTransform>
+                    <CompositeTransform/>
+                </Button.RenderTransform>
+            </Button>
+            <Button Grid.Row="3" Grid.Column="0" x:Name="btn_about" Background="#5C5240" Tap="aboutUs_Tap" Hold="button_Hold" RenderTransformOrigin="0.5,0.5" Content="{Binding Path=LocalizedResources.Button_About, Source={StaticResource LocalizedStrings}}" Grid.ColumnSpan="2">
+                <Button.RenderTransform>
+                    <CompositeTransform/>
+                </Button.RenderTransform>
+            </Button>
 
-		</Grid>
 
-	</Grid>
+        </Grid>
+
+    </Grid>
 
 </phone:PhoneApplicationPage>

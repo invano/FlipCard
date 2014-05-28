@@ -124,6 +124,15 @@ namespace FlipCard_WP.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scores.
+        /// </summary>
+        public static string Button_Stats {
+            get {
+                return ResourceManager.GetString("Button_Stats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
@@ -156,6 +165,15 @@ namespace FlipCard_WP.Resources {
         public static string Rules {
             get {
                 return ResourceManager.GetString("Rules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistics.
+        /// </summary>
+        public static string Stats_Title {
+            get {
+                return ResourceManager.GetString("Stats_Title", resourceCulture);
             }
         }
     }

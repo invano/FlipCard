@@ -152,4 +152,10 @@
   <data name="Again_Question" xml:space="preserve">
     <value>Again</value>
   </data>
+  <data name="Button_Stats" xml:space="preserve">
+    <value>Scores</value>
+  </data>
+  <data name="Stats_Title" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
 </root>

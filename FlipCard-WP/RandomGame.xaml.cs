@@ -13,6 +13,9 @@ using System.Diagnostics;
 using System.Threading;
 using System.Windows.Media.Animation;
 using Microsoft.Phone.Tasks;
+using System.Windows.Resources;
+using System.Xml.Linq;
+using System.IO.IsolatedStorage;
 
 namespace FlipCard_WP
 {
@@ -40,6 +43,7 @@ namespace FlipCard_WP
         int step = 0;
         Random rgn = new Random();
         bool PBegin = false;
+        IsolatedStorageSettings appStats = IsolatedStorageSettings.ApplicationSettings;
 
         int playerOverall = 0;
         int cpuOverall = 0;
@@ -48,6 +52,9 @@ namespace FlipCard_WP
         public RandomGame()
         {
             InitializeComponent();
+
+           
+
             cards[0].img = Card0;
             cards[0].name = "Card0";
             cards[1].img = Card1;
@@ -598,16 +605,109 @@ namespace FlipCard_WP
 
                 String res = null;
                 if (counterRed < counterBlue)
+                {
                     res = Const.CPU_WINS;
+                    if (appStats.Contains("Losses"))
+                {
+                    int i = (int)appStats["Losses"];
+                    i++;
+                    appStats["Losses"] = i;
+                    appStats["Row"] = 0;
+
+                }
+                    else
+                    {
+                        appStats.Add("Losses", 1);
+                    }
+
+                }
                 if (counterBlue < counterRed)
+                {
                     res = Const.PLAYER_WINS;
-                if (counterRed == counterBlue)
+                    if (appStats.Contains("Wins"))
+                {
+                    int i = (int)appStats["Wins"];
+                    i++;
+                    appStats["Wins"] = i;
+                    appStats["Row"] = (int)appStats["Row"] + 1;
+
+                }
+                    else
+                    {
+                        appStats.Add("Wins", 1);
+                    }
+                }
+                if (counterRed == counterBlue){
                     res = Const.TIES;
+                    if (appStats.Contains("Ties"))
+                {
+                    int i = (int)appStats["Ties"];
+                    i++;
+                    appStats["Ties"] = i;
+
+                }
+                    else
+                    {
+                        appStats.Add("Ties", 1);
+                    }
+                }
+
                 updateScore();
+                CheckStars();
+                //MessageBox.Show("Wins: " + appStats["Wins"] + " Ties: " + appStats["Ties"] + " Losses: " + appStats["Losses"]);
                 ExpandTopBar(res, Const.RETRY);
-                return;
+          return;
             }
         }
+
+        void CheckStars(){
+            switch ((int)appStats["Stars"])
+                {
+                    case 0:
+                        if ((int)appStats["Row"] == 1)
+                        {
+                            appStats["Stars"] = 1;
+                            appStats["Row"] = 0;
+                            MessageBox.Show("Una stella");
+                        }
+                        break;
+                    case 1:
+                        if ((int)appStats["Row"] == 2)
+                        {
+                            appStats["Stars"] = 2;
+                            appStats["Row"] = 0;
+                            MessageBox.Show("Due stelle");
+                        }
+                        break;
+                    case 2:
+                        if ((int)appStats["Row"] == 3)
+                        {
+                            appStats["Stars"] = 3;
+                            appStats["Row"] = 0;
+                            MessageBox.Show("Tre stelle");
+                        }
+                        break;
+                    case 3:
+                        if ((int)appStats["Row"] == 4)
+                        {
+                            appStats["Stars"] = 4;
+                            appStats["Row"] = 0;
+                            MessageBox.Show("Quattro stelle");
+                        }
+                        break;
+                    case 4:
+                        if ((int)appStats["Row"] == 5)
+                        {
+                            appStats["Stars"] = 5;
+                            appStats["Row"] = 0;
+                            MessageBox.Show("Cinque stelle");
+                        }
+                        //call score...
+                        break;
+                }
+            return;
+        }
+
 
         private void tiltCardAtIndex(int index)
         {
@@ -738,7 +838,30 @@ namespace FlipCard_WP
         {
             Title_RetryPanel.Text = title;
             Description_RetryPanel.Text = description;
+            if ((int)appStats["Stars"] < 5)
+            {
+                string tmp = "You have collected " + appStats["Stars"] + " star(s) so far... Win " + ((int)appStats["Stars"] + 1 - (int)appStats["Row"]) + " matches in a row to get a new star!";
+     
+                EndMatchStatsBox.Text = tmp;
+            }
+            else
+            {
+                string fin = "You got 5 stars! This is your final score: " + countScore(); 
+                EndMatchStatsBox.Text = fin;
+            }
             RetryPanel.Visibility = Visibility.Visible;
+        }
+
+        decimal countScore()
+        {
+            decimal score;
+
+            decimal tmp = (1 / (int)appStats["Wins"] + 1 / (int)appStats["Losses"] +
+                                1 / (int)appStats["Ties"] + (int)appStats["Losses"] / (int)appStats["Wins"]);
+            decimal tmp2 = Math.Round(tmp);
+            score = Math.Round(1/tmp)*10000;
+
+            return score;
         }
 
 
