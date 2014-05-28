@@ -1,0 +1,18 @@
+﻿<Products>
+  <Product ProductId="1"
+           ProductName="PDSA .NET Productivity Framework"
+           IntroductionDate="3/3/2002"
+           Price="20000" />
+  <Product ProductId="2"
+           ProductName="Architecting ASP.NET Applications eBook"
+           IntroductionDate="4/3/2002"
+           Price="19.95" />
+  <Product ProductId="3"
+           ProductName="Haystack Code Generator for .NET"
+           IntroductionDate="7/1/2010"
+           Price="19.95" />
+  <Product ProductId="4"
+           ProductName="Security for ASP.NET Developers eBook"
+           IntroductionDate="8/25/2004"
+           Price="19.95" />
+</Products>
