@@ -790,7 +790,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c0">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c0">
@@ -798,11 +798,11 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c0">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c0">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -812,7 +812,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c1">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c1">
@@ -820,11 +820,11 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c1">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c1">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -834,7 +834,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c2">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c2">
@@ -842,11 +842,11 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c2">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c2">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -857,7 +857,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c3">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c3">
@@ -866,10 +866,10 @@
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c3">
                         <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
-                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.4"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c3">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -879,7 +879,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c4">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c4">
@@ -887,11 +887,11 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c4">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c4">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -901,7 +901,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c5">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c5">
@@ -910,10 +910,10 @@
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c5">
                         <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
-                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.4"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c5">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -923,7 +923,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c6">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c6">
@@ -931,11 +931,11 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c6">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c6">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -945,7 +945,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c7">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c7">
@@ -953,11 +953,11 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c7">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c7">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -967,7 +967,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c8">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c8">
@@ -975,11 +975,11 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c8">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c8">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -989,7 +989,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c9">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c9">
@@ -997,11 +997,11 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c9">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c9">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -1011,7 +1011,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c10">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c10">
@@ -1019,11 +1019,11 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c10">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c10">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -1033,7 +1033,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c11">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c11">
@@ -1041,11 +1041,11 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c11">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c11">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -1055,7 +1055,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c12">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c12">
@@ -1063,11 +1063,11 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c12">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c12">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -1077,7 +1077,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c13">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c13">
@@ -1085,11 +1085,11 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c13">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c13">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -1099,7 +1099,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c14">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c14">
@@ -1107,11 +1107,11 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c14">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c14">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
@@ -1121,7 +1121,7 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="c15">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetX)" Storyboard.TargetName="c15">
@@ -1129,11 +1129,11 @@
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="c15">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                     <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="c15">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
                         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
                     </DoubleAnimationUsingKeyFrames>
                 </Storyboard>
