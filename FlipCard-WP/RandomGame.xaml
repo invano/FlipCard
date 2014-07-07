@@ -215,7 +215,7 @@
                 	<Run Text="-"/>
                 </TextBlock>
                 <TextBlock Grid.Column="2" x:Name="ActualScoreCPU" Foreground="#6f99ff"  Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-
+                <TextBlock Grid.Column="3" x:Name="ActualRow" Foreground="#FFE270" TextAlignment="Right" Style="{StaticResource PhoneTextExtraLargeStyle}"></TextBlock>
             </Grid>
         </StackPanel>
 
@@ -1466,7 +1466,7 @@
                     </Grid>
                 </StackPanel>
             </ScrollViewer>
-            <TextBlock x:Name="textBlock1" Opacity="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="COMBO" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" TextOptions.TextHintingMode="Animated" FontFamily="Segoe WP Light">
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="COMBO" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" TextOptions.TextHintingMode="Animated" FontFamily="Segoe WP Black" Opacity="0">
             	<TextBlock.RenderTransform>
             		<CompositeTransform/>
             	</TextBlock.RenderTransform>

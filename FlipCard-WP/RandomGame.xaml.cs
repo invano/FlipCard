@@ -502,8 +502,10 @@ namespace FlipCard_WP
 
             string tmpScoreYou = "You " + counterRed;
             string tmpScoreCpu = "CPU " + counterBlue;
+            string tmpActualRow = "R: " +   appStats["Row"] + "/" +   appStats["Stars"];
             ActualScoreYou.Text = tmpScoreYou;
             ActualScoreCPU.Text = tmpScoreCpu;
+            ActualRow.Text = tmpActualRow;
 
             if (comboCount > 1)
             {
