@@ -44,6 +44,7 @@ namespace FlipCard_WP
         int step = 0;
         Random rgn = new Random();
         bool PBegin = false;
+        int comboCount;
         IsolatedStorageSettings appStats = IsolatedStorageSettings.ApplicationSettings;
 
         int playerOverall = 0;
@@ -113,6 +114,7 @@ namespace FlipCard_WP
             }
 
             AnimateStart.Begin();
+            CampoIn.Begin();
 
             if (PBegin == false)
             {
@@ -283,6 +285,7 @@ namespace FlipCard_WP
             int tmpIndex = 0;
             for (int u = 0; u < 4; u++)
             {
+                comboCount = 0;
                 checkDone[u] = 0;
             }
 
@@ -328,7 +331,7 @@ namespace FlipCard_WP
                     tiltBackIndex[t] = tmpIndex;
                     //tmpPath is a global string to be passed to the tiltBack method
                     tmpPath[t] = string.Copy(targetSource2);
-
+                    comboCount++;
                     tiltCardAtIndex(tmpIndex);
 
                     // img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
@@ -374,7 +377,7 @@ namespace FlipCard_WP
                     tiltBackIndex[t] = tmpIndex;
                     //tmpPath is a global string to be passed to the tiltBack method
                     tmpPath[t] = string.Copy(targetSource2);
-
+                    comboCount++;
                     tiltCardAtIndex(tmpIndex);
 
                     // img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
@@ -419,7 +422,7 @@ namespace FlipCard_WP
                     tiltBackIndex[t] = tmpIndex;
                     //tmpPath is a global string to be passed to the tiltBack method
                     tmpPath[t] = string.Copy(targetSource2);
-
+                    comboCount++;
                     tiltCardAtIndex(tmpIndex);
 
                     // img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
@@ -462,7 +465,7 @@ namespace FlipCard_WP
                     tiltBackIndex[t] = tmpIndex;
                     //tmpPath is a global string to be passed to the tiltBack method
                     tmpPath[t] = string.Copy(targetSource2);
-
+                    comboCount++;
                     tiltCardAtIndex(tmpIndex);
 
                     // img2.Source = new ImageSourceConverter().ConvertFromString(targetSource2) as ImageSource;
@@ -501,6 +504,12 @@ namespace FlipCard_WP
             string tmpScoreCpu = "CPU " + counterBlue;
             ActualScoreYou.Text = tmpScoreYou;
             ActualScoreCPU.Text = tmpScoreCpu;
+
+            if (comboCount > 1)
+            {
+                comboCount = 0;
+                ComboAnima.Begin();
+            }
         }
 
         public void updateHand(int index, Card newCard)

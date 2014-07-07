@@ -234,6 +234,8 @@
     <Content Include="Assets\Misc\TitleFlipCard.png" />
     <Content Include="Assets\Tiles\Tile_Big.png" />
     <Content Include="Assets\Tiles\Tile_Final.png" />
+    <Content Include="FCLarge.png" />
+    <Content Include="FCSmall.png" />
     <Content Include="Images\AppBar\overflowdots.png" />
     <Content Include="Images\AppBar\share.png" />
     <Content Include="Images\Misc\YouStart.png" />
