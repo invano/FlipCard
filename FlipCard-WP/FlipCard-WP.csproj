@@ -239,6 +239,8 @@
     <Content Include="Images\Misc\YouStart.png" />
     <Content Include="Images\Misc\CPUStarts.png" />
     <Content Include="Images\Misc\Star.png" />
+    <Content Include="Logo3.png" />
+    <Content Include="YouStart.png" />
     <Resource Include="Resources\CardsLibrary.xml">
       <SubType>Designer</SubType>
     </Resource>
