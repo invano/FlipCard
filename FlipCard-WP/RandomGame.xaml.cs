@@ -287,7 +287,7 @@ namespace FlipCard_WP
             }
 
             tmpIndex = myGame.abovePositionWRTLocation(index);
-            if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].downValue < newCard.upValue)
+            if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].downValue < newCard.upValue && table[tmpIndex].color != newCard.color)
             {
                 int tmp2 = table[tmpIndex].idNumber;
                 string targetSource2 = "/Assets/ImagesCards/Card" + tmp2;
@@ -338,7 +338,7 @@ namespace FlipCard_WP
             }
 
             tmpIndex = myGame.leftPositionWRTLocation(index);
-            if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].rightValue < newCard.leftValue)
+            if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].rightValue < newCard.leftValue && table[tmpIndex].color != newCard.color)
             {
                 int tmp2 = table[tmpIndex].idNumber;
                 string targetSource2 = "/Assets/ImagesCards/Card" + tmp2;
@@ -383,7 +383,7 @@ namespace FlipCard_WP
             }
 
             tmpIndex = myGame.belowPositionWRTLocation(index);
-            if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].upValue < newCard.downValue)
+            if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].upValue < newCard.downValue && table[tmpIndex].color != newCard.color)
             {
                 int tmp2 = table[tmpIndex].idNumber;
                 string targetSource2 = "/Assets/ImagesCards/Card" + tmp2;
@@ -427,7 +427,7 @@ namespace FlipCard_WP
             }
 
             tmpIndex = myGame.rightPositionWRTLocation(index);
-            if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].leftValue < newCard.rightValue)
+            if (tmpIndex != -1 && table[tmpIndex] != null && table[tmpIndex].leftValue < newCard.rightValue && table[tmpIndex].color != newCard.color)
             {
                 int tmp2 = table[tmpIndex].idNumber;
                 string targetSource2 = "/Assets/ImagesCards/Card" + tmp2;
