@@ -15,6 +15,7 @@ namespace FlipCard_WP
         public Page3()
         {
             InitializeComponent();
+            StartAnimation.Begin();
         }
     }
 }

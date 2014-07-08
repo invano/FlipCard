@@ -21,6 +21,7 @@ namespace FlipCard_WP
         public Page2()
         {
             InitializeComponent();
+            StartAnimation.Begin();
 
             dragTranslation = new TranslateTransform();
             //originalTranslation = new TranslateTransform();

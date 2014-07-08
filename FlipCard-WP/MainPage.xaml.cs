@@ -53,7 +53,7 @@ namespace FlipCard_WP
             PlayPressedAnimation.Begin();
         }
 
-        private void Rules_Tap(object sender, RoutedEventArgs e)
+        private void Rules_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             //At the end of the animation the proper target page is fired up
             RulesPressedAnimation.Begin();

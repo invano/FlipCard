@@ -12,6 +12,42 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
+	<phone:PhoneApplicationPage.Resources>
+		<Storyboard x:Name="StartAnimation">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuinticEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuinticEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="textBlock">
+				<EasingDoubleKeyFrame KeyTime="0" Value="800"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuinticEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="textBlock1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="800"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuinticEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -22,12 +58,19 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="{Binding Path=LocalizedResources.Button_Rules, Source={StaticResource LocalizedStrings}}" FontSize="50" Margin="10,10,10,10"/>
+            <TextBlock x:Name="textBlock" Text="{Binding Path=LocalizedResources.Button_Rules, Source={StaticResource LocalizedStrings}}" FontSize="50" Margin="10,10,10,10" RenderTransformOrigin="0.5,0.5">
+            	<TextBlock.RenderTransform>
+            		<CompositeTransform/>
+            	</TextBlock.RenderTransform>
+            </TextBlock>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Width="auto" Margin="30,0,30,0">
-            <TextBlock TextWrapping="Wrap" FontSize="25" Text="{Binding Path=LocalizedResources.Rules, Source={StaticResource LocalizedStrings}}"></TextBlock>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" FontSize="25" Text="{Binding Path=LocalizedResources.Rules, Source={StaticResource LocalizedStrings}}" RenderTransformOrigin="0.5,0.5">
+            	<TextBlock.RenderTransform>
+            		<CompositeTransform/>
+            	</TextBlock.RenderTransform></TextBlock>
         </Grid>
     </Grid>
 

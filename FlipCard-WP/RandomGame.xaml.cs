@@ -177,6 +177,7 @@ namespace FlipCard_WP
 
         private void board_Tap(object sender, GestureEventArgs e)
         {
+            TestBar.Begin();
             int index=0;
             Image img = (Image)sender;
 
@@ -502,7 +503,7 @@ namespace FlipCard_WP
 
             string tmpScoreYou = "You " + counterRed;
             string tmpScoreCpu = "CPU " + counterBlue;
-            string tmpActualRow = "R: " +   appStats["Row"] + "/" +   appStats["Stars"];
+            string tmpActualRow = "R: " +   appStats["Row"] + "/" + ((int)appStats["Stars"]+1);
             ActualScoreYou.Text = tmpScoreYou;
             ActualScoreCPU.Text = tmpScoreCpu;
             ActualRow.Text = tmpActualRow;
@@ -541,10 +542,10 @@ namespace FlipCard_WP
         private void sharestatus_Click(object sender, EventArgs e)
         {
             ShareStatusTask shareStatusTask = new ShareStatusTask();
-            String cpuwin = " CPU is beating me :(";
-            String playerwin = " I'm winning! :D";
-            String tie = " We're even! :)";
-            String res = playerOverall.ToString() + " " + cpuOverall.ToString();
+            String cpuwin = " ..CPU is beating me :(";
+            String playerwin = " ..I'm winning! :D";
+            String tie = " ..We're even! :)";
+            String res = playerOverall.ToString() + "-" + cpuOverall.ToString();
             if (cpuOverall == playerOverall)
                 shareStatusTask.Status = "First twitter message from #FlipCard! " + res + tie;
             else
@@ -616,6 +617,8 @@ namespace FlipCard_WP
                         counterBlue++;
                 }
 
+                playerOverall = counterRed;
+                cpuOverall = counterBlue;
                 String res = null;
                 if (counterRed < counterBlue)
                 {
@@ -859,7 +862,7 @@ namespace FlipCard_WP
             }
             else
             {
-                string fin = "You got 5 stars! This is your final score: " + countScore(); 
+                string fin = "You got 4 stars! This is your final score: " + countScore(); 
                 EndMatchStatsBox.Text = fin;
             }
             RetryPanel.Visibility = Visibility.Visible;
@@ -869,8 +872,8 @@ namespace FlipCard_WP
         {
             decimal score;
 
-            decimal tmp = (1 / (int)appStats["Wins"] + 1 / (int)appStats["Losses"] +
-                                1 / (int)appStats["Ties"] + (int)appStats["Losses"] / (int)appStats["Wins"]);
+            decimal tmp = (1 / ((int)appStats["Wins"]+1) + 1 / (int)appStats["Losses"] +
+                                1 / ((int)appStats["Ties"]+1) + (int)appStats["Losses"] / ((int)appStats["Wins"]+1));
             decimal tmp2 = Math.Round(tmp);
             score = Math.Round(1/tmp)*10000;
 
@@ -886,6 +889,11 @@ namespace FlipCard_WP
         private void CancelButton_RetryPanel_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void TestBar_Completed(object sender, EventArgs e)
+        {
+
         }
 
     }

@@ -12,9 +12,53 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
+	<phone:PhoneApplicationPage.Resources>
+		<Storyboard x:Name="StartAnimation">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="ContentPanel">
+				<EasingDoubleKeyFrame KeyTime="0" Value="500"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuarticEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ContentPanel">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuarticEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuarticEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="textBlock">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="360">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuarticEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.CenterOfRotationY)" Storyboard.TargetName="textBlock">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuarticEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="White">
+    <Grid x:Name="LayoutRoot" Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -22,20 +66,27 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="{Binding Path=LocalizedResources.Stats_Title, Source={StaticResource LocalizedStrings}}" Foreground="Black" FontSize="50" Margin="10,10,10,10"/>
+            <TextBlock x:Name="textBlock" Foreground="White" TextAlignment="Center" Text="{Binding Path=LocalizedResources.Stats_Title, Source={StaticResource LocalizedStrings}}" FontSize="50" Margin="10,10,10,10">
+            	<TextBlock.Projection>
+            		<PlaneProjection/>
+            	</TextBlock.Projection>
+            </TextBlock>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Width="auto" Margin="30,0,30,0">
+        <Grid x:Name="ContentPanel" Grid.Row="1" Width="auto" Margin="30,0,30,0" RenderTransformOrigin="0.5,0.5">
+        	<Grid.RenderTransform>
+        		<CompositeTransform/>
+        	</Grid.RenderTransform>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <TextBlock x:Name="stats_block_W" Grid.Row="0" TextWrapping="Wrap" FontSize="25" Foreground="Black"></TextBlock>
-            <TextBlock x:Name="stats_block_L" Grid.Row="1" TextWrapping="Wrap" FontSize="25" Foreground="Black"></TextBlock>
-            <TextBlock x:Name="stats_block_T" Grid.Row="2" TextWrapping="Wrap" FontSize="25" Foreground="Black"></TextBlock>
+            <TextBlock x:Name="stats_block_W" Foreground="White" Grid.Row="0" TextWrapping="Wrap" FontSize="25"></TextBlock>
+            <TextBlock x:Name="stats_block_L" Foreground="White" Grid.Row="1" TextWrapping="Wrap" FontSize="25"></TextBlock>
+            <TextBlock x:Name="stats_block_T" Foreground="White" Grid.Row="2" TextWrapping="Wrap" FontSize="25"></TextBlock>
             <Grid Grid.Row="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="70"></RowDefinition>

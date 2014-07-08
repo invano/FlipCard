@@ -18,7 +18,7 @@ namespace FlipCard_WP
         public Statistics_Page()
         {
             InitializeComponent();
-
+            StartAnimation.Begin();
 
             stats_block_W.Text = "Victories = " + appStats["Wins"] + "\n";
             stats_block_L.Text = "Losses = " + appStats["Losses"] + "\n";
