@@ -105,9 +105,17 @@ namespace FlipCard_WP
             PlayPressedAnimation.Stop();
             StatsPressedAnimation.Seek(new TimeSpan(0));
             StatsPressedAnimation.Stop();
-            //int myBest = (int)appStats["Best"];
-            //this.progressBar.Value = ((myBest / 13090) * 100);
-           // ProgressBarIn.Begin(); ProgressBarOut.Stop();
+            
+         
+            FadeInMenu.Begin();
+            //update bottom bar value
+            float myBest = (int)appStats["Best"];
+            myBest = ((myBest / 13090) * 100);
+            this.progressBar.Value = (int)myBest;
+
+            //make bottom bar appear
+            ProgressBarIn.Begin(); 
+            ProgressBarOut.Stop();
 
  	        base.OnNavigatedTo(e);
             while (NavigationService.RemoveBackEntry() != null) ;    
@@ -136,6 +144,11 @@ namespace FlipCard_WP
         private void StatsPressedAnimation_Completed(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/Statistics.xaml", UriKind.Relative));
+        }
+
+        private void setMyBest(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            appStats["Best"] = 3333;
         }
     }
 }

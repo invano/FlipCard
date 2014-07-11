@@ -37,6 +37,20 @@
 				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
 			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
+		<Storyboard x:Name="FadeInMenu">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TitlePanel">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CircleEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ContentPanel">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
 	</phone:PhoneApplicationPage.Resources>
 
 
@@ -621,7 +635,7 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Row="0" Grid.Column="0" Content="{Binding Path=LocalizedResources.Button_Play, Source={StaticResource LocalizedStrings}}" x:Name="btn_play" Click="Play_Tap" Background="#FF9b0b" Width="290" Height="100" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" >
+            <Button Grid.Row="0" Grid.Column="0" Content="{Binding Path=LocalizedResources.Button_Play, Source={StaticResource LocalizedStrings}}" x:Name="btn_play" Click="Play_Tap" Background="#FF9b0b" Width="290" Height="100" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Hold="setMyBest" >
                 <Button.RenderTransform>
                     <CompositeTransform/>
                 </Button.RenderTransform>
