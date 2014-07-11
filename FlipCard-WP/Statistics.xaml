@@ -83,6 +83,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <TextBlock x:Name="stats_block_W" Foreground="White" Grid.Row="0" TextWrapping="Wrap" FontSize="25"></TextBlock>
             <TextBlock x:Name="stats_block_L" Foreground="White" Grid.Row="1" TextWrapping="Wrap" FontSize="25"></TextBlock>
@@ -103,8 +104,10 @@
                 <Image x:Name="star3" Grid.Row="0" Grid.Column="2" Source="/Images/Misc/Star.png"/>
                 <Image x:Name="star4" Grid.Row="0" Grid.Column="3" Source="/Images/Misc/Star.png"/>
                 <Image x:Name="star5" Grid.Row="0" Grid.Column="4" Source="/Images/Misc/Star.png"/>
+           
+           </Grid>
+            <TextBlock x:Name="stats_block_B" Foreground="White" Grid.Row="4" TextWrapping="Wrap" FontSize="25" Margin="0,34,0,-34"></TextBlock>
 
-            </Grid>
         </Grid>
     </Grid>
 

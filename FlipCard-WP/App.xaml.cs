@@ -86,6 +86,10 @@ namespace FlipCard_WP
             {
                 appStats.Add("Stars", 0);
             }
+            if (!appStats.Contains("Best"))
+            {
+                appStats.Add("Best", 0);
+            }
         }
 
         // Code to execute when the application is activated (brought to foreground)

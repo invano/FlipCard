@@ -27,6 +27,9 @@ namespace FlipCard_WP
             //BuildLocalizedApplicationBar();
             Storyboard_ButtonsDown.Begin();
             Menu_In.Begin();
+          //  int myBest = (int)appStats["Best"];
+           // this.progressBar.Value = ((myBest / 13090) * 100);
+           // ProgressBarIn.Begin();
         }
 
 
@@ -51,17 +54,20 @@ namespace FlipCard_WP
         {
             //At the end of the animation the proper target page is fired up
             PlayPressedAnimation.Begin();
+            ProgressBarOut.Begin();
         }
 
         private void Rules_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             //At the end of the animation the proper target page is fired up
             RulesPressedAnimation.Begin();
+            ProgressBarOut.Begin();
         }
 
         private void btn_stats_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             StatsPressedAnimation.Begin();
+            ProgressBarOut.Begin();
 
         }
 
@@ -70,7 +76,14 @@ namespace FlipCard_WP
            
 
             MessageBox.Show("You are holding me down :(");
-
+            
+            //Cancel this before deployement
+            appStats["Stars"] = 0;
+            appStats["Row"] = 0;
+            appStats["Wins"] = 0;
+            appStats["Losses"] = 0;
+            appStats["Ties"] = 0;
+            appStats["Best"] = 0;
            
         }
 
@@ -78,10 +91,12 @@ namespace FlipCard_WP
         {
             //At the end of the animation the proper target page is fired up
             AboutUsPressedAnimation.Begin();
+            ProgressBarOut.Begin();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+           
             AboutUsPressedAnimation.Seek(new TimeSpan(0));
             AboutUsPressedAnimation.Stop();
             RulesPressedAnimation.Seek(new TimeSpan(0));
@@ -90,6 +105,10 @@ namespace FlipCard_WP
             PlayPressedAnimation.Stop();
             StatsPressedAnimation.Seek(new TimeSpan(0));
             StatsPressedAnimation.Stop();
+            //int myBest = (int)appStats["Best"];
+            //this.progressBar.Value = ((myBest / 13090) * 100);
+           // ProgressBarIn.Begin(); ProgressBarOut.Stop();
+
  	        base.OnNavigatedTo(e);
             while (NavigationService.RemoveBackEntry() != null) ;    
         }

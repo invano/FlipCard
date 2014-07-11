@@ -54,9 +54,8 @@ namespace FlipCard_WP
         public RandomGame()
         {
             InitializeComponent();
-
-           
-
+            spimage2.ImageSource = new ImageSourceConverter().ConvertFromString("/Images/Misc/newstar.png") as ImageSource;
+ 
             cards[0].img = Card0;
             cards[0].name = "Card0";
             cards[1].img = Card1;
@@ -141,7 +140,6 @@ namespace FlipCard_WP
             TranslateTransform translation;
             translation = new TranslateTransform();
 
-
             for (int i = 0; i < cards.Length; i++)
             {
                 if (img.Name.Equals(cards[i].name))
@@ -177,6 +175,7 @@ namespace FlipCard_WP
 
         private void board_Tap(object sender, GestureEventArgs e)
         {
+            selectableCards(false);
             TestBar.Begin();
             int index=0;
             Image img = (Image)sender;
@@ -547,9 +546,9 @@ namespace FlipCard_WP
             String tie = " ..We're even! :)";
             String res = playerOverall.ToString() + "-" + cpuOverall.ToString();
             if (cpuOverall == playerOverall)
-                shareStatusTask.Status = "First twitter message from #FlipCard! " + res + tie;
+                shareStatusTask.Status = "Tweeting from @FlipCardApp! " + res + tie;
             else
-                shareStatusTask.Status = "First twitter message from #FlipCard! " + res + (cpuOverall > playerOverall ? cpuwin : playerwin);
+                shareStatusTask.Status = "Tweeting from @FlipCardApp! " + res + (cpuOverall > playerOverall ? cpuwin : playerwin);
             this.shared = true;
             shareStatusTask.Show();
         }
@@ -561,7 +560,12 @@ namespace FlipCard_WP
             
             if (Result == MessageBoxResult.Cancel)
                         e.Cancel = true;
-            
+            if (Result == MessageBoxResult.OK)
+            {
+                //Handle a gamer that quits
+                appStats["Row"] = 0;
+                appStats["Losses"] = (int)appStats["Losses"] + 1;
+            }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -671,6 +675,9 @@ namespace FlipCard_WP
                 updateScore();
                 CheckStars();
                 //MessageBox.Show("Wins: " + appStats["Wins"] + " Ties: " + appStats["Ties"] + " Losses: " + appStats["Losses"]);
+                this.WhoWonBlock.Text = res;
+                //EndOfMatch.Begin();
+              
                 ExpandTopBar(res, Const.RETRY);
           return;
             }
@@ -684,7 +691,8 @@ namespace FlipCard_WP
                         {
                             appStats["Stars"] = 1;
                             appStats["Row"] = 0;
-                            MessageBox.Show("Una stella");
+                            NewStarAnimation.Begin();
+                            //MessageBox.Show("Una stella");
                         }
                         break;
                     case 1:
@@ -692,7 +700,8 @@ namespace FlipCard_WP
                         {
                             appStats["Stars"] = 2;
                             appStats["Row"] = 0;
-                            MessageBox.Show("Due stelle");
+                            NewStarAnimation.Begin();
+                            //MessageBox.Show("Due stelle");
                         }
                         break;
                     case 2:
@@ -700,7 +709,8 @@ namespace FlipCard_WP
                         {
                             appStats["Stars"] = 3;
                             appStats["Row"] = 0;
-                            MessageBox.Show("Tre stelle");
+                            NewStarAnimation.Begin();
+                            //MessageBox.Show("Tre stelle");
                         }
                         break;
                     case 3:
@@ -708,7 +718,9 @@ namespace FlipCard_WP
                         {
                             appStats["Stars"] = 4;
                             appStats["Row"] = 0;
-                            MessageBox.Show("Quattro stelle");
+
+                            NewStarAnimation.Begin();
+                            //MessageBox.Show("Quattro stelle");
                         }
                         break;
                     case 4:
@@ -716,7 +728,8 @@ namespace FlipCard_WP
                         {
                             appStats["Stars"] = 5;
                             appStats["Row"] = 0;
-                            MessageBox.Show("Cinque stelle");
+                            NewStarAnimation.Begin();
+                            //MessageBox.Show("Cinque stelle");
                         }
                         //call score...
                         break;
@@ -784,6 +797,7 @@ namespace FlipCard_WP
 
         private void TiltBack_Completed(object sender, EventArgs e)
         {
+            
             int i;
 
             for(i=0;i<4;i++){
@@ -854,28 +868,42 @@ namespace FlipCard_WP
         {
             Title_RetryPanel.Text = title;
             Description_RetryPanel.Text = description;
-            if ((int)appStats["Stars"] < 5)
+            if ((int)appStats["Stars"] < 4)
             {
                 string tmp = "You have collected " + appStats["Stars"] + " star(s) so far... Win " + ((int)appStats["Stars"] + 1 - (int)appStats["Row"]) + " matches in a row to get a new star!";
-     
                 EndMatchStatsBox.Text = tmp;
             }
             else
             {
-                string fin = "You got 4 stars! This is your final score: " + countScore(); 
+                double myscore = countScore();
+                string fin = "You got 4 stars! This is your final score: " + myscore; 
                 EndMatchStatsBox.Text = fin;
+                appStats["Stars"] = 0;
+                appStats["Row"] = 0;
+                appStats["Wins"] = 0;
+                appStats["Losses"] = 0;
+                appStats["Ties"] = 0;
+                int tmpscore = (int)appStats["Best"];
+                if (tmpscore < myscore)
+                {
+                    appStats["Best"] = myscore;
+                }
+
             }
             RetryPanel.Visibility = Visibility.Visible;
+            ExpandRetry.Begin();
         }
 
-        decimal countScore()
+        double countScore()
         {
-            decimal score;
-
-            decimal tmp = (1 / ((int)appStats["Wins"]+1) + 1 / (int)appStats["Losses"] +
-                                1 / ((int)appStats["Ties"]+1) + (int)appStats["Losses"] / ((int)appStats["Wins"]+1));
-            decimal tmp2 = Math.Round(tmp);
-            score = Math.Round(1/tmp)*10000;
+            double score;
+            float wins = (int)appStats["Wins"]+1;
+            float lose = (int)appStats["Losses"]+1;
+            float ties = (int)appStats["Ties"]+1;
+            float myscore;
+            myscore = ((1 / wins) + (1 / lose) + (1 / (ties)) + (wins / lose));
+            score = myscore * 1000;
+            score = Math.Round(score);
 
             return score;
         }
@@ -891,10 +919,53 @@ namespace FlipCard_WP
             NavigationService.GoBack();
         }
 
-        private void TestBar_Completed(object sender, EventArgs e)
+        private void selectableCards(bool nosel)
         {
-
+            if (!nosel)
+            {
+                this.c0.IsHitTestVisible = false;
+                this.c1.IsHitTestVisible = false;
+                this.c2.IsHitTestVisible = false;
+                this.c3.IsHitTestVisible = false;
+                this.c4.IsHitTestVisible = false;
+                this.c5.IsHitTestVisible = false;
+                this.c6.IsHitTestVisible = false;
+                this.c7.IsHitTestVisible = false;
+                this.c8.IsHitTestVisible = false;
+                this.c9.IsHitTestVisible = false;
+                this.c10.IsHitTestVisible = false;
+                this.c11.IsHitTestVisible = false;
+                this.c12.IsHitTestVisible = false;
+                this.c13.IsHitTestVisible = false;
+                this.c14.IsHitTestVisible = false;
+                this.c15.IsHitTestVisible = false;
+            }
+            else
+            {
+                this.c0.IsHitTestVisible = true;
+                this.c1.IsHitTestVisible = true;
+                this.c2.IsHitTestVisible = true;
+                this.c3.IsHitTestVisible = true;
+                this.c4.IsHitTestVisible = true;
+                this.c5.IsHitTestVisible = true;
+                this.c6.IsHitTestVisible = true;
+                this.c7.IsHitTestVisible = true;
+                this.c8.IsHitTestVisible = true;
+                this.c9.IsHitTestVisible = true;
+                this.c10.IsHitTestVisible = true;
+                this.c11.IsHitTestVisible = true;
+                this.c12.IsHitTestVisible = true;
+                this.c13.IsHitTestVisible = true;
+                this.c14.IsHitTestVisible = true;
+                this.c15.IsHitTestVisible = true;
+            }
+            return;
         }
 
+        private void TestBar_Completed(object sender, EventArgs e)
+        {
+            //use the bottom white bar as "timer" to make cards on table not selectable just after a move, avoiding crash
+            selectableCards(true);
+        }
     }
 }

@@ -23,6 +23,7 @@ namespace FlipCard_WP
             stats_block_W.Text = "Victories = " + appStats["Wins"] + "\n";
             stats_block_L.Text = "Losses = " + appStats["Losses"] + "\n";
             stats_block_T.Text = "Ties = " + appStats["Ties"] + "\n";
+            stats_block_B.Text = "MyBest = " + appStats["Best"] + "\n";
 
             int starstmp = (int)appStats["Stars"];
             clearStars();
