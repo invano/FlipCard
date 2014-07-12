@@ -176,6 +176,7 @@ namespace FlipCard_WP
         private void board_Tap(object sender, GestureEventArgs e)
         {
             selectableCards(false);
+            this.rectangle.Fill = new SolidColorBrush(Color.FromArgb(255, 255, 145, 143)); ;
             TestBar.Begin();
             int index=0;
             Image img = (Image)sender;
@@ -591,19 +592,19 @@ namespace FlipCard_WP
 
         private void CardOnTable_Completed(object sender, EventArgs e)
         {
-            if (playerPlayed && step < 16)
-            {
+            //if (playerPlayed && step < 16)
+            //{
 
-                PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
-                Card carri = new Card();
-                carri.clone(cpu.hand[pc.getCard()]);
-                playerPlayed = false;
-                updateTiles(pc.getPosition(), carri);
-                table[pc.getPosition()] = carri;
-                cpu.hand[pc.getCard()] = null;
-                step++;
-                checkVictory();
-            }
+            //    PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
+            //    Card carri = new Card();
+            //    carri.clone(cpu.hand[pc.getCard()]);
+            //    playerPlayed = false;
+            //    updateTiles(pc.getPosition(), carri);
+            //    table[pc.getPosition()] = carri;
+            //    cpu.hand[pc.getCard()] = null;
+            //    step++;
+            //    checkVictory();
+            //}
 
         }
         private void checkVictory()
@@ -966,6 +967,21 @@ namespace FlipCard_WP
         {
             //use the bottom white bar as "timer" to make cards on table not selectable just after a move, avoiding crash
             selectableCards(true);
+            if (playerPlayed && step < 16)
+            {
+                selectableCards(false);
+                this.rectangle.Fill = new SolidColorBrush(Color.FromArgb(255, 143, 197, 255));
+                TestBar.Begin();
+                PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
+                Card carri = new Card();
+                carri.clone(cpu.hand[pc.getCard()]);
+                playerPlayed = false;
+                updateTiles(pc.getPosition(), carri);
+                table[pc.getPosition()] = carri;
+                cpu.hand[pc.getCard()] = null;
+                step++;
+                checkVictory();
+            }
         }
     }
 }
