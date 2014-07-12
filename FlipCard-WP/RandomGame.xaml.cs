@@ -564,7 +564,7 @@ namespace FlipCard_WP
             {
                 //Handle a gamer that quits
                 appStats["Row"] = 0;
-                appStats["Losses"] = (int)appStats["Losses"] + 1;
+                appStats["Ties"] = (int)appStats["Ties"] + 1;
             }
         }
 
