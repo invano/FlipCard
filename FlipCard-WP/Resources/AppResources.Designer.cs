@@ -160,7 +160,8 @@ namespace FlipCard_WP.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to In FlipCard the player with the most cards of his color on the table wins. When two cards are played one next to the other, the numbers on the touching sides are compared and the higher one wins, making the other card switch color. Cards are randomly drawn and distributed between the player and the CPU. At the beginning of each turn a player is randomly selected to play first..
+        ///   Looks up a localized string similar to In FlipCard the player with most cards of his color on the table wins. When two cards are played one next to the other, the numbers on the touching sides are compared and the higher one wins. When a player wins a card, it becomes of its color. Cards are randomly drawn and distributed between the player (red cards) and the CPU (blue cards). At the beginning of each turn a player is randomly selected to play first.
+        ///To get the final score you have to achieve 4 stars. To get the first star win one match, to ge [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Rules {
             get {

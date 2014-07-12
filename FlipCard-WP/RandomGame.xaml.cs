@@ -511,6 +511,7 @@ namespace FlipCard_WP
             if (comboCount > 1)
             {
                 comboCount = 0;
+                selectableCards(false);
                 ComboAnima.Begin();
             }
         }
@@ -876,7 +877,7 @@ namespace FlipCard_WP
             }
             else
             {
-                double myscore = countScore();
+                int myscore = (int)countScore();
                 string fin = "You got 4 stars! This is your final score: " + myscore; 
                 EndMatchStatsBox.Text = fin;
                 appStats["Stars"] = 0;
@@ -981,7 +982,30 @@ namespace FlipCard_WP
                 cpu.hand[pc.getCard()] = null;
                 step++;
                 checkVictory();
+
+
+                int counterRed = 0;
+                int counterBlue = 0;
+                for (int h = 0; h < 16; h++)
+                {
+                    if (table[h] != null && table[h].color == Const.RED)
+                        counterRed++;
+                    if (table[h] != null && table[h].color == Const.BLUE)
+                        counterBlue++;
+                }
+
+                string tmpScoreYou = "You " + counterRed;
+                string tmpScoreCpu = "CPU " + counterBlue;
+                string tmpActualRow = "R: " + appStats["Row"] + "/" + ((int)appStats["Stars"] + 1);
+                ActualScoreYou.Text = tmpScoreYou;
+                ActualScoreCPU.Text = tmpScoreCpu;
+                ActualRow.Text = tmpActualRow;
             }
+        }
+
+        private void ComboAnima_Completed(object sender, EventArgs e)
+        {
+            selectableCards(true);
         }
     }
 }

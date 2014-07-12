@@ -144,7 +144,8 @@
     <value>Rules</value>
   </data>
   <data name="Rules" xml:space="preserve">
-    <value>In FlipCard the player with the most cards of his color on the table wins. When two cards are played one next to the other, the numbers on the touching sides are compared and the higher one wins, making the other card switch color. Cards are randomly drawn and distributed between the player and the CPU. At the beginning of each turn a player is randomly selected to play first.</value>
+    <value>In FlipCard the player with most cards of his color on the table wins. When two cards are played one next to the other, the numbers on the touching sides are compared and the higher one wins. When a player wins a card, it becomes of its color. Cards are randomly drawn and distributed between the player (red cards) and the CPU (blue cards). At the beginning of each turn a player is randomly selected to play first.
+To get the final score you have to achieve 4 stars. To get the first star win one match, to get the second one win two matches in a row, and so on. If you lose one match, you don't lose your previously obtained stars. A tie doesn't count as a loss, but the final score will be decreased. The bar at the bottom of the screen in the main page of the game indicates how good is your best score with respect to the highest possible (that can be obtained by winning 10 games in a row). Notice: when a final score is obtained by achieving the fourth star, all previous statistics about Wins, Losses and Ties are zeroed, so that you are all set to try to get again 4 stars and beat your best!</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>

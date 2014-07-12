@@ -46,6 +46,22 @@
 					</EasingDoubleKeyFrame.EasingFunction>
 				</EasingDoubleKeyFrame>
 			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="scrollViewer">
+				<EasingDoubleKeyFrame KeyTime="0" Value="800"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CircleEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="scrollViewer">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CircleEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
 	</phone:PhoneApplicationPage.Resources>
 
@@ -66,11 +82,17 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
+       
         <Grid x:Name="ContentPanel" Grid.Row="1" Width="auto" Margin="30,0,30,0">
-            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" FontSize="25" Text="{Binding Path=LocalizedResources.Rules, Source={StaticResource LocalizedStrings}}" RenderTransformOrigin="0.5,0.5">
-            	<TextBlock.RenderTransform>
+            <ScrollViewer x:Name="scrollViewer" Height="Auto" RenderTransformOrigin="0.5,0.5">
+            	<ScrollViewer.RenderTransform>
             		<CompositeTransform/>
-            	</TextBlock.RenderTransform></TextBlock>
+            	</ScrollViewer.RenderTransform>
+                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" FontSize="25" Text="{Binding Path=LocalizedResources.Rules, Source={StaticResource LocalizedStrings}}" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <CompositeTransform/>
+                    </TextBlock.RenderTransform></TextBlock>
+            </ScrollViewer>
         </Grid>
     </Grid>
 

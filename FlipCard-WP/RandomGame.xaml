@@ -155,7 +155,7 @@
         		</EasingDoubleKeyFrame>
         	</DoubleAnimationUsingKeyFrames>
         </Storyboard>
-        <Storyboard x:Name="ComboAnima">
+        <Storyboard x:Name="ComboAnima" Completed="ComboAnima_Completed">
         	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="ComboText">
         		<EasingDoubleKeyFrame KeyTime="0" Value="207"/>
         		<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="207"/>

@@ -666,7 +666,8 @@
 
         </Grid>
         <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="30" Margin="3,483,0,0" Grid.Row="1" VerticalAlignment="Top" Width="473" RenderTransformOrigin="0.5,0.5">
-        	<ProgressBar.RenderTransform>
+            
+            <ProgressBar.RenderTransform>
         		<CompositeTransform/>
         	</ProgressBar.RenderTransform>
         </ProgressBar>

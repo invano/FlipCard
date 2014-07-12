@@ -109,7 +109,7 @@ namespace FlipCard_WP
          
             FadeInMenu.Begin();
             //update bottom bar value
-            float myBest = (int)appStats["Best"];
+            double myBest = (int)appStats["Best"];
             myBest = ((myBest / 13090) * 100);
             this.progressBar.Value = (int)myBest;
 
