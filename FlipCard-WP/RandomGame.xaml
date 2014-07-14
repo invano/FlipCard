@@ -126,7 +126,7 @@
         			</EasingDoubleKeyFrame.EasingFunction>
         		</EasingDoubleKeyFrame>
         	</DoubleAnimationUsingKeyFrames>
-        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TopGameBar">
         		<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
         		<SplineDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
         	</DoubleAnimationUsingKeyFrames>
@@ -467,18 +467,18 @@
 			<StackPanel.RenderTransform>
 				<CompositeTransform/>
 			</StackPanel.RenderTransform>
-			<TextBlock x:Name="textBlock" Text="Random Match - FlipCard" Style="{StaticResource PhoneTextNormalStyle}">
+			<TextBlock x:Name="textBlock" Text="Random Match - FlipCard" Style="{StaticResource PhoneTextNormalStyle}" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo">
 				<TextBlock.Projection>
 					<PlaneProjection/>
 				</TextBlock.Projection>
 			</TextBlock>
             <!-- <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>-->
-			<StackPanel x:Name="RetryPanel" Height="0" Margin="0,0,10,10" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5">
+			<StackPanel x:Name="RetryPanel" Height="0" Margin="0,0,10,10" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
 				<StackPanel.RenderTransform>
 					<CompositeTransform/>
 				</StackPanel.RenderTransform>
-				<TextBlock x:Name="Title_RetryPanel" Text="" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-				<TextBlock x:Name="Description_RetryPanel" Text="" Style="{StaticResource PhoneTextNormalStyle}"/>
+				<TextBlock x:Name="Title_RetryPanel" Text="" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo"/>
+				<TextBlock x:Name="Description_RetryPanel" Text="" Style="{StaticResource PhoneTextNormalStyle}" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo"/>
 				<Grid Height="auto">
 					<Grid.RowDefinitions>
 						<RowDefinition Height="auto"/>
@@ -494,22 +494,22 @@
 					<Button Grid.Column="2" x:Name="sharestatus" Click="sharestatus_Click" BorderThickness="0" RenderTransformOrigin="0.316,0.476">
 						<Image Source="/Images/AppBar/share.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None"/>
 					</Button>
-					<TextBlock Grid.Row="1" Grid.ColumnSpan="3" TextWrapping="Wrap" x:Name="EndMatchStatsBox" Foreground="Yellow"/>
+					<TextBlock Grid.Row="1" Grid.ColumnSpan="3" TextWrapping="Wrap" x:Name="EndMatchStatsBox" Foreground="#FFF1DA46" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo" Margin="0,5,0,0"/>
 				</Grid>
 			</StackPanel>
-			<Grid x:Name="grid" Margin="0,10,0,0" Height="auto">
+			<Grid x:Name="TopGameBar" Margin="0,10,0,0" Height="auto">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="auto"/>
 					<ColumnDefinition Width="auto"/>
 					<ColumnDefinition Width="auto"/>
 					<ColumnDefinition Width="5*"/>
 				</Grid.ColumnDefinitions>
-				<TextBlock Grid.Column="0" x:Name="ActualScoreYou" Foreground="#ff8d6e"  Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-				<TextBlock Grid.Column="1" Style="{StaticResource PhoneTextExtraLargeStyle}">
+				<TextBlock Grid.Column="0" x:Name="ActualScoreYou" Foreground="#ff8d6e"  Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo"/>
+				<TextBlock x:Name="SepYouCPu" Grid.Column="1" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo">
 					<Run Text="-"/>
 				</TextBlock>
-				<TextBlock Grid.Column="2" x:Name="ActualScoreCPU" Foreground="#6f99ff"  Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-				<TextBlock Grid.Column="3" x:Name="ActualRow" Foreground="#FFE270" TextAlignment="Right" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+				<TextBlock Grid.Column="2" x:Name="ActualScoreCPU" Foreground="#6f99ff"  Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo"/>
+				<TextBlock Grid.Column="3" x:Name="ActualRow" Foreground="#FFE270" TextAlignment="Right" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo"/>
 			</Grid>
 		</StackPanel>
 
@@ -1585,7 +1585,7 @@
 				<RowDefinition Height="4*"/>
 				<RowDefinition Height="4*"/>
 			</Grid.RowDefinitions>
-			<Image x:Name="c0" x:Uid="0" Grid.Row="0" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c0" x:Uid="0" Grid.Row="0" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1593,7 +1593,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c1" x:Uid="1" Grid.Row="0" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c1" x:Uid="1" Grid.Row="0" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1601,7 +1601,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c2" x:Uid="2" Grid.Row="0" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c2" x:Uid="2" Grid.Row="0" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1609,7 +1609,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c3" x:Uid="3" Grid.Row="0" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c3" x:Uid="3" Grid.Row="0" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1617,7 +1617,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c4" x:Uid="4" Grid.Row="1" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c4" x:Uid="4" Grid.Row="1" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1625,7 +1625,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c5" x:Uid="5" Grid.Row="1" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c5" x:Uid="5" Grid.Row="1" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1633,7 +1633,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c6" x:Uid="6" Grid.Row="1" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c6" x:Uid="6" Grid.Row="1" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1641,7 +1641,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c7" x:Uid="7" Grid.Row="1" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c7" x:Uid="7" Grid.Row="1" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1649,7 +1649,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c8" x:Uid="8" Grid.Row="2" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c8" x:Uid="8" Grid.Row="2" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1657,7 +1657,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c9" x:Uid="9" Grid.Row="2" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c9" x:Uid="9" Grid.Row="2" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1665,7 +1665,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c10" x:Uid="10" Grid.Row="2" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c10" x:Uid="10" Grid.Row="2" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1673,7 +1673,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c11" x:Uid="11" Grid.Row="2" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c11" x:Uid="11" Grid.Row="2" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1681,7 +1681,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c12" x:Uid="12" Grid.Row="3" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c12" x:Uid="12" Grid.Row="3" Grid.Column="0" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1689,7 +1689,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c13" x:Uid="13" Grid.Row="3" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c13" x:Uid="13" Grid.Row="3" Grid.Column="1" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1697,7 +1697,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c14" x:Uid="14" Grid.Row="3" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c14" x:Uid="14" Grid.Row="3" Grid.Column="2" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1705,7 +1705,7 @@
 					<PlaneProjection/>
 				</Image.Projection>
 			</Image>
-			<Image x:Name="c15" x:Uid="15" Grid.Row="3" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5">
+			<Image x:Name="c15" x:Uid="15" Grid.Row="3" Grid.Column="3" Source="/Assets/ImagesCards/Empty.png" Margin="10" Tap="board_Tap" RenderTransformOrigin="0.5,0.5" Opacity="0.4">
 				<Image.RenderTransform>
 					<CompositeTransform/>
 				</Image.RenderTransform>
@@ -1715,14 +1715,23 @@
 			</Image>
 		</Grid>
 
-		<Grid x:Name="Cards" Grid.Row="2" Canvas.ZIndex="40" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" Margin="0,10" Grid.RowSpan="3">
+		<Grid x:Name="Cards" Grid.Row="2" Canvas.ZIndex="40" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" Margin="0,10" Grid.RowSpan="3" Opacity="0.78">
+			<Grid.Background>
+				<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+					<GradientStop Color="#FF474747" Offset="0.121"/>
+					<GradientStop Color="#FF252525" Offset="0.828"/>
+				</LinearGradientBrush>
+			</Grid.Background>
 			<Grid.RenderTransform>
 				<CompositeTransform/>
 			</Grid.RenderTransform>
-			<Grid.Background>
-				<ImageBrush Stretch="Fill" ImageSource="/Assets/ImagesCards/bar.png"/>
-			</Grid.Background>
 			<ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Visible" HorizontalContentAlignment="Center" VerticalScrollBarVisibility="disabled" RenderTransformOrigin="0.5,0.5">
+				<ScrollViewer.Foreground>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="Black" Offset="0"/>
+						<GradientStop Color="White" Offset="1"/>
+					</LinearGradientBrush>
+				</ScrollViewer.Foreground>
 				<ScrollViewer.RenderTransform>
 					<CompositeTransform/>
 				</ScrollViewer.RenderTransform>
