@@ -1006,6 +1006,8 @@ namespace FlipCard_WP
         private void ComboAnima_Completed(object sender, EventArgs e)
         {
             selectableCards(true);
+            ComboAnima.Seek(new TimeSpan(0));
+            ComboAnima.Stop();
         }
     }
 }
