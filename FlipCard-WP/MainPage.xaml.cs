@@ -26,7 +26,8 @@ namespace FlipCard_WP
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
             Storyboard_ButtonsDown.Begin();
-            Menu_In.Begin();
+            //Menu_In.Begin();
+            OpenApp.Begin();
           //  int myBest = (int)appStats["Best"];
            // this.progressBar.Value = ((myBest / 13090) * 100);
            // ProgressBarIn.Begin();
@@ -54,6 +55,7 @@ namespace FlipCard_WP
         {
             //At the end of the animation the proper target page is fired up
             PlayPressedAnimation.Begin();
+            TitleOut.Begin();
             ProgressBarOut.Begin();
         }
 
@@ -61,12 +63,14 @@ namespace FlipCard_WP
         {
             //At the end of the animation the proper target page is fired up
             RulesPressedAnimation.Begin();
+            TitleOut.Begin();
             ProgressBarOut.Begin();
         }
 
         private void btn_stats_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             StatsPressedAnimation.Begin();
+            TitleOut.Begin();
             ProgressBarOut.Begin();
 
         }
@@ -91,6 +95,7 @@ namespace FlipCard_WP
         {
             //At the end of the animation the proper target page is fired up
             AboutUsPressedAnimation.Begin();
+            TitleOut.Begin();
             ProgressBarOut.Begin();
         }
 
@@ -105,8 +110,10 @@ namespace FlipCard_WP
             PlayPressedAnimation.Stop();
             StatsPressedAnimation.Seek(new TimeSpan(0));
             StatsPressedAnimation.Stop();
-            
-         
+            TitleOut.Seek(new TimeSpan(0));
+            TitleOut.Stop();
+
+                 
             FadeInMenu.Begin();
             //update bottom bar value
             double myBest = (int)appStats["Best"];

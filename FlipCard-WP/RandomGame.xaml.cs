@@ -176,7 +176,7 @@ namespace FlipCard_WP
         private void board_Tap(object sender, GestureEventArgs e)
         {
             selectableCards(false);
-            this.rectangle.Fill = new SolidColorBrush(Color.FromArgb(255, 255, 145, 143)); ;
+            this.ProgressBar.Fill = new SolidColorBrush(Color.FromArgb(255, 255, 145, 143)); ;
             TestBar.Begin();
             int index=0;
             Image img = (Image)sender;
@@ -677,7 +677,7 @@ namespace FlipCard_WP
                 updateScore();
                 CheckStars();
                 //MessageBox.Show("Wins: " + appStats["Wins"] + " Ties: " + appStats["Ties"] + " Losses: " + appStats["Losses"]);
-                this.WhoWonBlock.Text = res;
+                
                 //EndOfMatch.Begin();
               
                 ExpandTopBar(res, Const.RETRY);
@@ -971,7 +971,7 @@ namespace FlipCard_WP
             if (playerPlayed && step < 16)
             {
                 selectableCards(false);
-                this.rectangle.Fill = new SolidColorBrush(Color.FromArgb(255, 143, 197, 255));
+                this.ProgressBar.Fill = new SolidColorBrush(Color.FromArgb(255, 143, 197, 255));
                 TestBar.Begin();
                 PositionAndCard pc = CPUBrain.generateMoveWithModel(myGame, cpu);
                 Card carri = new Card();
