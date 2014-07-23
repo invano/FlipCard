@@ -1635,7 +1635,7 @@
 				<ImageBrush x:Name="spimage" Stretch="Fill"/>
 			</Rectangle.Fill>
 		</Rectangle>
-        <Rectangle x:Name="startingPanel2" HorizontalAlignment="Left" Height="199" Margin="-630,143,0,138" VerticalAlignment="Center" Width="625" Canvas.ZIndex="102" RenderTransformOrigin="0.554,0.191" Grid.Row="1">
+        <Rectangle x:Name="startingPanel2" HorizontalAlignment="Left" Height="199" Margin="-630,88,0,193" VerticalAlignment="Center" Width="625" Canvas.ZIndex="102" RenderTransformOrigin="0.554,0.191" Grid.Row="1">
             <Rectangle.RenderTransform>
                 <CompositeTransform/>
             </Rectangle.RenderTransform>
