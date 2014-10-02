@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{679fd7ad-2a53-4b64-b63f-804d31dae25f}" Title="FlipCard" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="FlipCard_WP author" Description="Beat me." Publisher="FlipCard_WP" PublisherID="{5dcc3e02-2eff-4647-aec0-3432f5ea217a}">
+  <App xmlns="" ProductID="{679fd7ad-2a53-4b64-b63f-804d31dae25f}" Title="FlipCard" RuntimeType="Silverlight" Version="1.5" Genre="apps.normal" Author="FlipCard_WP author" Description="Beat me." Publisher="FlipCard_WP" PublisherID="{5dcc3e02-2eff-4647-aec0-3432f5ea217a}">
     <IconPath IsRelative="true" IsResource="false">FCSmall.png</IconPath>
     <Capabilities>
     </Capabilities>

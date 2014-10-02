@@ -665,12 +665,12 @@
         	<StackPanel.RenderTransform>
         		<CompositeTransform/>
         	</StackPanel.RenderTransform>
-            <TextBlock x:Name="AppName" Height="163" TextWrapping="Wrap" Text="FlipCard" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo" TextAlignment="Center" FontSize="106.667">
+            <TextBlock x:Name="AppName" Height="163" TextWrapping="Wrap" Text="FlipCard" FontFamily="Tw Cen MT" TextAlignment="Center" FontSize="106.667">
             	<TextBlock.Projection>
             		<PlaneProjection/>
             	</TextBlock.Projection>
             </TextBlock>
-            <TextBlock x:Name="textBlock" Margin="0,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" HorizontalAlignment="Center" Foreground="#FF66B9C1" FontSize="24" >
+            <TextBlock x:Name="textBlock" Margin="-75,-7,-75,0" Style="{StaticResource PhoneTextTitle1Style}" HorizontalAlignment="Center" Foreground="#FF66B9C1" FontSize="24" >
             	<Run Text="@FlipCardApp"/>
             </TextBlock>
 
@@ -694,7 +694,7 @@
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Row="1" Content="Play" x:Name="btn_play" Click="Play_Tap" RenderTransformOrigin="0.5,-3" Hold="setMyBest" BorderBrush="#FFD6D6D6" BorderThickness="2" FontSize="29.333" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo" Padding="0,0,0,-10" Margin="0,-5" CharacterSpacing="50" Foreground="White" Background="#FFFFB900" Grid.Column="1" >
+            <Button Grid.Row="1" Content="Play" x:Name="btn_play" Click="Play_Tap" RenderTransformOrigin="0.5,-3" Hold="setMyBest" BorderBrush="#FFD6D6D6" BorderThickness="2" FontSize="29.333" FontFamily="Tw Cen MT" Padding="0,0,0,-10" Margin="0,-5" CharacterSpacing="50" Foreground="White" Background="#FFFFB900" Grid.Column="1" >
             	<Button.Projection>
             		<PlaneProjection/>
             	</Button.Projection>
@@ -703,7 +703,7 @@
                 </Button.RenderTransform>
 
             </Button>
-            <Button Grid.Row="4" x:Name="btn_rules" Background="#FF895622" Tap="Rules_Tap" Hold="button_Hold" Content="{Binding Path=LocalizedResources.Button_Rules, Source={StaticResource LocalizedStrings}}" RenderTransformOrigin="0.5,-3" BorderBrush="#FFD6D6D6" BorderThickness="2" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo" FontSize="29.333" Margin="0,-5" CharacterSpacing="50" Foreground="White" Grid.Column="1" Padding="0,0,0,-10">
+            <Button Grid.Row="4" x:Name="btn_rules" Background="#FF895622" Tap="Rules_Tap" Hold="button_Hold" Content="{Binding Path=LocalizedResources.Button_Rules, Source={StaticResource LocalizedStrings}}" RenderTransformOrigin="0.5,-3" BorderBrush="#FFD6D6D6" BorderThickness="2" FontFamily="Tw Cen MT" FontSize="29.333" Margin="0,-5" CharacterSpacing="50" Foreground="White" Grid.Column="1" Padding="0,0,0,-10">
             	<Button.Projection>
             		<PlaneProjection/>
             	</Button.Projection>
@@ -711,7 +711,7 @@
                     <CompositeTransform/>
                 </Button.RenderTransform>
             </Button>
-            <Button Grid.Row="2" x:Name="btn_stats" Background="#FFDE7219" Tap="btn_stats_Tap" Hold="button_Hold" RenderTransformOrigin="0.5,-3" Content="Scores" BorderBrush="#FFD6D6D6" BorderThickness="2" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo" FontSize="29.333" Margin="0,-5" CharacterSpacing="50" Foreground="White" Grid.Column="1" Padding="0,0,0,-10">
+            <Button Grid.Row="2" x:Name="btn_stats" Background="#FFDE7219" Tap="btn_stats_Tap" Hold="button_Hold" RenderTransformOrigin="0.5,-3" Content="Scores" BorderBrush="#FFD6D6D6" BorderThickness="2" FontFamily="Tw Cen MT" FontSize="29.333" Margin="0,-5" CharacterSpacing="50" Foreground="White" Grid.Column="1" Padding="0,0,0,-10">
             	<Button.Projection>
             		<PlaneProjection/>
             	</Button.Projection>
@@ -719,7 +719,7 @@
                     <CompositeTransform/>
                 </Button.RenderTransform>
             </Button>
-            <Button Grid.Row="5" x:Name="btn_about" Background="#5C5240" Tap="aboutUs_Tap" Hold="button_Hold" RenderTransformOrigin="0.5,-3" Content="{Binding Path=LocalizedResources.Button_About, Source={StaticResource LocalizedStrings}}" BorderBrush="#FFD6D6D6" BorderThickness="2" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo" FontSize="29.333" CharacterSpacing="50" Foreground="White" Grid.Column="1" Margin="0,-5" Padding="0,0,0,-10">
+            <Button Grid.Row="5" x:Name="btn_about" Background="#5C5240" Tap="aboutUs_Tap" Hold="button_Hold" RenderTransformOrigin="0.5,-3" Content="{Binding Path=LocalizedResources.Button_About, Source={StaticResource LocalizedStrings}}" BorderBrush="#FFD6D6D6" BorderThickness="2" FontFamily="Tw Cen MT" FontSize="29.333" CharacterSpacing="50" Foreground="White" Grid.Column="1" Margin="0,-5" Padding="0,0,0,-10">
             	<Button.Projection>
             		<PlaneProjection/>
             	</Button.Projection>

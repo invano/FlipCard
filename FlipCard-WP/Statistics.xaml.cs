@@ -24,6 +24,7 @@ namespace FlipCard_WP
             stats_block_L.Text = "Losses = " + appStats["Losses"] + "\n";
             stats_block_T.Text = "Ties = " + appStats["Ties"] + "\n";
             stats_block_B.Text = "MyBest = " + appStats["Best"] + "\n";
+            stats_reset.Text = "Reset Stats";
 
             int starstmp = (int)appStats["Stars"];
             clearStars();
@@ -93,6 +94,16 @@ namespace FlipCard_WP
         void setStar5()
         {
             star5.Visibility = Visibility.Visible;
+        }
+
+        private void resetstats(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            appStats["Stars"] = 0;
+            appStats["Row"] = 0;
+            appStats["Wins"] = 0;
+            appStats["Losses"] = 0;
+            appStats["Ties"] = 0;
+            appStats["Best"] = 0;
         }
     }
 

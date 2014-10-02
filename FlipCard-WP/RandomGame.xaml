@@ -321,8 +321,8 @@
 				<StackPanel.RenderTransform>
 					<CompositeTransform/>
 				</StackPanel.RenderTransform>
-				<TextBlock x:Name="Title_RetryPanel" Text="" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo"/>
-				<TextBlock x:Name="Description_RetryPanel" Text="" Style="{StaticResource PhoneTextNormalStyle}" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo"/>
+				<TextBlock x:Name="Title_RetryPanel" Text="" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Tw Cen MT"/>
+				<TextBlock x:Name="Description_RetryPanel" Text="" Style="{StaticResource PhoneTextNormalStyle}" FontFamily="Tw Cen MT"/>
 				<Grid Height="auto">
 					<Grid.RowDefinitions>
 						<RowDefinition Height="auto"/>
@@ -338,10 +338,10 @@
 					<Button Grid.Column="2" x:Name="sharestatus" Click="sharestatus_Click" BorderThickness="0" RenderTransformOrigin="0.316,0.476">
 						<Image Source="/Images/AppBar/share.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None"/>
 					</Button>
-					<TextBlock Grid.Row="1" Grid.ColumnSpan="3" TextWrapping="Wrap" x:Name="EndMatchStatsBox" Foreground="#FFF1BB46" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo" Margin="12,5,12,0"/>
+					<TextBlock Grid.Row="1" Grid.ColumnSpan="3" TextWrapping="Wrap" x:Name="EndMatchStatsBox" Foreground="#FFF1BB46" FontFamily="Tw Cen MT" Margin="12,5,12,0"/>
 				</Grid>
 			</StackPanel>
-			<TextBlock x:Name="textBlock" Text="Random Match - FlipCard" Style="{StaticResource PhoneTextNormalStyle}" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo">
+			<TextBlock x:Name="textBlock" Text="Random Match - FlipCard" Style="{StaticResource PhoneTextNormalStyle}" FontFamily="Kartika">
 				<TextBlock.Projection>
 					<PlaneProjection/>
 				</TextBlock.Projection>
@@ -354,12 +354,12 @@
 					<ColumnDefinition Width="auto"/>
 					<ColumnDefinition Width="5*"/>
 				</Grid.ColumnDefinitions>
-				<TextBlock Grid.Column="0" x:Name="ActualScoreYou" Foreground="#ff8d6e"  Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo"/>
-				<TextBlock x:Name="SepYouCPu" Grid.Column="1" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo">
+				<TextBlock Grid.Column="0" x:Name="ActualScoreYou" Foreground="#ff8d6e"  Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Tw Cen MT"/>
+				<TextBlock x:Name="SepYouCPu" Grid.Column="1" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Tw Cen MT">
 					<Run Text="-"/>
 				</TextBlock>
-				<TextBlock Grid.Column="2" x:Name="ActualScoreCPU" Foreground="#6f99ff"  Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo"/>
-				<TextBlock Grid.Column="3" x:Name="ActualRow" Foreground="#FFF1BB46" TextAlignment="Right" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo"/>
+				<TextBlock Grid.Column="2" x:Name="ActualScoreCPU" Foreground="#6f99ff"  Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Tw Cen MT"/>
+				<TextBlock Grid.Column="3" x:Name="ActualRow" Foreground="#FFF1BB46" TextAlignment="Right" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Tw Cen MT"/>
 			</Grid>
 		</StackPanel>
 

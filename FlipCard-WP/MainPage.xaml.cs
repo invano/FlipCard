@@ -77,18 +77,7 @@ namespace FlipCard_WP
 
         private void button_Hold(object sender, System.Windows.Input.GestureEventArgs e)
         {
-           
-
             MessageBox.Show("You are holding me down :(");
-            
-            //Cancel this before deployement
-            appStats["Stars"] = 0;
-            appStats["Row"] = 0;
-            appStats["Wins"] = 0;
-            appStats["Losses"] = 0;
-            appStats["Ties"] = 0;
-            appStats["Best"] = 0;
-           
         }
 
         private void aboutUs_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -155,7 +144,7 @@ namespace FlipCard_WP
 
         private void setMyBest(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            appStats["Best"] = 3333;
+            //appStats["Best"] = 3333;
         }
     }
 }

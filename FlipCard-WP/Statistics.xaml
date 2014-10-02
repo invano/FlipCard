@@ -66,7 +66,7 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="textBlock" TextAlignment="Center" Text="{Binding Path=LocalizedResources.Stats_Title, Source={StaticResource LocalizedStrings}}" FontSize="50" Margin="10,10,10,10" FontFamily="/FlipCard-WP;component/Fonts/Fonts.zip#Alpaca Scarlett Demo">
+            <TextBlock x:Name="textBlock" TextAlignment="Center" Text="{Binding Path=LocalizedResources.Stats_Title, Source={StaticResource LocalizedStrings}}" FontSize="50" Margin="10,10,10,10" FontFamily="Tw Cen MT">
             	<TextBlock.Projection>
             		<PlaneProjection/>
             	</TextBlock.Projection>
@@ -84,10 +84,11 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <TextBlock x:Name="stats_block_W" Grid.Row="0" TextWrapping="Wrap" FontSize="25" HorizontalAlignment="Center"/>
-            <TextBlock x:Name="stats_block_L" Grid.Row="1" TextWrapping="Wrap" FontSize="25" HorizontalAlignment="Center"/>
-            <TextBlock x:Name="stats_block_T" Grid.Row="2" TextWrapping="Wrap" FontSize="25" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="stats_block_W" Grid.Row="0" TextWrapping="Wrap" FontSize="25" HorizontalAlignment="Center" FontFamily="Tw Cen MT"/>
+            <TextBlock x:Name="stats_block_L" Grid.Row="1" TextWrapping="Wrap" FontSize="25" HorizontalAlignment="Center" FontFamily="Tw Cen MT"/>
+            <TextBlock x:Name="stats_block_T" Grid.Row="2" TextWrapping="Wrap" FontSize="25" HorizontalAlignment="Center" FontFamily="Tw Cen MT"/>
             <Grid Grid.Row="3" HorizontalAlignment="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="70"></RowDefinition>
@@ -106,8 +107,9 @@
                 <Image x:Name="star5" Grid.Row="0" Grid.Column="4" Source="/Images/Misc/Star.png" Margin="5,0"/>
            
            </Grid>
-            <TextBlock x:Name="stats_block_B" Grid.Row="4" TextWrapping="Wrap" FontSize="33.333" Margin="0,34,0,-34" HorizontalAlignment="Center"/>
-
+            <TextBlock x:Name="stats_block_B" Grid.Row="4" TextWrapping="Wrap" FontSize="33.333" Margin="0,34,0,-34" HorizontalAlignment="Center" FontFamily="Tw Cen MT"/>
+			<TextBlock x:Name="stats_reset" Grid.Row="5" TextWrapping="Wrap" FontSize="33.333" Margin="0,34,0,-34" HorizontalAlignment="Center" Tap="resetstats" FontFamily="Tw Cen MT"/>
+			
         </Grid>
     </Grid>
 

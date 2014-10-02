@@ -57,6 +57,7 @@
             App was developed in 32 hours<LineBreak />
             for the /publish/ hackaton <LineBreak />
             in 16-17/05/2014 by:<LineBreak />
+            Tile Font: http://www.aboutletters.com/<LineBreak />
         </TextBlock>
         <TextBlock Grid.Column="1" 
                    Grid.Row="2" 
